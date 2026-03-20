@@ -1,0 +1,133 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "CloseTheCall Docs",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#1A56DB",
+    "light": "#3B82F6",
+    "dark": "#1E40AF",
+    "anchors": {
+      "from": "#1A56DB",
+      "to": "#3B82F6"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Dashboard",
+      "url": "https://app.closethecall.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Get Started",
+    "url": "https://app.closethecall.com/register"
+  },
+  "anchors": [
+    {
+      "name": "Support",
+      "icon": "headset",
+      "url": "https://app.closethecall.com/support"
+    },
+    {
+      "name": "Contact Us",
+      "icon": "envelope",
+      "url": "mailto:support@closethecall.com"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/first-10-minutes",
+        "getting-started/understanding-dashboard",
+        "getting-started/call-forwarding",
+        "getting-started/billing-plans",
+        "getting-started/glossary"
+      ]
+    },
+    {
+      "group": "AI Receptionist",
+      "pages": [
+        "ai-receptionist/choosing-voice",
+        "ai-receptionist/greeting-message",
+        "ai-receptionist/personality",
+        "ai-receptionist/knowledge-base",
+        "ai-receptionist/smart-routing",
+        "ai-receptionist/ivr-phone-menu",
+        "ai-receptionist/testing"
+      ]
+    },
+    {
+      "group": "Phone & Routing",
+      "pages": [
+        "phone-routing/ai-phone-number",
+        "phone-routing/call-forwarding-setup",
+        "phone-routing/routing-modes"
+      ]
+    },
+    {
+      "group": "Leads & Customers",
+      "pages": [
+        "leads-customers/lead-board",
+        "leads-customers/lead-capture"
+      ]
+    },
+    {
+      "group": "Appointments",
+      "pages": [
+        "appointments/how-booking-works"
+      ]
+    },
+    {
+      "group": "Quotes & Invoices",
+      "pages": [
+        "quotes-invoices/how-quotes-work"
+      ]
+    },
+    {
+      "group": "Conversations",
+      "pages": [
+        "conversations/overview"
+      ]
+    },
+    {
+      "group": "Automations",
+      "pages": [
+        "automations/overview"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "pages": [
+        "integrations/google-calendar",
+        "integrations/crm-hubspot-salesforce-ghl",
+        "integrations/zapier"
+      ]
+    },
+    {
+      "group": "Settings & Account",
+      "pages": [
+        "settings/account-security",
+        "settings/team-management"
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        "troubleshooting/common-issues"
+      ]
+    },
+    {
+      "group": "Analytics",
+      "pages": [
+        "analytics/reading-analytics"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://closethecall.com"
+  }
+}
