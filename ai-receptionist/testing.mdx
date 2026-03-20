@@ -1,0 +1,120 @@
+---
+title: "Testing Your AI Receptionist"
+description: "How to test your AI before going live — call yourself, use the browser test, and verify everything works."
+icon: "flask-vial"
+---
+
+## Always test before going live
+
+Before forwarding your real business number to your AI receptionist, you need to test it. A quick 5-minute test can save you from lost customers and embarrassing mistakes.
+
+There are two ways to test: calling yourself (recommended) and using the browser test.
+
+## Method 1: Call yourself (easiest and best)
+
+This is the best test because you experience exactly what your callers will hear — real phone audio quality, real connection speed, real everything.
+
+<Steps>
+  <Step title="Find your AI phone number">
+    Go to **Phone** in the left sidebar. Your AI phone number is displayed at the top of the page (it starts with +44 for UK or +1 for US).
+  </Step>
+  <Step title="Call the number from your mobile">
+    Dial the number from your personal mobile phone. Do not call from your business line if it is already forwarding to the AI — that creates a loop.
+  </Step>
+  <Step title="Have a real conversation">
+    Do not just listen to the greeting and hang up. Pretend you are a real customer. Ask about services, try to book an appointment, ask about pricing. Push the AI with real questions.
+  </Step>
+  <Step title="Check the results">
+    After the call, go to **Calls** in your dashboard. You should see the call logged with a transcript, summary, and any leads or appointments that were created.
+  </Step>
+</Steps>
+
+<Tip>
+Call from a number the AI has never seen before (borrow a friend's phone) to test the first-time caller experience. Then call from your own phone a second time to test the returning caller greeting.
+</Tip>
+
+## Method 2: Browser test
+
+If you do not want to use phone minutes, you can test directly from your dashboard using your computer's microphone.
+
+<Steps>
+  <Step title="Go to Test AI">
+    Click **Test AI** in the left sidebar (under the Receptionist section).
+  </Step>
+  <Step title="Choose your test method">
+    You will see two tabs:
+    - **Call Me** — enters your phone number and the AI calls you back
+    - **Browser Call** — uses your computer's microphone for an in-browser call
+  </Step>
+  <Step title="Start the test">
+    For **Call Me**, enter your phone number and click Call. For **Browser Call**, click Start and allow microphone access when prompted.
+  </Step>
+  <Step title="Talk to your AI">
+    Have a conversation just like a real caller would. The test uses your actual AI configuration, voice, greeting, and Knowledge Base.
+  </Step>
+</Steps>
+
+<Info>
+Browser calls may sound slightly different from phone calls due to microphone quality differences. The phone test is always the most accurate representation of what callers hear.
+</Info>
+
+## The 8-point test checklist
+
+Run through this checklist every time you make changes to your AI configuration:
+
+<Steps>
+  <Step title="Greeting sounds right">
+    Does the AI say your business name correctly? Is the greeting the right length? Does it end with a question?
+  </Step>
+  <Step title="Voice and personality match">
+    Does the voice sound appropriate for your business? Is the tone right (friendly, professional, etc.)?
+  </Step>
+  <Step title="Services are correct">
+    Ask "What services do you offer?" — does the AI list your actual services, not made-up ones?
+  </Step>
+  <Step title="Pricing is accurate">
+    Ask "How much does [your main service] cost?" — does the AI give the right price? If you do not have pricing in your Knowledge Base, does it handle it gracefully?
+  </Step>
+  <Step title="Booking works">
+    Try to book an appointment. Does the AI ask for the right details (name, service, preferred time)? Does the appointment show up in your dashboard?
+  </Step>
+  <Step title="Hours are correct">
+    Ask "What are your opening hours?" — does the AI give today's actual hours?
+  </Step>
+  <Step title="Transfer works">
+    Say "Can I speak to someone?" — does the AI offer to transfer you? Does your phone ring?
+  </Step>
+  <Step title="Lead is captured">
+    After the call, check the **Leads** page. Is there a new lead with the caller's details?
+  </Step>
+</Steps>
+
+## What to do if the AI answers wrong
+
+<Accordion title="AI gives wrong information">
+**Fix it in the Knowledge Base.** Go to **Knowledge Base**, find the article with the wrong information (or create a new one), and correct it. The AI uses your Knowledge Base as its source of truth — fix the source and the AI is fixed.
+</Accordion>
+
+<Accordion title="AI makes up information it does not know">
+**Add the information or tell it not to guess.** Either add the correct information to your Knowledge Base, or go to **Receptionist Settings** and update the conversation handling instructions to say "If you do not know the answer, say you will have someone call them back."
+</Accordion>
+
+<Accordion title="AI says the business name wrong">
+**Check your greeting message.** Go to **Receptionist** and look at your greeting. Make sure the business name is spelled phonetically if it is unusual. For example, if your business is "Beauté Salon", write "Bootay Salon" in the greeting so the AI pronounces it correctly.
+</Accordion>
+
+<Accordion title="AI does not book appointments">
+**Check that booking is enabled.** Go to **Receptionist Settings** and make sure the **Take Bookings** toggle is turned on. Also check that you have availability set up — if no time slots are available, the AI cannot book.
+</Accordion>
+
+<Accordion title="AI does not capture leads">
+**Check that lead capture is enabled.** Go to **Receptionist Settings** and make sure the **Capture Leads** toggle is turned on. Without this, the AI will not ask for the caller's name and contact details.
+</Accordion>
+
+<Accordion title="Caller cannot hear the AI or AI cannot hear the caller">
+**This is usually a phone/network issue, not an AI issue.** Try calling from a different phone or location. If the problem persists, check your phone number settings in the **Phone** page and contact support.
+</Accordion>
+
+<Warning>
+Do not skip testing. Even if everything looks right in the dashboard, the only way to know for sure is to call the number and talk to your AI like a real customer would. Spend 5 minutes testing now to avoid losing customers later.
+</Warning>

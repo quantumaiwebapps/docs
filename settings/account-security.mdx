@@ -1,0 +1,133 @@
+---
+title: "Account & Security"
+description: "Change your password, enable two-factor authentication, manage active sessions, and delete your account."
+icon: "shield-halved"
+---
+
+Your account security settings are found in **Settings > Account** from the sidebar. This is where you manage your password, two-factor authentication, active sessions, and account deletion.
+
+## Change Your Password
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Click your profile icon in the top right corner, then click **Account Settings**. Or go to **Settings** in the sidebar.
+  </Step>
+  <Step title="Find the Password section">
+    Scroll down to the **Change Password** section.
+  </Step>
+  <Step title="Enter your current password">
+    Type your existing password to verify it's really you.
+  </Step>
+  <Step title="Enter your new password">
+    Type a new password. It must be at least 8 characters. We recommend using a mix of letters, numbers, and symbols.
+  </Step>
+  <Step title="Confirm and save">
+    Type the new password again to confirm. Click **Change Password**.
+  </Step>
+</Steps>
+
+<Info>
+After changing your password, you'll receive a confirmation email. All other sessions stay logged in — if you suspect someone else has access to your account, revoke all sessions (see below) after changing your password.
+</Info>
+
+## Enable Two-Factor Authentication (2FA)
+
+Two-factor authentication adds a second layer of security. After entering your password, you'll also need a 6-digit code from an authenticator app on your phone.
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Navigate to **Settings > Account**.
+  </Step>
+  <Step title="Find the Two-Factor Authentication section">
+    Click **Enable 2FA**.
+  </Step>
+  <Step title="Scan the QR code">
+    Open your authenticator app (Google Authenticator, Authy, or Microsoft Authenticator) and scan the QR code shown on screen.
+  </Step>
+  <Step title="Enter the 6-digit code">
+    Your authenticator app will show a 6-digit code. Enter it to verify the setup works.
+  </Step>
+  <Step title="Save your backup codes">
+    You'll be shown a set of one-time backup codes. **Save these somewhere safe** — a password manager, a printed sheet in a safe, or a secure note. If you lose your phone, these codes are the only way to get back into your account.
+  </Step>
+</Steps>
+
+<Warning>
+If you lose your phone and don't have your backup codes, you will be locked out of your account. There is no way around this — it's what makes 2FA secure. Save those backup codes.
+</Warning>
+
+<Accordion title="Which authenticator apps work?">
+  Any TOTP-based authenticator app works: Google Authenticator, Authy, Microsoft Authenticator, 1Password, Bitwarden. We recommend Authy because it backs up your codes to the cloud.
+</Accordion>
+
+<Accordion title="How do I disable 2FA?">
+  Go to **Settings > Account**, find the Two-Factor Authentication section, and click **Disable 2FA**. You'll need to enter a 6-digit code from your authenticator app to confirm.
+</Accordion>
+
+## Active Sessions
+
+See every device and browser currently logged into your account. This is useful for:
+
+- Checking if you accidentally left yourself logged in on a shared computer
+- Spotting any logins you don't recognise (which could mean someone else has your password)
+- Logging out of old devices remotely
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Navigate to **Settings > Account**.
+  </Step>
+  <Step title="Scroll to Active Sessions">
+    You'll see a list of all logged-in sessions, showing the device type, browser, location, and when it was last active.
+  </Step>
+  <Step title="Revoke a single session">
+    Click **Revoke** next to any session to log it out. The person using that session will be returned to the login page.
+  </Step>
+  <Step title="Revoke all sessions">
+    Click **Revoke All** to log out every session except the one you're currently using. Do this if you think your account has been compromised.
+  </Step>
+</Steps>
+
+<Tip>
+Your current session is marked with a "Current" badge so you know which one is you. You can't accidentally revoke your own active session.
+</Tip>
+
+## Delete Your Account
+
+Account deletion is permanent, but includes a 30-day grace period.
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Navigate to **Settings > Account**.
+  </Step>
+  <Step title="Scroll to the Danger Zone">
+    At the bottom of the page, find the **Delete Account** section.
+  </Step>
+  <Step title="Click Delete Account">
+    A confirmation dialog will appear.
+  </Step>
+  <Step title="Type DELETE to confirm">
+    Type the word **DELETE** (in capitals) into the text field. This prevents accidental deletion.
+  </Step>
+  <Step title="Click Confirm Deletion">
+    Your account enters a 30-day grace period.
+  </Step>
+</Steps>
+
+<Warning>
+During the 30-day grace period, your account is deactivated but not destroyed. Your AI receptionist stops answering calls immediately. If you change your mind, log back in within 30 days and your account will be reactivated with all data intact. After 30 days, everything is permanently deleted and cannot be recovered.
+</Warning>
+
+### What gets deleted:
+
+- Your account and login credentials
+- All business data (leads, calls, appointments, knowledge base)
+- All call recordings and transcripts
+- Your AI receptionist configuration
+- Your phone number (released back to the pool)
+- Your billing information (Stripe subscription is cancelled)
+
+### What is NOT deleted:
+
+- Emails already sent to customers (those are in their inboxes)
+- Data already synced to your CRM (that's in your CRM's system)
+- Calendar events already created (those stay on your Google/Outlook calendar)

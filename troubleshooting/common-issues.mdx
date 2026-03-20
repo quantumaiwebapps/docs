@@ -1,0 +1,41 @@
+---
+title: "Common Issues & Solutions"
+description: "Quick fixes for the most common problems — find your issue and solve it in seconds"
+icon: "wrench"
+---
+
+## Quick Fix Table
+
+| Problem | Likely Cause | Solution |
+|---------|-------------|----------|
+| AI gives wrong prices | Pricing not in Knowledge Base | Go to **Knowledge Base** → add PRICING articles with your rates |
+| AI says "I don't know" to a question | Missing knowledge for that topic | Check which **Knowledge Base category** is empty → add articles |
+| Calls aren't being forwarded | Carrier forwarding not set up | Follow the **Call Forwarding** guide for your specific carrier |
+| SMS confirmations not sending | Phone number issue | Contact support — we'll check your Twilio number configuration |
+| "Request failed" error toast | Temporary server issue | Wait 30 seconds and refresh. If persistent, contact support. |
+| AI hangs up too early | Silence timeout too short | Go to **Receptionist Settings** → increase silence re-engagement timeout |
+| No leads appearing after calls | Lead capture is disabled | Go to **Receptionist Settings** → enable **"Capture Lead Info"** |
+| No appointments appearing | Booking is disabled | Go to **Receptionist Settings** → enable **"Book Appointments"** |
+| Customer got wrong appointment time | Calendar not synced | Connect **Google Calendar** in Integrations → AI checks your availability |
+| AI doesn't know my business hours | Hours not in Knowledge Base | Go to **Knowledge Base** → add HOURS article, or **My Business** → set hours |
+| Dashboard shows 0 calls | Forwarding not working or no calls yet | Call your AI number directly to test. Check forwarding setup. |
+| Conversations page is empty | SMS auto-reply is off | Toggle **"SMS Auto-Reply"** ON in the Conversations page header |
+
+## Still Stuck?
+
+<CardGroup cols={2}>
+  <Card title="Contact Support" icon="headset" href="https://app.closethecall.com/support">
+    Submit a support ticket from your dashboard
+  </Card>
+  <Card title="WhatsApp Us" icon="whatsapp" href="https://wa.me/447450307109">
+    Chat with us directly on WhatsApp
+  </Card>
+</CardGroup>
+
+<Warning>
+When contacting support, please include:
+- Your business name
+- What you were trying to do
+- What error message you saw (screenshot helps!)
+- Your browser (Chrome, Safari, etc.)
+</Warning>

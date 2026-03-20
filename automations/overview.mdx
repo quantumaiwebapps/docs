@@ -1,0 +1,181 @@
+---
+title: "Automations Overview"
+description: "Set up automatic follow-ups, reminders, and notifications so you never lose a lead or miss a booking."
+icon: "robot"
+---
+
+Automations handle the follow-up work that most small businesses forget to do. They send texts, emails, and reminders on your behalf — automatically — so you can focus on doing the actual work.
+
+You'll find all five automations on the **Automations** page in your sidebar.
+
+## The Five Automations
+
+<CardGroup cols={2}>
+  <Card title="Missed Call Textback" icon="phone-missed">
+    Sends an SMS to anyone who calls but doesn't reach you (missed call, voicemail, or hangup). Gets them to text back instead.
+  </Card>
+  <Card title="Review Generation" icon="star">
+    Sends a review request SMS after a completed appointment. Only sends to happy customers — negative sentiment calls are skipped.
+  </Card>
+  <Card title="Estimate Follow-up" icon="receipt">
+    Sends a personalised follow-up SMS to leads who got a quote but haven't booked yet. Uses AI to personalise based on the call.
+  </Card>
+  <Card title="New Lead Notification" icon="bell">
+    Notifies you (and your team) by SMS and email whenever a new lead comes in, so nothing slips through the cracks.
+  </Card>
+  <Card title="Appointment Reminder" icon="clock">
+    Sends the customer a reminder SMS 1 hour before their appointment with confirm/cancel buttons.
+  </Card>
+</CardGroup>
+
+---
+
+## 1. Missed Call Textback
+
+**What it does:** When someone calls and your AI can't connect (rare, but it happens — e.g. the AI is already on another call), this automation sends them a text within 60 seconds.
+
+**Default message:**
+> "Hi, thanks for calling [Your Business]. Sorry we missed you! Reply to this text and we'll get back to you ASAP."
+
+**How to configure:**
+
+<Steps>
+  <Step title="Go to Automations">
+    Click **Automations** in the sidebar.
+  </Step>
+  <Step title="Find Missed Call Textback">
+    Click the toggle to enable it.
+  </Step>
+  <Step title="Customise the message">
+    Edit the text template. You can use `{businessName}` and `{callerName}` as variables.
+  </Step>
+  <Step title="Set the delay">
+    Choose how long to wait before sending (default: 60 seconds). A short delay feels natural — instant texts can feel robotic.
+  </Step>
+</Steps>
+
+<Tip>
+This is the single highest-impact automation. Businesses that text back missed calls within 1 minute recover up to 40% of those leads.
+</Tip>
+
+---
+
+## 2. Review Generation
+
+**What it does:** After a completed appointment, sends the customer an SMS asking them to leave a Google review.
+
+**The smart part:** This automation checks the sentiment of the original phone call. If the call was negative (angry customer, complaint), it skips the review request. You only ask happy customers for reviews.
+
+**How to configure:**
+
+<Steps>
+  <Step title="Enable Review Generation">
+    Toggle it on in the Automations page.
+  </Step>
+  <Step title="Add your Google review link">
+    Paste your Google Business Profile review link. (Find it by searching your business on Google, clicking "Write a review," and copying the URL.)
+  </Step>
+  <Step title="Set the delay">
+    Choose how long after the appointment to send the request. Default is 2 hours — enough time for the customer to assess the work.
+  </Step>
+</Steps>
+
+<Info>
+The sentiment gate means you'll never accidentally ask an unhappy customer for a review. If the call had negative sentiment, the automation simply doesn't fire.
+</Info>
+
+---
+
+## 3. Estimate Follow-up
+
+**What it does:** Sends a follow-up SMS to leads who received a quote or pricing information but haven't booked yet.
+
+**The smart part:** The AI reads the original call transcript and writes a personalised follow-up message. Instead of a generic "Just following up," the customer gets something like: "Hi Sarah, just wanted to check if you had any questions about the boiler service we discussed? Happy to help if you need more info."
+
+**How to configure:**
+
+<Steps>
+  <Step title="Enable Estimate Follow-up">
+    Toggle it on in the Automations page.
+  </Step>
+  <Step title="Set the delay">
+    Choose how long to wait after the call. Default is 24 hours. This gives the customer time to think without feeling pressured.
+  </Step>
+  <Step title="Customise the fallback template">
+    If the AI can't generate a personalised message (rare), it falls back to your template. Edit this to match your brand voice.
+  </Step>
+</Steps>
+
+---
+
+## 4. New Lead Notification
+
+**What it does:** Sends you an SMS and/or email the moment a new lead is captured by the AI.
+
+**How to configure:**
+
+<Steps>
+  <Step title="Enable New Lead Notification">
+    Toggle it on in the Automations page.
+  </Step>
+  <Step title="Choose notification channels">
+    Select SMS, email, or both.
+  </Step>
+  <Step title="Add team members">
+    Optionally add phone numbers or emails for other team members who should also be notified.
+  </Step>
+</Steps>
+
+<Tip>
+Pair this with the Missed Call Textback. You'll know about every lead the moment it comes in, and the customer gets a text at the same time. Two-way coverage.
+</Tip>
+
+---
+
+## 5. Appointment Reminder
+
+**What it does:** Sends the customer an SMS 1 hour before their appointment with two links — **Confirm** or **Cancel**.
+
+**How it works:**
+- The reminder goes out automatically. No action needed from you.
+- If the customer clicks **Confirm**, the appointment status updates to Confirmed in your dashboard.
+- If the customer clicks **Cancel**, the appointment is cancelled and the time slot is freed up. You get a notification.
+
+<Steps>
+  <Step title="Enable Appointment Reminder">
+    Toggle it on in the Automations page.
+  </Step>
+  <Step title="Customise the message">
+    Edit the reminder text. Use `{customerName}`, `{service}`, `{date}`, and `{time}` as variables.
+  </Step>
+</Steps>
+
+---
+
+## SMS Opt-Out Compliance
+
+All automated SMS messages include opt-out handling to comply with TCPA (US) and PECR (UK) regulations.
+
+<Warning>
+If a customer replies **STOP** to any automated text, they are automatically unsubscribed from all future SMS automations. This is a legal requirement and cannot be overridden. The customer can text **START** to re-subscribe.
+</Warning>
+
+## Enabling and Disabling
+
+Each automation has its own on/off toggle. Turning one off doesn't affect the others. When disabled:
+
+- No new messages will be sent for that automation.
+- Messages already queued will still be delivered.
+- Your configuration (message template, delay) is saved — so you can re-enable it without starting over.
+
+<Accordion title="Can I see which messages were sent?">
+  Yes. Every automated SMS appears in your **Conversations** page with a tag showing which automation triggered it.
+</Accordion>
+
+<Accordion title="What if I want different messages for different services?">
+  Currently, each automation uses one message template for all services. If you need service-specific messages, contact support and we can set that up for you.
+</Accordion>
+
+<Accordion title="Do automations cost extra?">
+  No. All five automations are included in every plan. The only cost is the SMS messages themselves, which come out of your plan's SMS allowance.
+</Accordion>

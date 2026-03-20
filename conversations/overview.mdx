@@ -1,0 +1,177 @@
+---
+title: "Conversations"
+description: "Manage SMS, WhatsApp, and Web Chat conversations with your customers — all in one place."
+icon: "messages"
+---
+
+The Conversations page is your unified inbox for every text-based conversation with your customers. SMS replies, WhatsApp messages, and Web Chat sessions all appear here — so you never have to check multiple apps to see what your customers are saying.
+
+## How It Works
+
+When someone texts your AI phone number, sends a WhatsApp message, or chats through the widget on your website, the AI responds automatically using the same knowledge base it uses on phone calls. The entire conversation is logged in your dashboard.
+
+<CardGroup cols={3}>
+  <Card title="SMS" icon="comment-sms">
+    Customers who text your AI number get automatic replies. The AI handles FAQs, booking requests, and lead capture — just like a phone call, but over text.
+  </Card>
+  <Card title="WhatsApp" icon="whatsapp">
+    If your business has WhatsApp Business connected, incoming messages are handled by the same AI and appear in the same inbox.
+  </Card>
+  <Card title="Web Chat" icon="browser">
+    The chat widget on your website creates conversations here too. Visitors can ask questions, book appointments, and become leads — all without picking up the phone.
+  </Card>
+</CardGroup>
+
+## The Conversations List
+
+When you open the Conversations page, you'll see a list of all conversations on the left side — similar to a messaging app. Each conversation shows:
+
+- **Customer name** (if known) or phone number
+- **Last message** preview
+- **Timestamp** of the most recent message
+- **Channel badge** (SMS, WhatsApp, or Web Chat)
+- **Status** — Active, Escalated, or Closed
+
+Click any conversation to open the full message history on the right.
+
+## Channel Filters
+
+Use the filter buttons at the top of the conversation list to show only certain channels:
+
+- **All** — Every conversation across all channels
+- **SMS** — Only text message conversations
+- **WhatsApp** — Only WhatsApp conversations
+- **Web Chat** — Only website chat conversations
+
+<Tip>
+If you're looking for a specific customer, use the search bar at the top. You can search by name, phone number, or message content.
+</Tip>
+
+## SMS Auto-Reply
+
+SMS auto-reply is the core feature of Conversations. Here's how it works:
+
+<Steps>
+  <Step title="Customer texts your AI number">
+    They might text "Hi, do you do emergency plumbing?" or "I need to book an appointment."
+  </Step>
+  <Step title="AI reads and replies">
+    The AI uses your knowledge base (services, hours, pricing, FAQs) to generate a helpful reply. It sends the response as an SMS from your business number.
+  </Step>
+  <Step title="Conversation continues">
+    The customer can reply, and the AI responds again. It's a natural back-and-forth text conversation — the customer usually can't tell it's AI.
+  </Step>
+  <Step title="Lead is captured">
+    If the customer provides their name, email, or asks about a service, a lead is created in your dashboard automatically.
+  </Step>
+</Steps>
+
+<Info>
+SMS auto-reply must be enabled for this to work. You'll see an **SMS Replies** toggle at the top of the Conversations page. Make sure it's turned on.
+</Info>
+
+## Human Takeover
+
+Sometimes you need to step in and reply as yourself — to handle a complex question, negotiate a price, or build a personal relationship. This is called "human takeover."
+
+<Steps>
+  <Step title="Open the conversation">
+    Click the conversation you want to take over.
+  </Step>
+  <Step title="Type your reply">
+    Use the message input at the bottom of the conversation. Type your message as you normally would.
+  </Step>
+  <Step title="Send">
+    Click **Send** or press Enter. Your message is sent as an SMS (or WhatsApp/Web Chat reply) from your business number. The AI pauses automatic replies for this conversation.
+  </Step>
+</Steps>
+
+When you send a manual reply:
+- The AI stops auto-replying to this specific conversation.
+- The conversation is marked as "human-managed."
+- You can hand it back to the AI by clicking the **Resume AI** button.
+
+<Warning>
+When you take over a conversation, the customer sees messages coming from the same number — they won't know the difference between your AI's replies and yours. Keep your tone consistent with how your AI sounds.
+</Warning>
+
+## Escalate and Close
+
+Two buttons appear at the top of each conversation:
+
+### Escalate
+Marks the conversation as needing human attention. Use this when:
+- The AI can't answer a question
+- The customer is upset and needs a personal touch
+- The request is too complex for the AI
+
+Escalated conversations appear with a red badge in the list so you can spot them quickly.
+
+### Close
+Marks the conversation as resolved. Use this when:
+- The customer's question has been answered
+- The booking has been made
+- The conversation is finished
+
+Closed conversations move to the bottom of the list. They can be reopened if the customer texts again.
+
+## Right Panel — Customer Info
+
+When you open a conversation, the right panel shows everything you know about this customer:
+
+- **Name** and **phone number**
+- **Email** (if provided)
+- **Lead status** (New, In Progress, Qualified, etc.)
+- **Lead temperature** (HOT, WARM, COOL, COLD)
+- **Previous calls** — links to call recordings
+- **Appointments** — any upcoming or past bookings
+- **Notes** — add your own notes to the customer record
+
+<Tip>
+The customer info panel pulls from your Lead Board. If you update a lead's status on the Lead Board, it updates here too — and vice versa.
+</Tip>
+
+## SMS Opt-Out (STOP Keyword)
+
+Customers can opt out of receiving automated texts at any time by replying **STOP**.
+
+<Warning>
+When a customer texts STOP, all automated SMS messages to that number are immediately halted. This is a legal requirement (TCPA in the US, PECR in the UK). You cannot override it or re-subscribe them manually. The customer must text **START** to opt back in.
+</Warning>
+
+What happens when someone texts STOP:
+- All automations stop sending to that number (textback, reminders, follow-ups, review requests).
+- The conversation is marked with an "Opted Out" badge.
+- If you try to send a manual SMS, you'll see a warning that the customer has opted out.
+- The AI will not send automatic replies to that number.
+
+## WhatsApp Support
+
+WhatsApp works the same way as SMS — the AI reads incoming messages and replies using your knowledge base. The only difference is the channel.
+
+To enable WhatsApp:
+1. You need a WhatsApp Business account connected to your phone number.
+2. The incoming webhook must be configured (your account manager can help with this).
+3. Once connected, WhatsApp messages appear in the Conversations page alongside SMS and Web Chat.
+
+## Web Chat Widget
+
+The Web Chat widget is a separate feature that you install on your website. Conversations from the widget appear here in your inbox alongside SMS and WhatsApp.
+
+To set up the Web Chat widget, go to **Chat Widget** in the sidebar. See the [Chat Widget setup guide](/chat-widget/setup) for full instructions.
+
+<Accordion title="Can I see which messages were sent by the AI vs. by me?">
+  Yes. AI-generated messages show a small "AI" badge. Messages you sent manually show your name. Customer messages are always on the left side of the conversation.
+</Accordion>
+
+<Accordion title="Is there a limit to how many conversations I can have?">
+  No. You can have unlimited conversations. The only limit is your plan's SMS allowance — each outgoing text message counts against your monthly SMS quota.
+</Accordion>
+
+<Accordion title="Can I send images or files through conversations?">
+  Currently, conversations support text messages only. If a customer sends you an image via MMS or WhatsApp, you'll see it in the conversation, but you can only reply with text.
+</Accordion>
+
+<Accordion title="What if someone texts outside business hours?">
+  The AI replies 24/7 regardless of your business hours. If you have after-hours settings configured, the AI will mention your business hours in its reply and offer to book an appointment for the next available time.
+</Accordion>

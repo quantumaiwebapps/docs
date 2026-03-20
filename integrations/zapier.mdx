@@ -1,0 +1,115 @@
+---
+title: "Zapier Integration"
+description: "Connect CloseTheCall to 5,000+ apps using Zapier — send leads to Google Sheets, get Slack alerts, and more."
+icon: "bolt"
+---
+
+Zapier lets you connect CloseTheCall to over 5,000 other apps without writing any code. When something happens in CloseTheCall (a new lead comes in, an appointment is booked), Zapier can automatically do something in another app — add a row to a spreadsheet, send a Slack message, create a Trello card, or anything else you can think of.
+
+## What Zapier Does
+
+Think of Zapier as a bridge between CloseTheCall and everything else you use:
+
+<CardGroup cols={2}>
+  <Card title="Lead to Google Sheets" icon="table">
+    Every new lead automatically appears as a new row in your spreadsheet.
+  </Card>
+  <Card title="Lead to Slack" icon="hashtag">
+    Get a Slack notification in your team channel whenever a new lead comes in.
+  </Card>
+  <Card title="Appointment to Trello" icon="clipboard-list">
+    New bookings create a Trello card on your job board automatically.
+  </Card>
+  <Card title="Lead to Mailchimp" icon="envelope">
+    New leads get added to your email marketing list for follow-up campaigns.
+  </Card>
+</CardGroup>
+
+## Available Events
+
+CloseTheCall sends these events to Zapier:
+
+| Event | When It Fires |
+|-------|--------------|
+| `lead.created` | A new lead is captured by the AI during a call |
+| `appointment.booked` | An appointment is booked (by AI or manually) |
+| `call.completed` | A call finishes (includes duration, summary, outcome) |
+| `lead.updated` | A lead's status or details change |
+
+## How to Set Up
+
+<Steps>
+  <Step title="Get your webhook URL from CloseTheCall">
+    Go to **Integrations** in the sidebar. Find the **Zapier** card and click **Connect**. You'll see a webhook URL and a secret key. Copy both.
+  </Step>
+  <Step title="Create a Zap in Zapier">
+    Log into [zapier.com](https://zapier.com) and click **Create Zap**.
+  </Step>
+  <Step title="Set the trigger">
+    For the trigger app, choose **Webhooks by Zapier**. Select **Catch Hook** as the trigger event. Zapier will give you a webhook URL — copy it.
+  </Step>
+  <Step title="Paste the Zapier URL into CloseTheCall">
+    Back in CloseTheCall, paste the Zapier webhook URL into the **Webhook URL** field on the Zapier integration card. Click **Save**.
+  </Step>
+  <Step title="Test the connection">
+    Click **Send Test** in CloseTheCall. Go back to Zapier and click **Test trigger**. You should see sample data from CloseTheCall appear.
+  </Step>
+  <Step title="Set up your action">
+    Choose what happens when the event fires. For example: Google Sheets > Create Spreadsheet Row. Map the fields (name, phone, service, etc.) to your spreadsheet columns.
+  </Step>
+  <Step title="Turn on your Zap">
+    Click **Publish**. Your Zap is now live. Every time the event fires in CloseTheCall, Zapier will run your action automatically.
+  </Step>
+</Steps>
+
+## Example: New Lead to Google Sheets + Slack
+
+Here's a practical example that many of our customers use:
+
+<Steps>
+  <Step title="Trigger: CloseTheCall webhook">
+    Fires when `lead.created` event comes in.
+  </Step>
+  <Step title="Action 1: Google Sheets — Create Row">
+    Adds a new row with the lead's name, phone, email, service needed, temperature, and timestamp.
+  </Step>
+  <Step title="Action 2: Slack — Send Message">
+    Posts a message to your #new-leads channel: "New lead: Sarah Johnson needs a boiler repair. Phone: 07700 900123. Temperature: HOT."
+  </Step>
+</Steps>
+
+<Tip>
+You can chain multiple actions in a single Zap. The example above does two things (spreadsheet + Slack) from one trigger. Add as many actions as you need.
+</Tip>
+
+## Data Fields Available
+
+When CloseTheCall sends data to Zapier, these fields are included:
+
+| Field | Description | Example |
+|-------|------------|---------|
+| `name` | Customer's name | Sarah Johnson |
+| `phone` | Phone number | +447700900123 |
+| `email` | Email address (if provided) | sarah@email.com |
+| `service` | What they need | Boiler repair |
+| `temperature` | Lead score category | HOT |
+| `score` | Numeric score (0-100) | 85 |
+| `summary` | AI summary of the call | Customer has a leaking boiler, needs urgent repair |
+| `businessName` | Your business name | Smith Plumbing |
+| `timestamp` | When it happened | 2026-03-15T10:30:00Z |
+
+## How to Disconnect
+
+Go to **Integrations**, find the Zapier card, and click **Disconnect**. This removes the webhook URL so events will no longer be sent to Zapier. Your Zaps in Zapier will stop receiving data but won't be deleted.
+
+<Accordion title="Do I need a paid Zapier account?">
+  Zapier's free plan includes 100 tasks per month and 5 Zaps. That's enough for most small businesses getting started. If you receive more than 100 leads/month, you'll need a paid plan.
+</Accordion>
+
+<Accordion title="Can I use this with Make (formerly Integromat)?">
+  The webhook system works with any service that can receive webhooks, including Make, n8n, and Pipedream. The setup is similar — use a Catch Webhook trigger and paste the CloseTheCall webhook URL.
+</Accordion>
+
+<Accordion title="Events aren't coming through to Zapier">
+  Check three things: (1) The webhook URL is correct in CloseTheCall. (2) Your Zap is turned on in Zapier. (3) Try clicking **Send Test** in CloseTheCall to trigger a test event. If you still have issues, disconnect and reconnect the integration.
+</Accordion>

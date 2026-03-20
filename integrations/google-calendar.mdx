@@ -1,0 +1,97 @@
+---
+title: "Google Calendar"
+description: "Connect Google Calendar so your AI receptionist checks your real availability and adds bookings automatically."
+icon: "calendar"
+---
+
+Connecting Google Calendar gives your AI receptionist access to your real schedule. It will check when you're free before offering times, and it will add new bookings directly to your calendar — no double-entry, no double-bookings.
+
+## What It Does
+
+<CardGroup cols={2}>
+  <Card title="Checks your availability" icon="calendar-check">
+    Before offering a time to a caller, the AI checks your Google Calendar for conflicts. If you have a dentist appointment at 2pm, it won't offer 2pm.
+  </Card>
+  <Card title="Creates calendar events" icon="calendar-plus">
+    When the AI books an appointment, it appears on your Google Calendar immediately — with the customer's name, service, phone number, and any notes.
+  </Card>
+  <Card title="Reads busy times" icon="calendar-xmark">
+    Any event on your calendar (personal or work) is treated as "busy." The AI works around your entire schedule, not just work appointments.
+  </Card>
+  <Card title="Syncs both ways" icon="arrows-rotate">
+    Appointments booked in the dashboard also appear on Google Calendar. Everything stays in sync.
+  </Card>
+</CardGroup>
+
+## How to Connect
+
+<Steps>
+  <Step title="Go to Integrations">
+    Click **Integrations** in the sidebar menu.
+  </Step>
+  <Step title="Find Google Calendar">
+    Look for the Google Calendar card. It will show a **Connect** button.
+  </Step>
+  <Step title="Click Connect">
+    You'll be redirected to Google's sign-in page.
+  </Step>
+  <Step title="Sign in and grant access">
+    Choose the Google account that has your business calendar. Click **Allow** when asked to let CloseTheCall view and edit your calendar events.
+  </Step>
+  <Step title="Return to dashboard">
+    You'll be redirected back automatically. The Google Calendar card will now show **Connected** with a green indicator.
+  </Step>
+</Steps>
+
+<Info>
+Google may show a warning that says "This app isn't verified." This is normal for newer apps. Click **Advanced**, then **Go to CloseTheCall** to proceed. Your data is safe — we only access your calendar, nothing else.
+</Info>
+
+## What Syncs
+
+| From | To | What |
+|------|-----|------|
+| Google Calendar | AI Receptionist | Busy/free times (so the AI knows your availability) |
+| AI Receptionist | Google Calendar | New appointments booked by the AI or created in the dashboard |
+
+The AI checks your calendar in real time during each call. There's no sync delay — it reads your latest schedule every time a caller asks to book.
+
+## How to Disconnect
+
+<Steps>
+  <Step title="Go to Integrations">
+    Click **Integrations** in the sidebar.
+  </Step>
+  <Step title="Click Disconnect">
+    On the Google Calendar card, click the **Disconnect** button.
+  </Step>
+  <Step title="Confirm">
+    Click **Yes, disconnect** in the confirmation dialog.
+  </Step>
+</Steps>
+
+<Warning>
+After disconnecting, your AI receptionist will fall back to using your configured business hours for availability instead of your real calendar. Existing appointments won't be deleted from Google Calendar.
+</Warning>
+
+## Troubleshooting
+
+<Accordion title="Auth expired — AI can't check my calendar">
+  Google OAuth tokens expire periodically. Go to **Integrations**, disconnect Google Calendar, and reconnect it. This refreshes your authentication token.
+</Accordion>
+
+<Accordion title="Appointments aren't appearing on my calendar">
+  Make sure you connected the right Google account. If you have multiple Google accounts (personal and work), check that you signed in with the one that has your business calendar. Disconnect and reconnect with the correct account.
+</Accordion>
+
+<Accordion title="The AI offered a time when I have an event">
+  The AI only sees events on the primary calendar of the Google account you connected. If your busy event is on a secondary calendar (e.g. "Kids' activities"), it won't be visible. Move important events to your primary calendar, or create a blocking event on the primary calendar.
+</Accordion>
+
+<Accordion title="Can I connect multiple Google accounts?">
+  Currently, you can connect one Google Calendar account. If you manage multiple calendars, use Google's built-in calendar sharing to overlay them onto one account.
+</Accordion>
+
+<Accordion title="Does this work with Google Workspace (business accounts)?">
+  Yes. Google Workspace accounts work exactly the same way. Your Workspace admin may need to approve the CloseTheCall app in the Google Admin Console if your organisation restricts third-party apps.
+</Accordion>

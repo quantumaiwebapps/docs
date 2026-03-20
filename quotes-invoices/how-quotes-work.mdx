@@ -1,0 +1,119 @@
+---
+title: "How Quotes Work"
+description: "How your AI creates price estimates during calls, and how to manage quotes from draft to accepted."
+icon: "file-invoice-dollar"
+---
+
+When a customer calls and asks "How much does that cost?", your AI receptionist can give them a price range based on your configured pricing. It never commits you to a fixed price — it always gives a range and explains that a final quote depends on seeing the job.
+
+## How the AI Handles Pricing Calls
+
+<Steps>
+  <Step title="Customer asks about pricing">
+    The caller says something like "How much for a boiler service?" or "What do you charge for a cut and colour?"
+  </Step>
+  <Step title="AI gives a price range">
+    Based on the pricing you've configured in your business settings, the AI responds with a range: "A boiler service typically runs between 80 and 120 pounds, depending on the make and model."
+  </Step>
+  <Step title="AI adds a disclaimer">
+    The AI always follows up with something like: "That's an estimate — we'd need to take a look before giving you a firm price." This protects you from being held to a number.
+  </Step>
+  <Step title="A draft quote is created">
+    If the AI captured enough details (service, name, phone), a draft quote is created in your dashboard for you to review before it goes to the customer.
+  </Step>
+</Steps>
+
+<Warning>
+The AI will **never** give a fixed price — only a range. This is by design. Every job is different, and you should always see the work before committing to a final number. The AI explains this to the customer on every pricing call.
+</Warning>
+
+## Quote Statuses
+
+Every quote moves through a lifecycle:
+
+| Status | What It Means |
+|--------|--------------|
+| **Draft** | Created by the AI or by you. Not sent to the customer yet. You can edit it freely. |
+| **Sent** | Emailed or texted to the customer. They can view it via a link. |
+| **Viewed** | The customer has opened the quote link. |
+| **Accepted** | The customer agreed to the price. Time to book the job. |
+| **Rejected** | The customer declined. Follow up or move on. |
+| **Expired** | The quote passed its validity date without a response. |
+
+## Creating a Quote Manually
+
+Not every quote comes from a phone call. You can create one from scratch for any customer.
+
+<Steps>
+  <Step title="Go to Quotes">
+    Click **Quotes & Invoices** in the sidebar.
+  </Step>
+  <Step title="Click + New Quote">
+    Click the button at the top right.
+  </Step>
+  <Step title="Fill in the details">
+    Add the customer name, phone, email, and one or more line items. Each line item has a description and a price range (low and high).
+  </Step>
+  <Step title="Save as Draft">
+    Click **Save Draft**. The quote is stored but not sent yet.
+  </Step>
+  <Step title="Review and send">
+    Open the draft, check everything looks right, and click **Send Quote**. The customer receives it by email with a branded link to view, accept, or reject.
+  </Step>
+</Steps>
+
+## Editing Draft Quotes
+
+While a quote is in **Draft** status, you can change anything:
+
+- Add or remove line items
+- Adjust price ranges
+- Update customer details
+- Add notes or terms
+
+<Info>
+Once a quote is sent, you cannot edit it. If you need to change the price, create a new quote and let the old one expire.
+</Info>
+
+## Auto-Send Option
+
+If you'd rather not review every quote manually, you can enable **Auto-Send** in your settings. When enabled:
+
+1. The AI creates the quote during the call.
+2. The quote is automatically sent to the customer by SMS after the call ends.
+3. You still see it in your dashboard and get notified.
+
+<Tip>
+Auto-send works best when your pricing is straightforward and doesn't vary much per job. If your pricing depends heavily on seeing the work first, keep auto-send off and review each quote before sending.
+</Tip>
+
+## Price Ranges — Why Not Fixed Prices?
+
+Every service business knows that the price depends on the job. A "boiler repair" could be a simple part swap or a full system replacement. By using ranges:
+
+- **You stay protected** — You never accidentally promise a price you can't honour.
+- **Customers get useful information** — A range is better than "I'll have to come and look first" with no number at all.
+- **The AI sounds professional** — "Between 80 and 120 pounds" is a confident, helpful answer.
+
+## What the Customer Sees
+
+When a customer receives a quote (by email or SMS), they see:
+
+- Your business name and logo
+- A clear breakdown of each line item with the price range
+- Total estimated range
+- A disclaimer that the final price may vary
+- Two buttons: **Accept** and **Decline**
+- An expiry date (default: 14 days)
+
+<Accordion title="Can I convert a quote to an invoice?">
+  Yes. Open any accepted quote and click **Convert to Invoice**. It will create an invoice pre-filled with the quote details, ready for you to set the final price and send.
+</Accordion>
+
+<Accordion title="What happens when a quote expires?">
+  The status changes to **Expired** automatically. The customer can no longer accept it via the link. You can create a new quote if they come back.
+</Accordion>
+
+<Accordion title="Can the AI discuss pricing if I haven't set up my prices?">
+  No. If you haven't added pricing to your business settings, the AI will say "I don't have pricing information available — our team will follow up with a quote." It will never make up numbers.
+</Accordion>
