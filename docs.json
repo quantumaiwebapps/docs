@@ -118,7 +118,15 @@
       }
     ]
   },
+  "footer": {
+    "copyright": "© 2026 CloseTheCall by Quantum AI WebApps Digital LLC. All rights reserved."
+  },
   "footerSocials": {
     "website": "https://closethecall.com"
+  },
+  "metadata": {
+    "og:site_name": "CloseTheCall Documentation",
+    "og:description": "Help docs for CloseTheCall AI Receptionist — setup guides, troubleshooting, and feature documentation.",
+    "twitter:site": "@closethecall"
   }
 }
