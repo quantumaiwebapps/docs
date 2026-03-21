@@ -22,6 +22,23 @@ You have three options:
   </Card>
 </CardGroup>
 
+## Routing decision tree
+
+```mermaid
+flowchart TD
+    A["Incoming call to your AI number"] --> B{"Which routing mode is active?"}
+    B -->|"AI Answers"| C["AI picks up immediately"]
+    B -->|"Rings You First"| D["Your phone rings"]
+    B -->|"Schedule-Based"| E{"Is it within your business hours?"}
+    E -->|"Yes, during hours"| D
+    E -->|"No, after hours"| C
+    D --> F{"Do you answer within timeout?"}
+    F -->|"Yes"| G["You handle the call personally"]
+    F -->|"No"| C
+    C --> H["AI handles: greeting, booking, FAQs, lead capture"]
+    H --> I["You get notification with summary"]
+```
+
 ---
 
 ## Mode 1: AI Answers
@@ -163,6 +180,26 @@ You set your hours on a 7-day grid. Each day has an "open" and "close" time, or 
   </Step>
 </Steps>
 
+### 7-day schedule grid
+
+Here is what the schedule grid looks like in your dashboard:
+
+```
++----------+--------+---------+---------+------------------+
+|   Day    | Active |  Start  |   End   |     Routing      |
++----------+--------+---------+---------+------------------+
+| Monday   |  [x]   |  08:00  |  18:00  | Rings you first  |
+| Tuesday  |  [x]   |  08:00  |  18:00  | Rings you first  |
+| Wednesday|  [x]   |  08:00  |  13:00  | Rings you first  |
+| Thursday |  [x]   |  08:00  |  18:00  | Rings you first  |
+| Friday   |  [x]   |  08:00  |  17:00  | Rings you first  |
+| Saturday |  [ ]   |   --    |   --    | AI answers all   |
+| Sunday   |  [ ]   |   --    |   --    | AI answers all   |
++----------+--------+---------+---------+------------------+
+| Timezone: [Europe/London           v]                    |
++----------------------------------------------------------+
+```
+
 ### Example schedule
 
 | Day | Hours | What happens |
@@ -231,4 +268,26 @@ You can switch modes at any time. Switching does not affect your other settings 
 If you are just getting started, pick **AI Answers** to keep things simple. You can always switch to a more advanced mode once you are comfortable with how the AI handles calls.
 </Warning>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently asked questions
+
+<Accordion title="Can I change routing modes mid-week?">
+Yes. You can switch between AI Answers, Rings You First, and Schedule-Based at any time. The change takes effect on the very next incoming call. There is no waiting period and your other settings (greeting, voice, Knowledge Base) are not affected.
+</Accordion>
+
+<Accordion title="How do I handle holidays and bank holidays?">
+For Schedule-Based mode, you need to manually update your schedule for holidays. Toggle the day off in the 7-day grid before the holiday. Alternatively, switch temporarily to AI Answers mode for the holiday period and switch back when you return.
+</Accordion>
+
+<Accordion title="Does Rings You First work with IVR?">
+Yes. When IVR is enabled alongside Rings You First, the flow is: your phone rings first, and if you do not answer, the AI picks up and offers the IVR phone menu. The caller then speaks their choice and the AI routes them accordingly.
+</Accordion>
+
+<Accordion title="What is the default ring timeout for Rings You First?">
+The default ring timeout is **15 seconds** (approximately 4-5 rings). You can adjust this from 5 seconds (1-2 rings) up to 30 seconds (9-10 rings) using the slider on the Phone settings page.
+</Accordion>
+
+---
+
+<Card title="Configure your routing mode" icon="arrow-up-right-from-square" href="https://app.closethecall.com/phone">
+  Open the Phone page to choose your routing mode and configure the schedule.
+</Card>

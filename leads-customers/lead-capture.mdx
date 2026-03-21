@@ -6,6 +6,29 @@ icon: "user-plus"
 
 Every phone call to your business is a potential customer. Your AI receptionist captures their details automatically during the conversation — no forms, no voicemail, no missed opportunities.
 
+## Lead capture flow
+
+```mermaid
+sequenceDiagram
+    participant Caller
+    participant AI as AI Receptionist
+    participant System as CloseTheCall
+    participant Owner as Business Owner
+    participant CRM as CRM (Optional)
+
+    Caller->>AI: Calls your number
+    AI->>Caller: Greeting + conversation
+    AI->>AI: Identifies service needed
+    AI->>Caller: "What's the best name for you?"
+    Caller->>AI: Provides name, confirms phone
+    AI->>System: create_lead(name, phone, service)
+    System->>System: Score lead (7 factors)
+    System->>System: Assign temperature (HOT/WARM/COOL/COLD)
+    System-->>Owner: SMS + email notification
+    System-->>CRM: Auto-sync lead to HubSpot / Salesforce / GHL
+    AI->>Caller: Continues conversation (booking, FAQs, etc.)
+```
+
 ## What Happens During the Call
 
 Your AI receptionist gathers lead information naturally, as part of a normal conversation. It doesn't sound like a survey — it sounds like a helpful member of your team.
@@ -70,6 +93,36 @@ Every lead record includes:
 If a caller doesn't want to give their name or email, the AI won't push. It will still create a lead with whatever information is available — even a phone number alone is enough for you to call them back.
 </Tip>
 
+## Lead detail panel
+
+Here is what a lead looks like when you click on it in the dashboard:
+
+```
++----------------------------------------------------------+
+|  Sarah Johnson                          Temperature: HOT  |
+|  +447700900123  |  sarah@email.com                       |
++----------------------------------------------------------+
+|                                                          |
+|  Service: Boiler repair                                  |
+|  Score: 87/100                                           |
+|  Source: Phone call (2 min 34s)                          |
+|  Created: 15 Mar 2026, 10:32am                           |
+|                                                          |
+|  AI Summary:                                             |
+|  Customer has a leaking boiler in the kitchen. Needs     |
+|  urgent repair. Available Tuesday or Wednesday morning.  |
+|                                                          |
++----------------------------------------------------------+
+|  [Call Lead]  [Send Email]  [Send SMS]  [Convert to Apt] |
++----------------------------------------------------------+
+|                                                          |
+|  Call History (2 calls)                                   |
+|  - 15 Mar 10:32am  Inbound  2m34s  "Boiler leaking..."  |
+|  - 12 Mar 14:15pm  Inbound  1m12s  "General enquiry..." |
+|                                                          |
++----------------------------------------------------------+
+```
+
 ## Quick Actions
 
 When you open any lead from the dashboard, you'll see four action buttons:
@@ -105,6 +158,8 @@ Lead capture requires the **Capture Lead Info** toggle to be enabled in your Rec
 
 Every lead gets an automatic temperature score from 0 to 100, calculated from 7 factors during the call. See the [Lead Board](/leads-customers/lead-board) article for the full breakdown of scoring factors and what each temperature means.
 
+## Frequently asked questions
+
 <Accordion title="Can I turn off lead capture for certain calls?">
   The AI captures leads on every call by default. If you want it to only answer questions without collecting details (e.g. for FAQ-only mode), turn off **Capture Lead Info** in Receptionist Settings.
 </Accordion>
@@ -117,4 +172,12 @@ Every lead gets an automatic temperature score from 0 to 100, calculated from 7 
   No. Leads are kept permanently unless you delete them manually. If you have HIPAA mode enabled, call transcripts may be purged after your configured retention period, but the lead record itself stays.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+<Accordion title="How quickly do leads appear after a call?">
+  Leads are created during the call itself — before it even ends. By the time you check your dashboard, the lead is already there with all captured details, score, and temperature. CRM sync and notifications fire within 5 seconds of the call ending.
+</Accordion>
+
+---
+
+<Card title="View your leads" icon="arrow-up-right-from-square" href="https://app.closethecall.com/leads">
+  Open the Lead Board to see all captured leads, scores, and take action.
+</Card>

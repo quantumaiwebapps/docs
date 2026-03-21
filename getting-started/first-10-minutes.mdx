@@ -1,6 +1,6 @@
 ---
 title: "Your First 10 Minutes"
-description: "Set up your AI receptionist and start answering calls — no technical knowledge needed"
+description: "Set up your AI receptionist and start answering calls — no technical knowledge needed. [Open your dashboard](https://app.closethecall.com/register) to get started."
 icon: "rocket"
 ---
 
@@ -8,12 +8,33 @@ icon: "rocket"
 
 By the end of this guide, your AI receptionist will be answering calls for your business. The whole process takes under 10 minutes.
 
+<Note>
+**Free trial available.** CTC and RCA brands offer a 7-day free trial with no credit card required (50-minute cap). Start answering calls today and upgrade when you are ready.
+</Note>
+
+```mermaid
+sequenceDiagram
+    participant You
+    participant CloseTheCall
+    participant AI as AI Receptionist
+    participant Phone as Your Phone
+
+    You->>CloseTheCall: 1. Register (name, email, industry)
+    CloseTheCall->>AI: 2. Provision phone number + create assistant
+    CloseTheCall->>AI: Scrape website + build knowledge base
+    CloseTheCall-->>You: "AI Receptionist is Live" (30-60s)
+    You->>Phone: 3. Set up call forwarding (dial code)
+    Phone-->>AI: Calls now forward to AI
+    You->>AI: 4. Make a test call
+    AI-->>You: AI answers, captures lead, books appointment
+```
+
 <Steps>
   <Step title="Create Your Account (2 minutes)">
     1. Go to [app.closethecall.com/register](https://app.closethecall.com/register)
     2. Enter your **name, email, and password**
     3. Enter your **business name** and select your **industry**
-    4. If you have a **website**, enter the URL — the AI will automatically learn your services, pricing, and hours. **If you don't have a website, that's fine** — select your industry and the AI loads a template. You'll add your business info manually in the next step.
+    4. *(Optional)* Enter your **website URL** — the AI will automatically learn your services, pricing, and hours
     5. Click **Create Account**
   </Step>
 
@@ -45,9 +66,9 @@ By the end of this guide, your AI receptionist will be answering calls for your 
     - *"Can I book an appointment for next Tuesday?"*
 
     Then check your dashboard:
-    - ✅ Call appears in **Recent Calls**
-    - ✅ Lead appears in **Customers**
-    - ✅ Booking appears in **Appointments** (if you booked one)
+    - Call appears in **Recent Calls**
+    - Lead appears in **Customers**
+    - Booking appears in **Appointments** (if you booked one)
   </Step>
 </Steps>
 
@@ -68,17 +89,22 @@ By the end of this guide, your AI receptionist will be answering calls for your 
   </Accordion>
 </AccordionGroup>
 
-## Your First Week
+## Frequently Asked Questions
 
-You're live! Here's what to do in your first week to get the most out of your AI receptionist:
-
-1. **Make 3-5 test calls** — try different questions (pricing, hours, booking) and check the results in your dashboard
-2. **Review your Knowledge Base** — go to Knowledge Base in the sidebar and fill in any gaps the AI flagged
-3. **Connect your calendar** — go to Integrations and connect Google Calendar or Outlook so the AI can book real appointments
-4. **Set up call forwarding** — redirect your existing business number to your AI number so real customers start getting answered
-5. **Enable automations** — turn on Missed Call Textback and Appointment Reminders on the Automations page
-6. **Invite your team** — go to Settings → Team and invite anyone who needs dashboard access
-7. **Check analytics after a few days** — the Analytics page shows call volume, lead conversion, and sentiment trends
+<AccordionGroup>
+  <Accordion title="Is there a free trial?">
+    Yes. CTC and RCA brands offer a **7-day free trial** with no credit card required. You get up to 50 minutes of AI call time during the trial. If you love it, subscribe to a paid plan to continue. If not, your account simply pauses — no charges.
+  </Accordion>
+  <Accordion title="How long does phone provisioning take?">
+    Most phone numbers are provisioned in **30 to 60 seconds**. In rare cases (especially UK landline numbers), it can take up to 5 minutes. If your number has not appeared after 5 minutes, refresh the page or contact support.
+  </Accordion>
+  <Accordion title="Do I need a credit card to sign up?">
+    Not if you are on a free trial (CTC/RCA brands). You can register, get your AI phone number, and start taking calls without entering any payment information. You will only need a card when you subscribe to a paid plan.
+  </Accordion>
+  <Accordion title="Can I change my AI number later?">
+    Your AI phone number is provisioned automatically based on your location. If you need a different number (for example, a local area code), contact support and we can provision a replacement. Your old number will be released and a new one assigned.
+  </Accordion>
+</AccordionGroup>
 
 ## What's Next?
 
@@ -96,5 +122,3 @@ You're live! Here's what to do in your first week to get the most out of your AI
     Automatic follow-ups, reminders, and review requests
   </Card>
 </CardGroup>
-
-<Snippet file="snippets/footer.mdx" />

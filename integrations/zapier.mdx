@@ -6,6 +6,18 @@ icon: "bolt"
 
 Zapier lets you connect CloseTheCall to over 5,000 other apps without writing any code. When something happens in CloseTheCall (a new lead comes in, an appointment is booked), Zapier can automatically do something in another app — add a row to a spreadsheet, send a Slack message, create a Trello card, or anything else you can think of.
 
+## How Zapier connects to CloseTheCall
+
+```mermaid
+flowchart LR
+    A["CloseTheCall event fires"] --> B["Webhook sent to Zapier"]
+    B --> C{"Zapier trigger received"}
+    C --> D["Action 1: Google Sheets row"]
+    C --> E["Action 2: Slack message"]
+    C --> F["Action 3: Trello card"]
+    C --> G["Action N: Any of 5,000+ apps"]
+```
+
 ## What Zapier Does
 
 Think of Zapier as a bridge between CloseTheCall and everything else you use:
@@ -102,8 +114,22 @@ When CloseTheCall sends data to Zapier, these fields are included:
 
 Go to **Integrations**, find the Zapier card, and click **Disconnect**. This removes the webhook URL so events will no longer be sent to Zapier. Your Zaps in Zapier will stop receiving data but won't be deleted.
 
+## Frequently asked questions
+
 <Accordion title="Do I need a paid Zapier account?">
-  Zapier's free plan includes 100 tasks per month and 5 Zaps. That's enough for most small businesses getting started. If you receive more than 100 leads/month, you'll need a paid plan.
+  Zapier's free plan includes **100 tasks per month** and unlimited Zaps. That's enough for most small businesses getting started. A "task" is one action execution — so if your Zap has 2 actions (Sheets + Slack), each trigger uses 2 tasks. If you process more than 100 tasks per month, you'll need a paid plan (starting at $19.99/month for 750 tasks).
+</Accordion>
+
+<Accordion title="What is the webhook latency — how fast do events arrive?">
+  CloseTheCall sends webhook events within **2-3 seconds** of the triggering action (call ending, lead created, etc.). Zapier processes the webhook and runs your actions within another 1-5 seconds. Total end-to-end latency is typically under 10 seconds. Zapier's free plan checks for new webhooks instantly (webhooks are not subject to the 15-minute polling delay that applies to other Zapier triggers).
+</Accordion>
+
+<Accordion title="Can I filter which events trigger my Zap?">
+  Yes. Use Zapier's built-in **Filter** step between the trigger and action. For example, you can filter to only act on HOT leads by adding a filter: "temperature equals HOT". You can also filter by service type, score threshold, or any other field in the webhook payload.
+</Accordion>
+
+<Accordion title="Is the webhook secure?">
+  Yes. CloseTheCall signs every webhook with your secret key (shown when you connect the integration). You can verify the signature in Zapier using a Code step if needed, but for most use cases the webhook URL itself provides sufficient security since it is unique and unguessable. Never share your webhook URL publicly.
 </Accordion>
 
 <Accordion title="Can I use this with Make (formerly Integromat)?">
@@ -114,4 +140,8 @@ Go to **Integrations**, find the Zapier card, and click **Disconnect**. This rem
   Check three things: (1) The webhook URL is correct in CloseTheCall. (2) Your Zap is turned on in Zapier. (3) Try clicking **Send Test** in CloseTheCall to trigger a test event. If you still have issues, disconnect and reconnect the integration.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+---
+
+<Card title="Connect Zapier" icon="arrow-up-right-from-square" href="https://app.closethecall.com/integrations">
+  Open the Integrations page to set up your Zapier webhook connection.
+</Card>

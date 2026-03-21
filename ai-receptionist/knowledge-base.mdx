@@ -1,6 +1,6 @@
 ---
 title: "Knowledge Base"
-description: "Teach your AI receptionist everything about your business — services, pricing, hours, FAQs, and more."
+description: "Teach your AI receptionist everything about your business — services, pricing, hours, FAQs, and more. [Manage your Knowledge Base](https://app.closethecall.com/knowledge) in the dashboard."
 icon: "book-open"
 ---
 
@@ -9,6 +9,42 @@ icon: "book-open"
 The Knowledge Base is your AI receptionist's brain. It contains everything the AI knows about your business — your services, prices, opening hours, FAQs, policies, and more. The better your Knowledge Base, the smarter your AI sounds on calls.
 
 Think of it like training a new employee. The more information you give them, the better they handle customer questions.
+
+```mermaid
+flowchart TD
+    subgraph Sources["5 Data Sources"]
+        S1["Website Scrape"]
+        S2["Google Business Profile"]
+        S3["Manual Entry"]
+        S4["Document Upload<br/>(PDF, TXT, CSV)"]
+        S5["AI Call Learning"]
+    end
+
+    subgraph Categories["12 Knowledge Categories"]
+        C1["Services (20%)"]
+        C2["Pricing (15%)"]
+        C3["Hours (15%)"]
+        C4["Booking (10%)"]
+        C5["Location / FAQ / Policies<br/>Team / Promotions / Payments<br/>Emergency / Custom (40%)"]
+    end
+
+    subgraph Output["AI Output"]
+        IS["Intelligence Score<br/>(0-100)"]
+        SP["System Prompt<br/>(built from articles)"]
+        AI["AI Receptionist<br/>answers calls"]
+    end
+
+    S1 --> Categories
+    S2 --> Categories
+    S3 --> Categories
+    S4 --> Categories
+    S5 --> Categories
+
+    Categories --> IS
+    Categories --> SP
+    SP --> AI
+    AI -->|"Transcript analysis"| S5
+```
 
 ## Where does the information come from?
 
@@ -43,7 +79,7 @@ Every piece of information in your Knowledge Base belongs to one of these catego
 | Category | What it covers | Example |
 |----------|---------------|---------|
 | **Services** | What you offer | "We offer emergency plumbing, boiler repair, and bathroom fitting" |
-| **Pricing** | How much things cost | "Callout fee is £75, boiler service is £120" |
+| **Pricing** | How much things cost | "Callout fee is $75, boiler service is $120" |
 | **Hours** | When you are open | "Monday to Friday 8am-6pm, Saturday 9am-1pm" |
 | **Location** | Where you are | "Based in Manchester, covering a 20-mile radius" |
 | **Booking** | How appointments work | "We offer same-day appointments for emergencies" |
@@ -61,7 +97,7 @@ Every piece of information in your Knowledge Base belongs to one of these catego
 
 <Steps>
   <Step title="Go to Knowledge Base">
-    Click **Knowledge Base** in the left sidebar.
+    Click **Knowledge Base** in the left sidebar of your [dashboard](https://app.closethecall.com/knowledge).
   </Step>
   <Step title="Click Add Article">
     Click the **Add Article** button at the top right.
@@ -178,4 +214,19 @@ You will see these suggestions in the Knowledge Base with a "Call Learned" badge
 
 This means your AI gets smarter with every call — without you doing anything.
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="How often should I update my Knowledge Base?">
+    Review your Knowledge Base **at least once a month**, or whenever your business changes (new services, price changes, seasonal hours). The AI Call Learning feature surfaces gaps automatically, so check the "Call Learned" suggestions weekly. Businesses that update their KB monthly see 20-30% higher intelligence scores than those who set-and-forget.
+  </Accordion>
+  <Accordion title="What if two sources conflict?">
+    **Manual edits always win.** If you hand-type a price of $150 and your website says $120, the AI uses $150. For non-manual conflicts (e.g., website says one thing, Google Business Profile says another), the most recently updated source takes priority. You can always verify the correct article and delete the incorrect one.
+  </Accordion>
+  <Accordion title="Can I export my Knowledge Base?">
+    Currently, there is no one-click export. You can view all articles in the Knowledge Base page, organised by category. If you need a backup or want to migrate data, contact support and we can provide your articles in a structured format.
+  </Accordion>
+  <Accordion title="Does the AI use all articles on every call?">
+    No. Critical categories (Services, Pricing, Hours) are always included in the AI's prompt so they are available instantly. Other categories (FAQ, Policies, Team, etc.) are retrieved on demand using intelligent search — the AI pulls the most relevant articles based on what the caller is asking about. This keeps responses fast and accurate.
+  </Accordion>
+</AccordionGroup>

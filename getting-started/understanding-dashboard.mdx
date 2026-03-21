@@ -1,12 +1,34 @@
 ---
 title: "Understanding Your Dashboard"
-description: "What every number, chart, and indicator means on your main dashboard"
+description: "What every number, chart, and indicator means on your main dashboard. [Open your dashboard](https://app.closethecall.com/dashboard) to follow along."
 icon: "chart-line"
 ---
 
 ## Your Dashboard at a Glance
 
-When you log in, you'll see six key numbers. Here's what each one means and what's "good."
+When you log in to your [dashboard](https://app.closethecall.com/dashboard), you'll see six key numbers. Here's what each one means and what's "good."
+
+```mermaid
+graph TD
+    subgraph Dashboard["Dashboard — 6 Stat Cards"]
+        direction LR
+        A["Total Calls<br/>All calls this period"]
+        B["New Leads<br/>Callers who gave info"]
+        C["Bookings<br/>Appointments booked"]
+        D["Avg Call Length<br/>Mean duration"]
+        E["Total Minutes<br/>Plan usage"]
+        F["Conversion Rate<br/>Leads / Calls"]
+    end
+
+    subgraph Below["Below the Stats"]
+        G["Recent Calls Table"]
+        H["Call Reasons Chart"]
+        I["Call Volume Chart"]
+        J["Upcoming Appointments"]
+    end
+
+    Dashboard --> Below
+```
 
 | Metric | What It Means | Good Range |
 |--------|--------------|------------|
@@ -15,7 +37,7 @@ When you log in, you'll see six key numbers. Here's what each one means and what
 | **Bookings** | Appointments booked by the AI | 5-15% of total calls |
 | **Avg Call Length** | How long each conversation lasts | 0:30 - 2:00 minutes |
 | **Total Minutes** | Minutes used from your plan this month | Check against your plan limit |
-| **Conversion Rate** | Leads captured ÷ Total calls | 15-30% is good, 30%+ is great |
+| **Conversion Rate** | Leads captured / Total calls | 15-30% is good, 30%+ is great |
 
 <Tip>
 If your **average call length is under 15 seconds**, callers might be hanging up on your greeting. Try making it shorter and friendlier.
@@ -25,10 +47,10 @@ If your **average call length is under 15 seconds**, callers might be hanging up
 
 New accounts see a progress bar with 4 steps:
 
-1. ✅ **AI phone number provisioned** — done automatically
-2. ✅ **Customise your greeting** — go to Receptionist Settings
-3. ○ **Knowledge base set up** — add at least 1 article
-4. ○ **Make your first test call** — call your AI number
+1. **AI phone number provisioned** — done automatically
+2. **Customise your greeting** — go to Receptionist Settings
+3. **Knowledge base set up** — add at least 3 articles
+4. **Make your first test call** — call your AI number
 
 <Info>
 The checklist disappears once all 4 steps are complete. You can dismiss it early by clicking "Dismiss."
@@ -37,8 +59,8 @@ The checklist disappears once all 4 steps are complete. You can dismiss it early
 ## The AI Status Indicator
 
 The green bar below the checklist shows:
-- **🟢 AI Receptionist is Live** + your phone number — everything is working
-- **🔴 AI Receptionist is Offline** — there's a problem with your setup
+- **AI Receptionist is Live** + your phone number — everything is working
+- **AI Receptionist is Offline** — there's a problem with your setup
 
 If offline, check that your VAPI assistant was created successfully during onboarding.
 
@@ -57,4 +79,19 @@ Shows your most recent calls with:
 - **Lead Score** — temperature badge (HOT/WARM/COOL/COLD)
 - **Action Required** — whether you need to follow up
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="What's a good conversion rate?">
+    A conversion rate of **15-30%** is solid for most service businesses. Above 30% is excellent. If yours is below 10%, check your Knowledge Base — the AI might be missing key information about your services or pricing that would help convert callers into leads.
+  </Accordion>
+  <Accordion title="How often does data refresh?">
+    Dashboard data refreshes **every time you load the page**. Stats are calculated live from your call data — there is no delay or caching. If you are on the page during a call, refresh after the call ends to see updated numbers.
+  </Accordion>
+  <Accordion title="Can I export dashboard data?">
+    Currently, you can view detailed call and lead data in the **Calls** and **Leads** pages. CSV export is available on the Agency Analytics page. For individual call records, click into any call to see the full transcript and details.
+  </Accordion>
+  <Accordion title="What does the getting started checklist do?">
+    The checklist guides you through the 4 essential setup steps: phone provisioning, greeting customisation, knowledge base setup, and your first test call. Completing all 4 steps ensures your AI receptionist is fully configured and ready for real customer calls. It auto-hides once complete, or you can dismiss it manually.
+  </Accordion>
+</AccordionGroup>

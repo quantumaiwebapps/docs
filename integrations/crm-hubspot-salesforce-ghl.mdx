@@ -20,6 +20,26 @@ We support three CRMs:
   </Card>
 </CardGroup>
 
+## How CRM sync works
+
+```mermaid
+sequenceDiagram
+    participant Caller
+    participant AI as AI Receptionist
+    participant CTC as CloseTheCall
+    participant CRM as Your CRM
+
+    Caller->>AI: Phone call
+    AI->>CTC: create_lead(name, phone, service)
+    CTC->>CTC: Score lead + assign temperature
+    CTC->>CRM: Create or update contact
+    Note over CTC,CRM: Matches by phone/email to avoid duplicates
+    AI->>CTC: Call completed (duration, summary)
+    CTC->>CRM: Log call activity on contact
+    AI->>CTC: Appointment booked (optional)
+    CTC->>CRM: Add booking note to contact
+```
+
 ## What CRM Sync Does
 
 When the AI captures a lead or logs a call, the following happens automatically:
@@ -38,6 +58,8 @@ CRM sync happens in real time — within seconds of the call ending. You don't n
 
 ## Connecting HubSpot
 
+HubSpot uses a **Private App access token** (OAuth2-based) for authentication. This is more secure than a simple API key — the token is scoped to only the permissions CloseTheCall needs.
+
 <Steps>
   <Step title="Go to Integrations">
     Click **Integrations** in the sidebar.
@@ -45,15 +67,15 @@ CRM sync happens in real time — within seconds of the call ending. You don't n
   <Step title="Find HubSpot">
     Click **Connect** on the HubSpot card.
   </Step>
-  <Step title="Enter your API key">
-    Paste your HubSpot Private App API key. To find this: go to HubSpot > Settings > Integrations > Private Apps > Create a private app. Give it **Contacts** and **CRM** read/write scopes. Copy the access token.
+  <Step title="Enter your Private App access token">
+    Paste your HubSpot Private App access token. To create one: go to HubSpot > Settings > Integrations > Private Apps > Create a private app. Give it **Contacts** and **CRM** read/write scopes. Copy the access token.
   </Step>
   <Step title="Click Save">
     The integration will test the connection. If successful, you'll see a green **Connected** badge.
   </Step>
 </Steps>
 
-<Accordion title="Where do I find my HubSpot API key?">
+<Accordion title="How do I create a HubSpot Private App?">
   1. Log into HubSpot
   2. Click the gear icon (Settings) in the top right
   3. Go to **Integrations > Private Apps**
@@ -61,6 +83,8 @@ CRM sync happens in real time — within seconds of the call ending. You don't n
   5. Name it "CloseTheCall"
   6. Under Scopes, enable: `crm.objects.contacts.read`, `crm.objects.contacts.write`
   7. Click **Create app**, then copy the access token
+
+  This is a Private App token using HubSpot's OAuth2 infrastructure, not a legacy API key. HubSpot deprecated simple API keys in November 2022. The Private App approach gives you granular control over which permissions CloseTheCall has.
 </Accordion>
 
 ---
@@ -162,7 +186,11 @@ After disconnecting, new leads and calls will no longer sync to your CRM. You'll
 </Accordion>
 
 <Accordion title="Do I need a paid CRM plan?">
-  HubSpot's free plan works fine. Salesforce requires a paid plan with API access. GoHighLevel requires any active subscription.
+  HubSpot's free plan works fine (Private Apps are available on all tiers). Salesforce requires a paid plan with API access. GoHighLevel requires any active subscription.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+---
+
+<Card title="Connect your CRM" icon="arrow-up-right-from-square" href="https://app.closethecall.com/integrations">
+  Open the Integrations page to connect HubSpot, Salesforce, or GoHighLevel.
+</Card>

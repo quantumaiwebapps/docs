@@ -4,7 +4,28 @@ description: "Invite team members, assign roles, and control who can see and do 
 icon: "users"
 ---
 
+<Note>
+**Manage your team:** [Open Team Settings](https://app.closethecall.com/account)
+</Note>
+
 If you have staff, a business partner, or a virtual assistant who needs access to your dashboard, you can invite them as team members. Each person gets their own login and sees only what their role allows.
+
+## Role Hierarchy
+
+Your dashboard has three roles for business users. The Admin role exists only for CloseTheCall platform staff and is not available to customers.
+
+```mermaid
+flowchart TD
+    A[Owner] --> B[Manager]
+    B --> C[Viewer]
+    A -.->|Full control including\nbilling and account deletion| A
+    B -.->|Edit access to leads,\nappointments, AI settings, team| B
+    C -.->|Read-only access\nto all data| C
+
+    style A fill:#f59e0b,stroke:#d97706,color:#000
+    style B fill:#3b82f6,stroke:#2563eb,color:#fff
+    style C fill:#6b7280,stroke:#4b5563,color:#fff
+```
 
 ## The Three Roles
 
@@ -15,7 +36,7 @@ If you have staff, a business partner, or a virtual assistant who needs access t
 | **Viewer** | Read-only access. Can see calls, leads, appointments, and analytics but cannot change anything. | Part-time staff, accountant, or anyone who needs visibility without control. |
 
 <Info>
-There's always exactly one Owner. You can't transfer ownership through the dashboard — contact support if you need to change the account owner.
+There's always exactly one Owner. You can't transfer ownership through the dashboard — contact support if you need to change the account owner. The **Admin** role is reserved for CloseTheCall platform administrators and is not assignable to business team members.
 </Info>
 
 ## Inviting Team Members
@@ -106,12 +127,24 @@ After removal:
 | Change account settings | Yes | No | No |
 | Delete account | Yes | No | No |
 
-<Accordion title="How many team members can I add?">
-  There's no limit on any plan. Add as many team members as you need.
+---
+
+## Frequently Asked Questions
+
+<Accordion title="Can I transfer ownership to someone else?">
+  Ownership transfer is not available as a self-service feature. Contact support at [support@closethecall.com](mailto:support@closethecall.com) with the current owner's email and the new owner's email. Both parties will need to confirm the transfer via email for security purposes.
 </Accordion>
 
-<Accordion title="Do team members need to pay?">
-  No. Team member accounts are free. Only the business account itself has a subscription.
+<Accordion title="Is there a team member limit?">
+  No. There is no limit on any plan. Add as many team members as you need — team member accounts are completely free.
+</Accordion>
+
+<Accordion title="Can team members see billing information?">
+  No. Only the **Owner** role can view and manage billing, including subscription plans, invoices, and payment methods. Managers and Viewers do not have access to any billing pages or data.
+</Accordion>
+
+<Accordion title="What happens when I remove a team member?">
+  Their access is revoked instantly. All active sessions are terminated, so they are logged out immediately on every device. They cannot log back in. However, any changes they previously made (edits to leads, appointments, settings) are preserved in your account history. They do not receive a notification about the removal.
 </Accordion>
 
 <Accordion title="Can a team member have access to multiple businesses?">
@@ -121,5 +154,3 @@ After removal:
 <Accordion title="What if a team member forgets their password?">
   They can use the **Forgot Password** link on the login page. A reset email will be sent to the address they signed up with.
 </Accordion>
-
-<Snippet file="snippets/footer.mdx" />

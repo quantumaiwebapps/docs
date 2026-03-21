@@ -1,12 +1,27 @@
 ---
 title: "AI Personality"
-description: "Choose how your AI receptionist talks — Professional, Friendly, Enthusiastic, or Calm."
+description: "Choose how your AI receptionist talks — Professional, Friendly, Enthusiastic, or Calm. [Configure personality](https://app.closethecall.com/ai-config) in your dashboard."
 icon: "face-smile"
 ---
 
 ## Your AI's personality shapes every conversation
 
 The personality setting controls the **tone and style** of how your AI receptionist speaks throughout the entire call — not just the greeting, but every response. It affects word choice, energy level, and how formal or casual the AI sounds.
+
+```mermaid
+graph TD
+    A["Choose Personality"] --> B{"What are your<br/>callers feeling?"}
+    B -->|"Anxious / Worried<br/>(burst pipe, toothache)"| C["Calm"]
+    B -->|"Excited / Happy<br/>(booking dinner, event)"| D["Enthusiastic"]
+    B -->|"Neutral / Business<br/>(general enquiry)"| E{"What's your<br/>brand tone?"}
+    E -->|"Casual, approachable"| F["Friendly"]
+    E -->|"Sleek, premium"| G["Professional"]
+
+    style C fill:#22c55e,color:#fff
+    style D fill:#f59e0b,color:#fff
+    style F fill:#3b82f6,color:#fff
+    style G fill:#6366f1,color:#fff
+```
 
 ## The 4 personality options
 
@@ -69,7 +84,7 @@ Ask yourself these questions:
 
 <Steps>
   <Step title="Go to Receptionist Settings">
-    Click **Receptionist** in the left sidebar of your dashboard.
+    Click **Receptionist** in the left sidebar of your [dashboard](https://app.closethecall.com/ai-config).
   </Step>
   <Step title="Find the Personality section">
     Scroll to the **Personality** card. You will see four options with your current selection highlighted.
@@ -108,4 +123,19 @@ After changing the personality:
 Personality changes apply to all calls — you cannot set different personalities for different times of day. If you need a calmer tone after hours, consider adjusting your after-hours message instead.
 </Warning>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I create a custom personality?">
+    Not directly through the personality selector, but you can achieve custom tones through the **system prompt** in Receptionist Settings. The 4 preset personalities cover the vast majority of use cases. If you need something very specific (e.g., "speak like a luxury concierge"), contact support and we can help configure a custom prompt.
+  </Accordion>
+  <Accordion title="Does personality affect all channels?">
+    Yes. The personality setting applies to **phone calls**, **SMS/WhatsApp AI replies**, and **web chat widget** conversations. The AI maintains the same tone across all channels so your brand feels consistent no matter how a customer reaches you.
+  </Accordion>
+  <Accordion title="Can callers tell it's AI?">
+    With premium ElevenLabs voices and the right personality, most callers do not realise they are talking to AI — especially on short calls (booking, pricing enquiry). Longer or more complex conversations may reveal it. The "Friendly" and "Calm" personalities tend to sound the most natural.
+  </Accordion>
+  <Accordion title="Which personality is most popular?">
+    **Friendly** is by far the most popular choice, used by over 60% of businesses on CloseTheCall. It works well across almost every industry. **Professional** is the second most common, especially with dental practices, law firms, and financial services.
+  </Accordion>
+</AccordionGroup>

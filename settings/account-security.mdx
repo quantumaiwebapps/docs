@@ -4,6 +4,10 @@ description: "Change your password, enable two-factor authentication, manage act
 icon: "shield-halved"
 ---
 
+<Note>
+**Go to your account settings:** [Open Account Settings](https://app.closethecall.com/account)
+</Note>
+
 Your account security settings are found in **Settings > Account** from the sidebar. This is where you manage your password, two-factor authentication, active sessions, and account deletion.
 
 ## Change Your Password
@@ -33,6 +37,16 @@ After changing your password, you'll receive a confirmation email. All other ses
 ## Enable Two-Factor Authentication (2FA)
 
 Two-factor authentication adds a second layer of security. After entering your password, you'll also need a 6-digit code from an authenticator app on your phone.
+
+```mermaid
+flowchart LR
+    A[Enable 2FA] --> B[Scan QR Code]
+    B --> C[Enter 6-digit Code]
+    C --> D{Code Valid?}
+    D -->|Yes| E[Save Backup Codes]
+    D -->|No| C
+    E --> F[2FA Active]
+```
 
 <Steps>
   <Step title="Go to Account Settings">
@@ -132,4 +146,22 @@ During the 30-day grace period, your account is deactivated but not destroyed. Y
 - Data already synced to your CRM (that's in your CRM's system)
 - Calendar events already created (those stay on your Google/Outlook calendar)
 
-<Snippet file="snippets/footer.mdx" />
+---
+
+## Frequently Asked Questions
+
+<Accordion title="What if I lose my authenticator app or phone?">
+  Use one of the **backup codes** you saved when you enabled 2FA. Each code can only be used once. Go to the login page, enter your email and password, then click **"Use a backup code"** instead of entering a 6-digit code. If you've used all your backup codes and lost your phone, contact support at [support@closethecall.com](mailto:support@closethecall.com) with proof of identity — we'll manually verify your account and help you regain access.
+</Accordion>
+
+<Accordion title="Can I require 2FA for all team members?">
+  Not currently. Each team member enables 2FA on their own account independently. We recommend that all users with Manager or Owner roles enable 2FA, but it cannot be enforced at the account level. This is on our roadmap.
+</Accordion>
+
+<Accordion title="How do I change my email address?">
+  Go to **Settings > Account** and update the **Email** field in the Profile section. You'll receive a verification email at your new address. Click the link in that email to confirm the change. Your old email will no longer work for login after verification.
+</Accordion>
+
+<Accordion title="Is my data encrypted?">
+  Yes. All data is encrypted in transit (TLS/HTTPS) and sensitive fields like API keys and tokens are encrypted at rest using AES-256 encryption. Passwords are hashed with bcrypt (12 rounds) and are never stored in plain text. Password reset tokens are hashed with SHA-256 before storage.
+</Accordion>

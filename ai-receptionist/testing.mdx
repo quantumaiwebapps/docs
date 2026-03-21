@@ -10,6 +10,27 @@ Before forwarding your real business number to your AI receptionist, you need to
 
 There are two ways to test: calling yourself (recommended) and using the browser test.
 
+## How the test flow works
+
+```mermaid
+sequenceDiagram
+    participant You
+    participant AI as AI Receptionist
+    participant Dashboard
+    participant CRM as CRM / Calendar
+
+    You->>AI: Initiate test call (phone or browser)
+    AI->>You: Greeting + conversation
+    You->>AI: Ask about services, book appointment, etc.
+    AI->>AI: Checks availability, captures lead
+    AI->>You: Confirms booking / answers question
+    AI-->>Dashboard: Call logged with transcript + summary
+    AI-->>Dashboard: Lead created with score + temperature
+    AI-->>Dashboard: Appointment created (if booked)
+    Dashboard-->>CRM: Auto-sync lead + calendar event
+    You->>Dashboard: Review transcript, lead, and booking
+```
+
 ## Method 1: Call yourself (easiest and best)
 
 This is the best test because you experience exactly what your callers will hear — real phone audio quality, real connection speed, real everything.
@@ -100,7 +121,7 @@ Run through this checklist every time you make changes to your AI configuration:
 </Accordion>
 
 <Accordion title="AI says the business name wrong">
-**Check your greeting message.** Go to **Receptionist** and look at your greeting. Make sure the business name is spelled phonetically if it is unusual. For example, if your business is "Beauté Salon", write "Bootay Salon" in the greeting so the AI pronounces it correctly.
+**Check your greeting message.** Go to **Receptionist** and look at your greeting. Make sure the business name is spelled phonetically if it is unusual. For example, if your business is "Beaute Salon", write "Bootay Salon" in the greeting so the AI pronounces it correctly.
 </Accordion>
 
 <Accordion title="AI does not book appointments">
@@ -115,8 +136,30 @@ Run through this checklist every time you make changes to your AI configuration:
 **This is usually a phone/network issue, not an AI issue.** Try calling from a different phone or location. If the problem persists, check your phone number settings in the **Phone** page and contact support.
 </Accordion>
 
+## Frequently asked questions
+
+<Accordion title="Does testing use my plan minutes?">
+Yes. Test calls use your plan minutes just like real calls — the AI runs the full pipeline including voice synthesis and transcription. Budget 2-3 minutes per test call. On the Starter plan, that is well within your monthly allowance.
+</Accordion>
+
+<Accordion title="Can I test integrations (CRM, Calendar, Zapier) during a test call?">
+Absolutely. Test calls are real calls as far as the system is concerned. If you book an appointment during a test, it will appear on your Google Calendar. If you have HubSpot connected, a lead will be created there. This is the best way to verify your integrations end-to-end.
+</Accordion>
+
+<Accordion title="How long until test results appear in the dashboard?">
+Call logs, transcripts, leads, and appointments appear within **5 to 10 seconds** of the call ending. Refresh the Calls page if you do not see it immediately. CRM sync and calendar events take an additional 2-3 seconds.
+</Accordion>
+
+<Accordion title="Can I test from a different number to simulate a new caller?">
+Yes, and we recommend it. Borrow a friend's or colleague's phone and call your AI number. The AI will not recognise the number and will give the full first-time caller experience, including asking for their name and details. This is the best way to test the new customer flow.
+</Accordion>
+
 <Warning>
 Do not skip testing. Even if everything looks right in the dashboard, the only way to know for sure is to call the number and talk to your AI like a real customer would. Spend 5 minutes testing now to avoid losing customers later.
 </Warning>
 
-<Snippet file="snippets/footer.mdx" />
+---
+
+<Card title="Test your AI now" icon="arrow-up-right-from-square" href="https://app.closethecall.com/ai-config/test">
+  Open the Test AI page to make a test call or start a browser call.
+</Card>

@@ -1,38 +1,70 @@
 ---
 title: "Glossary"
-description: "Plain English definitions for every term you'll see in CloseTheCall"
+description: "Plain English definitions for every term you'll see in CloseTheCall. [Open your dashboard](https://app.closethecall.com/dashboard) to see these in action."
 icon: "book"
 ---
 
+## Business Terms
+
 | Term | What It Means |
 |------|---------------|
-| **AI Receptionist** | Your virtual phone answerer — sounds like a real person, available 24/7 |
-| **Lead** | Someone who called and gave their information (name, phone, what they need) |
-| **Booking / Appointment** | A time slot the AI scheduled for you with a customer |
-| **Knowledge Base** | Everything your AI knows about your business — services, prices, hours, FAQs |
-| **Call Forwarding** | Redirecting your existing phone calls to your AI number |
-| **Routing Mode** | How calls are handled — AI answers all, ring you first, or schedule-based |
-| **Automation** | Something that happens automatically, like texting a customer after a missed call |
+| **AI Receptionist** | Your virtual phone answerer — sounds like a real person, available 24/7. [Set yours up](/getting-started/first-10-minutes) |
+| **Lead** | Someone who called and gave their information (name, phone, what they need). [View leads](/features/leads) |
+| **Booking / Appointment** | A time slot the AI scheduled for you with a customer. [Manage appointments](/features/appointments) |
+| **Quote** | A price estimate sent to a customer after a call. [Learn about quotes](/features/quotes) |
 | **Conversion Rate** | The percentage of calls that turn into leads or bookings |
+| **Pipeline** | A visual board (like a Kanban) showing where each lead or quote sits in your sales process — from new enquiry to won or lost |
+| **Escalation** | When the AI transfers a caller to a real person because the request is beyond what it can handle, or the caller asks for a human |
+
+## AI & Voice Terms
+
+| Term | What It Means |
+|------|---------------|
+| **Knowledge Base** | Everything your AI knows about your business — services, prices, hours, FAQs. [Manage KB](/ai-receptionist/knowledge-base) |
+| **Intelligence Score** | A 0-100 rating of how well-informed your AI is, weighted by category importance (services 20%, pricing 15%, hours 15%, etc.). [Learn more](/ai-receptionist/knowledge-base) |
+| **Call Learning** | After every call, the AI analyses the transcript for questions it could not answer well, then suggests new Knowledge Base articles for you to review and approve |
 | **Sentiment** | How the caller felt during the call — positive, neutral, or negative (AI-detected) |
-| **Temperature** | How likely a lead is to convert — HOT (very likely), WARM, COOL, COLD (unlikely) |
-| **Quote** | A price estimate sent to a customer after a call |
-| **Squad / Smart Routing** | Multiple AI specialists handling different parts of a call (booking, pricing, transfer) |
+| **Temperature** | How likely a lead is to convert — HOT (very likely), WARM, COOL, COLD (unlikely). [View leads](/features/leads) |
+| **Personality** | The tone and style of your AI — Professional, Friendly, Enthusiastic, or Calm. [Choose personality](/ai-receptionist/personality) |
+| **Squad / Smart Routing** | Multiple AI specialists handling different parts of a call (booking, pricing, transfer). [Learn about squads](/ai-receptionist/smart-routing) |
 | **IVR** | Interactive Voice Response — menu options offered to callers at the start of a call |
-| **SMS Opt-Out** | When a customer texts STOP, they won't receive more texts from your number |
-| **TCPA** | US law requiring consent before recording calls — your AI can ask automatically |
-| **HIPAA** | Healthcare privacy rules — enable this if you're a medical or dental practice |
-| **CRM** | Customer Relationship Management — tools like HubSpot, Salesforce, GoHighLevel |
+| **Workflow Builder** | A visual tool for creating automated sequences of actions triggered by events like missed calls, new leads, or completed bookings |
+
+## Technical Terms
+
+| Term | What It Means |
+|------|---------------|
+| **Call Forwarding** | Redirecting your existing phone calls to your AI number. [Set up forwarding](/getting-started/call-forwarding) |
+| **Routing Mode** | How calls are handled — AI answers all, ring you first, or schedule-based. [Choose mode](/getting-started/call-forwarding) |
+| **Automation** | Something that happens automatically, like texting a customer after a missed call. [View automations](/automations/overview) |
+| **CRM** | Customer Relationship Management — tools like HubSpot, Salesforce, GoHighLevel. [Connect CRM](/integrations/overview) |
 | **Webhook** | A way for systems to talk to each other automatically — you don't need to know this |
 | **VAPI** | The AI voice technology powering your receptionist — you don't need to know this |
 | **Twilio** | The phone system powering your AI number — you don't need to know this |
-| **Disposition** | The outcome of a call — e.g., NEW_LEAD, BOOKED, TRANSFERRED, FAQ_ANSWERED, SPAM |
-| **System Prompt** | The behind-the-scenes instructions that tell your AI how to behave, what to say, and what to know |
-| **Squad** | A multi-assistant setup where different AI specialists handle different parts of a call (e.g., one for booking, one for pricing) |
-| **Transcript** | The full text version of a phone call, generated automatically by speech-to-text AI |
-| **Sentiment** | The AI's assessment of how the caller felt during the call — Positive, Neutral, or Negative |
-| **Overage** | Extra minutes used beyond your plan's monthly allowance, billed at a per-minute rate |
-| **Provisioning** | The process of getting a new phone number assigned to your account (happens automatically during signup) |
-| **Sync** | Pushing your latest settings, Knowledge Base, and configuration to the AI so it uses up-to-date information on calls |
 
-<Snippet file="snippets/footer.mdx" />
+## Legal & Compliance Terms
+
+| Term | What It Means |
+|------|---------------|
+| **SMS Opt-Out** | When a customer texts STOP, they won't receive more texts from your number |
+| **TCPA** | US law requiring consent before recording calls — your AI can ask automatically |
+| **HIPAA** | Healthcare privacy rules — enable this if you're a medical or dental practice |
+| **GDPR** | European data protection regulation — accounts deleted after 30-day grace period on request |
+
+```mermaid
+graph TD
+    subgraph Flow["How Terms Connect"]
+        Call["Incoming Call"] --> AI["AI Receptionist"]
+        AI -->|"Uses"| KB["Knowledge Base"]
+        AI -->|"Captures"| Lead["Lead"]
+        AI -->|"Books"| Appt["Appointment"]
+        AI -->|"Generates"| Quote["Quote"]
+        Lead -->|"Scored"| Temp["Temperature<br/>HOT/WARM/COOL/COLD"]
+        Lead -->|"Moves through"| Pipe["Pipeline"]
+        KB -->|"Measured by"| Score["Intelligence Score"]
+        Call -->|"Analysed for"| Sent["Sentiment"]
+        Call -->|"Triggers"| Auto["Automations"]
+        Call -->|"Feeds"| Learn["Call Learning"]
+        Learn -->|"Improves"| KB
+    end
+```

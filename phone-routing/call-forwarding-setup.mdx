@@ -12,6 +12,25 @@ Call forwarding sends calls from your existing phone number to your AI reception
 The easiest setup is "forward when unanswered." Your phone rings for 15 to 20 seconds, and if you do not pick up, the call goes to your AI receptionist. You never miss a call again.
 </Tip>
 
+## How call forwarding works
+
+```mermaid
+flowchart TD
+    A["Customer calls your business number"] --> B{"Forwarding type?"}
+    B -->|"When unanswered"| C["Your phone rings for 15-20 seconds"]
+    B -->|"All calls"| F["Skips your phone entirely"]
+    B -->|"When busy"| G{"Are you on another call?"}
+    C --> D{"Do you answer?"}
+    D -->|"Yes"| E["You take the call normally"]
+    D -->|"No"| F
+    G -->|"Yes, busy"| F
+    G -->|"No, free"| C
+    F --> H["Call routes to your AI number"]
+    H --> I["AI receptionist answers"]
+    I --> J["AI handles booking, FAQs, lead capture"]
+    J --> K["You get notification with summary"]
+```
+
 ## Before you start
 
 You will need:
@@ -283,4 +302,26 @@ After setting up forwarding:
 If forwarding does not activate, your carrier may require you to enable it through their app or by calling customer service. This is common with some business phone plans.
 </Tip>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently asked questions
+
+<Accordion title="What if forwarding does not activate after dialling the code?">
+First, try the cancel code to clear any existing forwarding, then re-enter the forwarding code. If it still does not work, some carriers require you to enable call forwarding through their app or by calling customer service. Business phone plans sometimes have forwarding locked by default — contact your carrier to unlock it.
+</Accordion>
+
+<Accordion title="Can I forward to multiple numbers?">
+Standard carrier forwarding only supports one destination number. Set your AI number as the forwarding target. If you want calls to ring multiple people before the AI picks up, use the **Rings You First** routing mode — it rings your phone first, then the AI catches what you miss.
+</Accordion>
+
+<Accordion title="Does call forwarding cost extra?">
+Most UK and US carriers include call forwarding for free on monthly contract plans. Pay-as-you-go and some budget carriers may charge a per-minute fee for forwarded calls — check with your carrier. The forwarded call is charged as if you were making a call to the AI number from your phone.
+</Accordion>
+
+<Accordion title="How do I test if forwarding is working?">
+Call your business number from a different phone (borrow a friend's). Let it ring without answering. After 15-20 seconds, your AI receptionist should pick up. If you hear your carrier's voicemail instead of the AI, the forwarding is not active — try the setup codes again or contact your carrier.
+</Accordion>
+
+---
+
+<Card title="Set up forwarding now" icon="arrow-up-right-from-square" href="https://app.closethecall.com/phone">
+  Open the Phone page to see personalised dial codes with your AI number pre-filled.
+</Card>

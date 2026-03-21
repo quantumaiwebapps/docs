@@ -1,6 +1,6 @@
 ---
 title: "Smart Routing (Squads)"
-description: "Use AI Squads to route callers through specialised agents — booking, info, and transfers handled by the right AI."
+description: "Use AI Squads to route callers through specialised agents — booking, info, and transfers handled by the right AI. [Enable Smart Routing](https://app.closethecall.com/ai-config) in your dashboard."
 icon: "users-gear"
 ---
 
@@ -9,6 +9,34 @@ icon: "users-gear"
 A Squad is a team of specialised AI agents that work together on a single call. Instead of one AI trying to do everything, the call gets routed through agents that are each experts at one thing.
 
 Think of it like a real office: the receptionist greets you, the booking manager handles your appointment, the billing team answers price questions, and someone else transfers you to the boss. Squads work the same way — but it is all AI.
+
+```mermaid
+sequenceDiagram
+    participant Caller
+    participant Greeter as Greeter Agent
+    participant Router as Route Decision
+    participant Booking as Booking Agent
+    participant Info as Info Agent
+    participant Transfer as Transfer Agent
+    participant Human as Your Phone
+
+    Caller->>Greeter: Calls AI number
+    Greeter->>Caller: "Hi! How can I help?"
+    Caller->>Greeter: States their need
+
+    Greeter->>Router: Analyse intent
+
+    alt Wants to book
+        Router->>Booking: Route to Booking Agent
+        Booking->>Caller: Checks availability, books appointment
+    else Wants pricing/info
+        Router->>Info: Route to Info Agent
+        Info->>Caller: Answers from Knowledge Base
+    else Wants a real person
+        Router->>Transfer: Route to Transfer Agent
+        Transfer->>Human: Connects call to your phone
+    end
+```
 
 ## How Squads work
 
@@ -80,7 +108,7 @@ Most businesses start with Single mode and switch to Squads later if they notice
 
 <Steps>
   <Step title="Go to Receptionist Settings">
-    Click **Receptionist** in the left sidebar.
+    Click **Receptionist** in the left sidebar of your [dashboard](https://app.closethecall.com/ai-config).
   </Step>
   <Step title="Find the Routing Mode section">
     Scroll to the **Smart Routing** card.
@@ -111,4 +139,19 @@ Squads use the same Knowledge Base as Single mode. You do not need to create sep
 Squads are an advanced feature. If your AI is already handling calls well in Single mode, there is no need to switch. Only enable Squads if you are seeing specific issues with accuracy or complexity.
 </Warning>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Do squads use more minutes?">
+    Squads use roughly the **same number of minutes** as single mode for equivalent calls. The handoff between agents is instant (no dead air), so you are not paying for transfer time. In some cases, squads can be slightly more efficient because each specialist resolves queries faster than a generalist.
+  </Accordion>
+  <Accordion title="Can I customize agent handoff phrases?">
+    Yes. When you enable Squad mode, you can edit the transition phrases each agent uses when handing off to another. For example, you can change the Greeter's transfer line from the default "Let me connect you with our booking team" to something that matches your brand tone.
+  </Accordion>
+  <Accordion title="What if an agent can't answer a question?">
+    If a specialist agent encounters a question outside its domain, it routes the caller back to the appropriate agent or offers to transfer to a human. For example, if someone asks the Booking Agent about pricing, it seamlessly hands off to the Info Agent. If no agent can help, the Transfer Agent connects the caller to your phone number.
+  </Accordion>
+  <Accordion title="When should I use squads vs single mode?">
+    **Single mode** is the right choice for most businesses — especially those with fewer than 10 services and straightforward booking. Switch to **Squad mode** when you notice the AI getting confused on calls with multiple topics, or when you have complex services (e.g., different appointment types with different durations and staff). Start simple and upgrade when you see the need.
+  </Accordion>
+</AccordionGroup>

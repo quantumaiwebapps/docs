@@ -1,12 +1,39 @@
 ---
 title: "Billing & Plans"
-description: "Understand our 3 plan tiers, what minutes mean, overage rates, and how to manage your subscription."
+description: "Understand our 3 plan tiers, what minutes mean, overage rates, and how to manage your subscription. [Manage your billing](https://app.closethecall.com/billing) in the dashboard."
 icon: "credit-card"
 ---
+
+## Try Free for 7 Days
+
+<Note>
+**No credit card required.** CTC and RCA brands offer a 7-day free trial with up to 50 minutes of AI call time. Sign up, get your AI number, and start answering calls today. Upgrade to a paid plan when you are ready.
+</Note>
 
 ## Which plan is right for you?
 
 CloseTheCall offers three simple plans. Every plan includes your own AI receptionist, a dedicated phone number, SMS confirmations, lead capture, and appointment booking. The only difference is how many minutes of AI call time you get each month.
+
+```mermaid
+graph LR
+    subgraph Starter["Starter — $297/mo"]
+        A1["200 minutes"]
+        A2["1 phone number"]
+        A3["Setup: $497"]
+    end
+    subgraph Growth["Growth — $497/mo"]
+        B1["500 minutes"]
+        B2["2 phone numbers"]
+        B3["Setup: $997"]
+    end
+    subgraph Scale["Scale — $997/mo"]
+        C1["1,250 minutes"]
+        C2["5 phone numbers"]
+        C3["Setup: $1,997"]
+    end
+
+    Starter -->|"Upgrade"| Growth -->|"Upgrade"| Scale
+```
 
 <CardGroup cols={3}>
   <Card title="Starter" icon="seedling">
@@ -18,6 +45,7 @@ CloseTheCall offers three simple plans. Every plan includes your own AI receptio
     - Appointment booking
     - Knowledge base
     - Email support
+    - Setup fee: $497
   </Card>
   <Card title="Growth" icon="chart-line">
     **$497/month**
@@ -28,8 +56,9 @@ CloseTheCall offers three simple plans. Every plan includes your own AI receptio
     - Google Calendar sync
     - CRM integrations
     - AI call learning
+    - Setup fee: $997
   </Card>
-  <Card title="Domination" icon="rocket">
+  <Card title="Scale" icon="rocket">
     **$997/month**
     - 1,250 AI minutes included
     - 5 phone numbers
@@ -38,6 +67,7 @@ CloseTheCall offers three simple plans. Every plan includes your own AI receptio
     - Team management
     - Advanced analytics
     - Dedicated account manager
+    - Setup fee: $1,997
   </Card>
 </CardGroup>
 
@@ -46,7 +76,7 @@ CloseTheCall offers three simple plans. Every plan includes your own AI receptio
 A minute is one minute of AI call time — the time your AI receptionist spends talking to a caller. Here is what you need to know:
 
 - A typical call lasts **1 to 3 minutes** (greeting, booking, or answering a question)
-- On the Starter plan with 200 minutes, that is roughly **65 to 200 calls per month**
+- On the Starter plan with 200 minutes, that is roughly **70 to 200 calls per month**
 - Minutes only count when the AI is actively on a call — hold time and ringing do not count
 - Unused minutes do **not** roll over to the next month
 
@@ -62,7 +92,7 @@ If you use all your included minutes, your AI receptionist keeps working. You ar
 |------|-------------|
 | Starter | $0.85 per minute |
 | Growth | $0.65 per minute |
-| Domination | $0.45 per minute |
+| Scale | $0.45 per minute |
 
 <Info>
 You will receive an email alert when you hit 80% of your included minutes so there are no surprises on your bill.
@@ -72,7 +102,7 @@ You will receive an email alert when you hit 80% of your included minutes so the
 
 <Steps>
   <Step title="Go to Billing">
-    Click **Billing** in the left sidebar of your dashboard.
+    Click **Billing** in the left sidebar of your [dashboard](https://app.closethecall.com/billing).
   </Step>
   <Step title="Choose your plan">
     You will see three plan cards. Click the **Subscribe** button on the plan you want.
@@ -126,21 +156,9 @@ Upgrading is instant. Your new minute allowance is available right away, and you
 After cancellation, your AI phone number will be released and your receptionist will stop answering calls. Your data (leads, call history, knowledge base) is kept for 30 days in case you resubscribe.
 </Warning>
 
-## One-Time Setup Fee
-
-Each plan includes a one-time setup fee that covers your initial AI receptionist configuration, phone number provisioning, knowledge base setup, and onboarding support.
-
-| Plan | Setup Fee |
-|------|-----------|
-| Starter | $497 |
-| Growth | $997 |
-| Domination | $1,997 |
-
-The setup fee is charged once at the time of your first subscription. It does not recur.
-
 ## Viewing your usage
 
-On the **Billing** page, you can see:
+On the [Billing](https://app.closethecall.com/billing) page, you can see:
 
 - **Minutes used** this billing period (with a progress bar)
 - **Calls handled** this month
@@ -151,92 +169,19 @@ On the **Billing** page, you can see:
 
 All invoices are available in the Stripe billing portal. Click **Manage Subscription** then **Billing history** to download PDF receipts for your records.
 
-<Accordion title="FAQ: Common billing questions">
-**Can I try before I pay?**
-Contact us for a demo — we will show you the AI receptionist live on a call with your actual business information.
+## Frequently Asked Questions
 
-**Do you offer annual billing?**
-Not yet, but it is coming soon with a discount.
-
-**Is there a contract or lock-in?**
-No. All plans are month-to-month. Cancel anytime.
-
-**What currency am I billed in?**
-Plans are billed in GBP (£) for UK businesses and USD ($) for US businesses.
-</Accordion>
-
-## Managing Your Subscription
-
-The **Manage Subscription** button on your Billing page opens a secure Stripe-hosted portal where you can manage everything about your subscription without contacting support.
-
-<Steps>
-  <Step title="Open the Billing Portal">
-    Go to **Billing** in the sidebar and click the **Manage Subscription** button at the top of the page. A new tab opens with the Stripe billing portal.
-  </Step>
-  <Step title="What you can do in the portal">
-    From the Stripe portal, you can:
-    - **Change your payment card** — Add a new card and set it as default, or remove old cards.
-    - **Download receipts and invoices** — Click **Billing history** to see every payment. Click the PDF icon next to any charge to download a receipt for your accountant.
-    - **Update your billing email** — Change where invoice emails are sent.
-    - **Cancel your plan** — Click **Cancel plan** to stop at the end of your current billing period.
-    - **Upgrade or downgrade** — Click **Update plan** to switch tiers. The change is prorated automatically.
-  </Step>
-</Steps>
-
-<Info>
-The billing portal is hosted by Stripe, not CloseTheCall. Your card details are never stored on our servers — they go directly to Stripe, which is PCI Level 1 certified (the highest security standard).
-</Info>
-
-## Invoice History
-
-Your past invoices are visible in two places:
-
-### On Your Dashboard
-
-Scroll down on the **Billing** page to find the **Invoice History** section. This shows a table with:
-
-| Column | What it shows |
-|--------|--------------|
-| **Date** | When the invoice was created |
-| **Period** | The billing period it covers (e.g. "1 Mar - 31 Mar 2026") |
-| **Amount** | The total charged |
-| **Status** | Paid, Pending, or Failed |
-
-Click the **Download PDF** button on any row to save the invoice to your computer.
-
-### In the Stripe Portal
-
-For a complete history including old subscriptions, click **Manage Subscription** then **Billing history** in the Stripe portal.
-
-## Creating a Manual Invoice
-
-If you need to bill a customer directly (for a one-off job, a deposit, or a service not covered by your AI bookings), you can create and send invoices from your dashboard.
-
-<Steps>
-  <Step title="Go to Billing">
-    Click **Billing** in the sidebar.
-  </Step>
-  <Step title="Click Create Invoice">
-    Click the **Create Invoice** button. A form dialog opens.
-  </Step>
-  <Step title="Fill in the invoice details">
-    - **Customer Name** — The name of the person or business you are billing.
-    - **Customer Email** — Where the invoice will be sent. The customer receives an email with a link to pay online.
-    - **Amount** — The total amount to charge (in your local currency).
-    - **Description** — A line item describing what the charge is for (e.g. "Emergency boiler repair — 15 March 2026").
-    - **Due Date** — Select the date by which payment is expected using the date picker.
-  </Step>
-  <Step title="Click Send Invoice">
-    Click **Send Invoice**. The customer receives a branded email with the invoice details and a **Pay Now** button. The Pay Now button takes them to a secure Stripe payment page where they can pay by card.
-  </Step>
-</Steps>
-
-<Tip>
-Sent invoices appear in your Invoice History with a **Sent** status. Once the customer pays, the status updates to **Paid** automatically. If an invoice passes its due date without payment, you will receive an overdue reminder.
-</Tip>
-
-<Warning>
-Manual invoices are separate from your subscription billing. They do not affect your plan or minute allowance — they are simply a convenient way to collect payments from your customers.
-</Warning>
-
-<Snippet file="snippets/footer.mdx" />
+<AccordionGroup>
+  <Accordion title="Is there a free trial?">
+    Yes. CTC and RCA brands offer a **7-day free trial** with no credit card required. You get up to 50 minutes of AI call time during the trial. Your AI receptionist is fully functional — same features as a paid plan, just with a minute cap.
+  </Accordion>
+  <Accordion title="Can I switch plans mid-month?">
+    Yes. Upgrades take effect immediately and you are charged the prorated difference for the remaining days. Downgrades also take effect immediately — you receive a prorated credit on your next invoice.
+  </Accordion>
+  <Accordion title="What happens when I hit my minute limit?">
+    Your AI receptionist keeps answering calls. You are charged overage at your plan's rate ($0.85/min Starter, $0.65/min Growth, $0.45/min Scale). You get an email warning at 80% usage and again when you hit 100% so you can upgrade if the overage rate is too high.
+  </Accordion>
+  <Accordion title="Are there setup fees?">
+    Yes. Each plan has a one-time setup fee: **$497** (Starter), **$997** (Growth), or **$1,997** (Scale). This covers AI assistant creation, phone number provisioning, website scraping, knowledge base setup, and initial configuration.
+  </Accordion>
+</AccordionGroup>

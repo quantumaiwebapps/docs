@@ -57,6 +57,7 @@
         "ai-receptionist/knowledge-base",
         "ai-receptionist/smart-routing",
         "ai-receptionist/ivr-phone-menu",
+        "ai-receptionist/ai-email-replies",
         "ai-receptionist/testing"
       ]
     },
@@ -96,7 +97,8 @@
     {
       "group": "Automations",
       "pages": [
-        "automations/overview"
+        "automations/overview",
+        "automations/workflow-builder"
       ]
     },
     {
@@ -111,7 +113,8 @@
       "group": "Settings & Account",
       "pages": [
         "settings/account-security",
-        "settings/team-management"
+        "settings/team-management",
+        "settings/chat-widget"
       ]
     },
     {

@@ -1,6 +1,6 @@
 ---
 title: "Greeting Message"
-description: "Craft the perfect opening line for your AI receptionist — first impressions that win customers."
+description: "Craft the perfect opening line for your AI receptionist — first impressions that win customers. [Edit your greeting](https://app.closethecall.com/ai-config) in the dashboard."
 icon: "message-smile"
 ---
 
@@ -11,6 +11,25 @@ Your greeting is the very first thing a caller hears. You have about 3 seconds t
 1. **Confirms the business name** (so the caller knows they dialled correctly)
 2. **Sounds welcoming** (not robotic or rushed)
 3. **Asks a question** (moves the conversation forward)
+
+```mermaid
+stateDiagram-v2
+    [*] --> CheckCaller: Incoming call
+    CheckCaller --> Returning: Caller phone matches previous lead/call
+    CheckCaller --> FirstTime: No match found
+
+    FirstTime --> GenericGreeting: "Hi, thanks for calling [Business]!<br/>How can I help?"
+    Returning --> PersonalisedGreeting: "Hi [Name]! Great to hear<br/>from you again. How can I help?"
+
+    GenericGreeting --> Conversation
+    PersonalisedGreeting --> Conversation
+
+    state CheckCaller {
+        [*] --> LookupPhone: Check caller number
+        LookupPhone --> MatchFound: Found in leads/calls
+        LookupPhone --> NoMatch: Not found
+    }
+```
 
 ## Good vs bad greetings
 
@@ -90,11 +109,25 @@ Here are proven greetings for common business types. Feel free to copy and tweak
 "Hi, thanks for calling [Business Name]! Is your heating or cooling down right now, or is this for a routine service?"
 </Accordion>
 
+## After-Hours Greeting
+
+You can set a separate message for calls that come in outside your business hours. When **After Hours** is enabled in your Phone settings:
+
+- The AI uses your **after-hours message** instead of the standard greeting
+- You can include an optional **forwarding number** for emergencies
+- The AI still captures leads and takes messages — callers are not turned away
+
+To configure after-hours:
+1. Go to **Phone** in the sidebar
+2. Toggle **After Hours** on
+3. Enter your after-hours message (e.g., "We're closed right now but I can take your details...")
+4. Optionally add an emergency forwarding number
+
 ## How to set your greeting
 
 <Steps>
   <Step title="Go to Receptionist Settings">
-    Click **Receptionist** in the left sidebar.
+    Click **Receptionist** in the left sidebar of your [dashboard](https://app.closethecall.com/ai-config).
   </Step>
   <Step title="Find the Greeting section">
     At the top of the page, you will see the **Greeting Message** text box with your current greeting.
@@ -131,4 +164,19 @@ Personalised greetings only work when the caller's number matches a previous lea
 If your greeting is too long (over 30 words), callers may start talking over the AI, which confuses the conversation. Keep it short.
 </Warning>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I have different greetings for different times?">
+    Yes. You can set a standard greeting for business hours and a separate **after-hours message** in the Phone settings. The AI automatically switches between them based on your configured business hours. You cannot set different greetings for specific days of the week beyond the hours/after-hours split.
+  </Accordion>
+  <Accordion title="Does the greeting use my minutes?">
+    Yes. The greeting is part of the call, so it counts toward your plan minutes. This is why keeping it short (under 15 words) is important — a 5-second greeting vs a 30-second greeting adds up over hundreds of calls.
+  </Accordion>
+  <Accordion title="Can I greet callers in another language?">
+    Yes. If you enable **Bilingual Mode** in Receptionist Settings and select a secondary language (Spanish, French, Hindi, or Portuguese), the AI can detect the caller's language and switch automatically. The greeting starts in English, but the AI responds in the caller's preferred language.
+  </Accordion>
+  <Accordion title="What's the ideal greeting length?">
+    **Under 15 words** is the sweet spot. This takes about 3-5 seconds to say, which is short enough that callers do not zone out or start talking over the AI. The greeting should confirm your business name, sound welcoming, and end with an open question.
+  </Accordion>
+</AccordionGroup>

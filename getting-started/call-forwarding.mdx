@@ -1,6 +1,6 @@
 ---
 title: "How Call Forwarding Works"
-description: "Understand call forwarding and choose the right setup for your business"
+description: "Understand call forwarding and choose the right setup for your business. [Set up forwarding now](https://app.closethecall.com/phone) in your dashboard."
 icon: "phone-arrow-right"
 ---
 
@@ -34,6 +34,20 @@ AFTER CloseTheCall:
 
 ## Quick Decision Guide
 
+```mermaid
+graph TD
+    A["How do you want calls handled?"] --> B{"Are you usually<br/>available to answer?"}
+    B -->|"No — on a job site<br/>or always busy"| C["AI Answers All"]
+    B -->|"Sometimes — at desk<br/>but often in meetings"| D{"Do you want AI<br/>only at certain times?"}
+    B -->|"Yes — but not<br/>after hours"| D
+    D -->|"No — let it ring<br/>then fall to AI"| E["Rings You First"]
+    D -->|"Yes — set specific<br/>hours for AI"| F["Schedule-Based"]
+
+    style C fill:#22c55e,color:#fff
+    style E fill:#3b82f6,color:#fff
+    style F fill:#a855f7,color:#fff
+```
+
 | Your Situation | Choose |
 |---------------|--------|
 | Always on a job site | AI Answers All |
@@ -52,7 +66,7 @@ AFTER CloseTheCall:
     UK, US, or Australia
   </Step>
   <Step title="Find your carrier">
-    EE, Vodafone, Three, O2, T-Mobile, AT&T, Verizon, Telstra, etc.
+    Click your carrier from the grid below to see step-by-step instructions
   </Step>
   <Step title="Follow the dial codes">
     Each carrier shows exact codes to type into your phone dialler
@@ -61,6 +75,46 @@ AFTER CloseTheCall:
     Call your business number — AI should answer
   </Step>
 </Steps>
+
+## Supported Carriers (25 total)
+
+### UK (9 carriers)
+| Carrier | Type | Unanswered Forward | All Calls Forward |
+|---------|------|-------------------|-------------------|
+| **EE** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **O2** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Vodafone** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Three** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **BT Mobile** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Sky** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Virgin** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **BT Landline** | Landline | Contact BT or use 1571 settings | Contact BT |
+| **TalkTalk** | Landline | Contact TalkTalk or use online portal | Contact TalkTalk |
+
+### US (7 carriers)
+| Carrier | Type | Unanswered Forward | All Calls Forward |
+|---------|------|-------------------|-------------------|
+| **AT&T** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **T-Mobile** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Verizon** | Mobile | `*71{AI number}` | `*72{AI number}` |
+| **Cricket** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Mint** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **US Cellular** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Landline** | Landline | Contact your provider | `*72{AI number}` |
+
+### AU (6 carriers)
+| Carrier | Type | Unanswered Forward | All Calls Forward |
+|---------|------|-------------------|-------------------|
+| **Telstra** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Optus** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Vodafone AU** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **TPG/iiNet** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **Boost** | Mobile | `**61*{AI number}#` | `**21*{AI number}#` |
+| **AU Landline** | Landline | Contact your provider | `*21{AI number}#` |
+
+<Info>
+Dial codes shown are the most common. Your dashboard shows carrier-specific codes with step-by-step instructions when you click on your carrier.
+</Info>
 
 ## Cancelling Forwarding
 
@@ -74,4 +128,19 @@ AFTER CloseTheCall:
 Your AI number stays active even when forwarding is off. Direct calls to the AI number still work.
 </Info>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Can I change routing mid-month?">
+    Yes, absolutely. You can switch between AI Answers All, Rings You First, and Schedule-Based at any time from the Phone page in your dashboard. Changes take effect on the next incoming call. There is no limit on how often you can change.
+  </Accordion>
+  <Accordion title="What if my carrier isn't listed?">
+    Most carriers support standard GSM forwarding codes (`**21*` for all calls, `**61*` for unanswered). Try the standard codes first. If they do not work, contact your carrier and ask them to enable "call forwarding to an external number." You can also contact our support team for help.
+  </Accordion>
+  <Accordion title="Does forwarding use my phone minutes?">
+    Call forwarding may use your mobile plan minutes depending on your carrier. The forwarded leg (from your phone to the AI number) counts as an outgoing call on your mobile plan. The AI answering time counts against your CloseTheCall plan minutes. Check with your carrier for specifics.
+  </Accordion>
+  <Accordion title="Can I forward to multiple AI numbers?">
+    Each business gets one AI phone number. All forwarded calls go to that single number. If you have multiple locations, each location can have its own AI number — set these up on the Locations page in your dashboard.
+  </Accordion>
+</AccordionGroup>

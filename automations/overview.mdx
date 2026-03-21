@@ -1,183 +1,189 @@
 ---
 title: "Automations Overview"
-description: "Set up automatic follow-ups, reminders, and notifications so you never lose a lead or miss a booking."
+description: "10 automated pipelines that follow up, remind, recover, and nurture — so you never lose a lead or forget a customer."
 icon: "robot"
 ---
 
-Automations handle the follow-up work that most small businesses forget to do. They send texts, emails, and reminders on your behalf — automatically — so you can focus on doing the actual work.
+Automations handle the follow-up work that most small businesses forget to do. They send texts, emails, and owner alerts on your behalf — automatically — so you can focus on doing the actual work.
 
-You'll find all five automations on the **Automations** page in your sidebar.
+You'll find all automations on the [Automations page](https://app.closethecall.com/automations) in your sidebar.
 
-## The Five Automations
+## How a Pipeline Works
 
-<CardGroup cols={2}>
-  <Card title="Missed Call Textback" icon="phone-missed">
-    Sends an SMS to anyone who calls but doesn't reach you (missed call, voicemail, or hangup). Gets them to text back instead.
+Every automation follows the same pattern: a trigger fires, one or more steps execute across channels, and you get a measurable outcome.
+
+```mermaid
+flowchart LR
+    T[Trigger Event] --> D{Delay}
+    D --> S1[Step 1: SMS / Email / Alert]
+    S1 --> C{Customer Responded?}
+    C -- Yes --> O1[Outcome: Engaged]
+    C -- No --> S2[Step 2: Follow-up]
+    S2 --> O2[Outcome: Escalate or Close]
+```
+
+## The 10 Pipelines
+
+| # | Pipeline | Trigger | Steps | Channels | Description |
+|---|----------|---------|-------|----------|-------------|
+| 1 | **Missed Call Rescue** | Missed call / hangup / voicemail | SMS within 60s, email if no reply in 30min | SMS, Email, Owner Alert | Recovers leads from calls the AI couldn't handle. Businesses that text back within 1 minute recover up to 40% of missed leads. |
+| 2 | **Lead Nurture** | New lead captured | Immediate owner alert, then 24h follow-up SMS if no contact made | SMS, Email, Owner Alert | Makes sure no lead slips through the cracks. Notifies you instantly and follows up if you haven't reached out. |
+| 3 | **Appointment Lifecycle** | Appointment booked | 1h reminder with confirm/cancel links, post-appointment review request | SMS | Reduces no-shows with a timely reminder, then captures a review from happy customers. |
+| 4 | **Quote Follow-up** | Quote sent but not accepted | AI-personalised follow-up SMS after configurable delay (default 24h) | SMS, Email | Uses the original call transcript to write a personalised nudge rather than a generic "just following up." |
+| 5 | **Morning Briefing** | Daily at 08:00 local time | Email summary of yesterday's calls, leads, appointments, and action items | Email | Start every day knowing exactly what happened and what needs attention. |
+| 6 | **No-Show Recovery** | Appointment marked as no-show | SMS to customer offering to rebook, owner alert | SMS, Owner Alert | Recovers revenue from missed appointments by offering an easy rebook link. |
+| 7 | **Payment Chase** | Invoice overdue | Reminder at 1 day, 3 days, and 7 days overdue | SMS, Email | Politely chases unpaid invoices on an escalating schedule so you don't have to send awkward texts. |
+| 8 | **Win Back** | Lead inactive for 30+ days | Re-engagement SMS with seasonal or promotional offer | SMS | Brings cold leads back into your pipeline with a timely nudge. |
+| 9 | **Negative Sentiment** | Call flagged as negative sentiment | Owner alert within 5 minutes, no review request sent | Owner Alert | Flags unhappy callers immediately so you can personally intervene before they leave a bad review. |
+| 10 | **Onboarding Drip** | New account created | Welcome email, setup tips at day 1/3/7, "Need help?" check-in | Email | Guides new users through setup so they get value from CloseTheCall quickly. |
+
+## Multi-Channel Delivery
+
+Each pipeline can use one or more channels depending on what makes sense for the situation.
+
+<CardGroup cols={3}>
+  <Card title="SMS" icon="comment-sms">
+    Text messages to the customer's phone. Best for urgent, time-sensitive actions like missed call recovery and appointment reminders.
   </Card>
-  <Card title="Review Generation" icon="star">
-    Sends a review request SMS after a completed appointment. Only sends to happy customers — negative sentiment calls are skipped.
+  <Card title="Email" icon="envelope">
+    Branded HTML emails for longer content like morning briefings, invoice reminders, and onboarding tips.
   </Card>
-  <Card title="Estimate Follow-up" icon="receipt">
-    Sends a personalised follow-up SMS to leads who got a quote but haven't booked yet. Uses AI to personalise based on the call.
-  </Card>
-  <Card title="New Lead Notification" icon="bell">
-    Notifies you (and your team) by SMS and email whenever a new lead comes in, so nothing slips through the cracks.
-  </Card>
-  <Card title="Appointment Reminder" icon="clock">
-    Sends the customer a reminder SMS 1 hour before their appointment with confirm/cancel buttons.
+  <Card title="Owner Alert" icon="bell">
+    Notifications to you (and your team) by SMS and/or email. Used when something needs human attention — a hot lead, a negative call, or a no-show.
   </Card>
 </CardGroup>
 
----
+## Pipeline Details
 
-## 1. Missed Call Textback
+### 1. Missed Call Rescue
 
-**What it does:** When someone calls and your AI can't connect (rare, but it happens — e.g. the AI is already on another call), this automation sends them a text within 60 seconds.
+When someone calls and the AI can't connect (e.g. the AI is already on another call, or the caller hangs up too quickly), this pipeline kicks in.
 
 **Default message:**
 > "Hi, thanks for calling [Your Business]. Sorry we missed you! Reply to this text and we'll get back to you ASAP."
 
-**How to configure:**
-
-<Steps>
-  <Step title="Go to Automations">
-    Click **Automations** in the sidebar.
-  </Step>
-  <Step title="Find Missed Call Textback">
-    Click the toggle to enable it.
-  </Step>
-  <Step title="Customise the message">
-    Edit the text template. You can use `{businessName}` and `{callerName}` as variables.
-  </Step>
-  <Step title="Set the delay">
-    Choose how long to wait before sending (default: 60 seconds). A short delay feels natural — instant texts can feel robotic.
-  </Step>
-</Steps>
+**Configuration:**
+- Toggle on/off
+- Customise the SMS template (variables: `{businessName}`, `{callerName}`)
+- Set delay before sending (default: 60 seconds)
 
 <Tip>
-This is the single highest-impact automation. Businesses that text back missed calls within 1 minute recover up to 40% of those leads.
+This is the single highest-impact automation. Enable it first.
 </Tip>
 
----
+### 2. Lead Nurture
 
-## 2. Review Generation
+Fires the moment a new lead is captured by the AI during a call or chat.
 
-**What it does:** After a completed appointment, sends the customer an SMS asking them to leave a Google review.
+- Sends you an SMS and/or email notification immediately
+- If you haven't contacted the lead within 24 hours, sends a follow-up SMS to the customer
 
-**The smart part:** This automation checks the sentiment of the original phone call. If the call was negative (angry customer, complaint), it skips the review request. You only ask happy customers for reviews.
+### 3. Appointment Lifecycle
 
-**How to configure:**
+Two stages in one pipeline:
 
-<Steps>
-  <Step title="Enable Review Generation">
-    Toggle it on in the Automations page.
-  </Step>
-  <Step title="Add your Google review link">
-    Paste your Google Business Profile review link. (Find it by searching your business on Google, clicking "Write a review," and copying the URL.)
-  </Step>
-  <Step title="Set the delay">
-    Choose how long after the appointment to send the request. Default is 2 hours — enough time for the customer to assess the work.
-  </Step>
-</Steps>
+1. **Reminder** — 1 hour before the appointment, the customer gets an SMS with **Confirm** and **Cancel** links. If they cancel, the slot is freed and you're notified.
+2. **Review Request** — After a completed appointment, sends a Google review request SMS. Skips customers whose call had negative sentiment.
 
-<Info>
-The sentiment gate means you'll never accidentally ask an unhappy customer for a review. If the call had negative sentiment, the automation simply doesn't fire.
-</Info>
+### 4. Quote Follow-up
 
----
+When a quote is sent but the customer hasn't responded:
 
-## 3. Estimate Follow-up
+- The AI reads the original call transcript and writes a personalised follow-up
+- Falls back to your template if personalisation fails
+- Configurable delay (default: 24 hours)
 
-**What it does:** Sends a follow-up SMS to leads who received a quote or pricing information but haven't booked yet.
+### 5. Morning Briefing
 
-**The smart part:** The AI reads the original call transcript and writes a personalised follow-up message. Instead of a generic "Just following up," the customer gets something like: "Hi Sarah, just wanted to check if you had any questions about the boiler service we discussed? Happy to help if you need more info."
+A daily email digest at 08:00 local time containing:
 
-**How to configure:**
+- Yesterday's call count and average duration
+- New leads captured (with temperature badges)
+- Upcoming appointments for today
+- Action items (unanswered leads, pending quotes, overdue invoices)
 
-<Steps>
-  <Step title="Enable Estimate Follow-up">
-    Toggle it on in the Automations page.
-  </Step>
-  <Step title="Set the delay">
-    Choose how long to wait after the call. Default is 24 hours. This gives the customer time to think without feeling pressured.
-  </Step>
-  <Step title="Customise the fallback template">
-    If the AI can't generate a personalised message (rare), it falls back to your template. Edit this to match your brand voice.
-  </Step>
-</Steps>
+### 6. No-Show Recovery
 
----
+When an appointment is marked as a no-show:
 
-## 4. New Lead Notification
+- Customer gets an SMS: "We missed you today! Would you like to rebook? Reply YES and we'll find a new time."
+- You get an owner alert so you can follow up personally if needed
 
-**What it does:** Sends you an SMS and/or email the moment a new lead is captured by the AI.
+### 7. Payment Chase
 
-**How to configure:**
+Escalating reminders for overdue invoices:
 
-<Steps>
-  <Step title="Enable New Lead Notification">
-    Toggle it on in the Automations page.
-  </Step>
-  <Step title="Choose notification channels">
-    Select SMS, email, or both.
-  </Step>
-  <Step title="Add team members">
-    Optionally add phone numbers or emails for other team members who should also be notified.
-  </Step>
-</Steps>
+- **Day 1:** Friendly SMS reminder with payment link
+- **Day 3:** Email with invoice details and payment link
+- **Day 7:** Final reminder SMS + owner alert to follow up manually
 
-<Tip>
-Pair this with the Missed Call Textback. You'll know about every lead the moment it comes in, and the customer gets a text at the same time. Two-way coverage.
-</Tip>
+### 8. Win Back
 
----
+For leads that went cold (no activity in 30+ days):
 
-## 5. Appointment Reminder
+- Sends a re-engagement SMS
+- Can include seasonal promotions or limited-time offers
+- Configurable inactivity threshold
 
-**What it does:** Sends the customer an SMS 1 hour before their appointment with two links — **Confirm** or **Cancel**.
+### 9. Negative Sentiment
 
-**How it works:**
-- The reminder goes out automatically. No action needed from you.
-- If the customer clicks **Confirm**, the appointment status updates to Confirmed in your dashboard.
-- If the customer clicks **Cancel**, the appointment is cancelled and the time slot is freed up. You get a notification.
+When the AI detects negative sentiment on a call:
 
-<Steps>
-  <Step title="Enable Appointment Reminder">
-    Toggle it on in the Automations page.
-  </Step>
-  <Step title="Customise the message">
-    Edit the reminder text. Use `{customerName}`, `{service}`, `{date}`, and `{time}` as variables.
-  </Step>
-</Steps>
+- Owner gets an alert within 5 minutes
+- The review request automation is automatically suppressed for this customer
+- Gives you a chance to personally call back and resolve the issue
+
+### 10. Onboarding Drip
+
+For new CloseTheCall users:
+
+- **Day 0:** Welcome email with quick-start steps
+- **Day 1:** "Set up your knowledge base" tip
+- **Day 3:** "Enable your first automation" tip
+- **Day 7:** "Need help?" check-in with link to support
 
 ---
 
-## SMS Opt-Out Compliance
+## Safety Features
 
-All automated SMS messages include opt-out handling to comply with TCPA (US) and PECR (UK) regulations.
+Every pipeline includes built-in safeguards to prevent spam, comply with regulations, and avoid annoying your customers.
+
+| Safety Feature | What It Does |
+|----------------|-------------|
+| **SMS Opt-Out (STOP)** | If a customer replies STOP to any text, all automated SMS to that number halt immediately. They can text START to re-subscribe. This is a legal requirement (TCPA/PECR). |
+| **Rate Limiting** | No customer receives more than 3 automated messages per day across all pipelines. Prevents message fatigue. |
+| **Loop Prevention** | If an automation triggers another automation (e.g. a follow-up SMS triggers a new conversation), the loop is detected and broken after one cycle. |
+| **Retry with Backoff** | If an SMS or email fails to send, the system retries up to 3 times with exponential backoff (1min, 5min, 15min). |
+| **Deduplication** | The same message is never sent twice to the same customer for the same event, even if the webhook fires multiple times. |
+| **Sentiment Gating** | Review requests are automatically suppressed for calls with negative sentiment. |
+| **Business Hours Awareness** | Owner alerts respect your notification preferences. Morning briefings send at your local 08:00, not UTC. |
 
 <Warning>
-If a customer replies **STOP** to any automated text, they are automatically unsubscribed from all future SMS automations. This is a legal requirement and cannot be overridden. The customer can text **START** to re-subscribe.
+If a customer replies **STOP** to any automated text, they are automatically unsubscribed from ALL future SMS automations. This is a legal requirement and cannot be overridden. The customer can text **START** to re-subscribe.
 </Warning>
+
+## Visual Workflow Builder
+
+For advanced users who want to create custom automation pipelines or modify the built-in ones, CloseTheCall includes a visual workflow builder. You can drag and drop triggers, conditions, delays, and actions to build any workflow you can imagine.
+
+See the [Workflow Builder guide](/automations/workflow-builder) for details.
 
 ## Enabling and Disabling
 
-Each automation has its own on/off toggle. Turning one off doesn't affect the others. When disabled:
+Each pipeline has its own on/off toggle. Turning one off doesn't affect the others. When disabled:
 
-- No new messages will be sent for that automation.
-- Messages already queued will still be delivered.
-- Your configuration (message template, delay) is saved — so you can re-enable it without starting over.
+- No new messages will be sent for that pipeline
+- Messages already queued will still be delivered
+- Your configuration is saved so you can re-enable without starting over
 
 <Accordion title="Can I see which messages were sent?">
-  Yes. Every automated SMS appears in your **Conversations** page with a tag showing which automation triggered it.
-</Accordion>
-
-<Accordion title="What if I want different messages for different services?">
-  Currently, each automation uses one message template for all services. If you need service-specific messages, contact support and we can set that up for you.
+  Yes. Every automated SMS appears in your **Conversations** page with a tag showing which automation triggered it. Emails appear in your account's email log.
 </Accordion>
 
 <Accordion title="Do automations cost extra?">
-  No. All five automations are included in every plan. The only cost is the SMS messages themselves, which come out of your plan's SMS allowance.
+  No. All 10 pipelines are included in every plan. The only cost is the SMS messages themselves, which come out of your plan's SMS allowance.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+<Accordion title="Can I customise the delay for each pipeline?">
+  Yes. Every pipeline with a delay step lets you configure the timing. Some pipelines (like Payment Chase) have multiple delay steps that can each be adjusted independently.
+</Accordion>

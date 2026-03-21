@@ -6,6 +6,30 @@ icon: "calendar-check"
 
 Your AI receptionist can book appointments for you while you're on another job, at lunch, or asleep. It checks your availability, offers times that work, confirms the booking, and sends SMS confirmations — all during a single phone call.
 
+## The booking flow
+
+```mermaid
+sequenceDiagram
+    participant Customer
+    participant AI as AI Receptionist
+    participant Cal as Calendar
+    participant SMS as SMS Service
+    participant Owner as Business Owner
+
+    Customer->>AI: "Can I book a time?"
+    AI->>Cal: check_availability(date range)
+    Cal-->>AI: Available slots
+    AI->>Customer: "I've got Tuesday 10am or Wednesday 2pm"
+    Customer->>AI: "Tuesday 10am please"
+    AI->>AI: book_appointment(name, service, date, time)
+    AI->>Customer: "Booked for Tuesday 15th at 10am. Anything else?"
+    AI-->>Cal: Create calendar event
+    AI-->>SMS: Send confirmation to customer
+    AI-->>Owner: Send notification (SMS + email)
+    Note over SMS,Customer: 1 hour before appointment
+    SMS->>Customer: Reminder with confirm/cancel links
+```
+
 ## During the Call
 
 Here's what happens when a customer wants to book:
@@ -118,10 +142,29 @@ When the appointment reminder goes out 1 hour before, the customer receives a te
 | Status | What It Means |
 |--------|--------------|
 | **Upcoming** | Booked and waiting for the date to arrive. |
+| **Confirmed** | The customer confirmed via the reminder SMS link. |
 | **Rescheduled** | The customer or you moved it to a different time. |
 | **Completed** | The job happened. |
 | **Cancelled** | Called off by either side. |
 | **No Show** | The customer didn't turn up. |
+
+## Frequently asked questions
+
+<Accordion title="Can the AI reschedule an existing appointment?">
+Yes. If a customer calls back and says "I need to move my appointment," the AI will cancel the existing booking and create a new one at the time they choose. It will not create duplicates — the old appointment is cancelled before the new one is booked.
+</Accordion>
+
+<Accordion title="How does the AI prevent double bookings?">
+The AI checks your calendar in real time before offering any time slot. If a slot is already taken (by an AI booking, a manual booking, or a personal calendar event), the AI will not offer it. This check happens during the call, so even if two callers are on the line simultaneously, the second caller will see the first booking reflected.
+</Accordion>
+
+<Accordion title="Do I need Google Calendar connected for booking to work?">
+No. Booking works without any calendar integration. Without a calendar connected, the AI uses your configured business hours to determine availability. Connecting Google Calendar or Outlook adds real-time schedule awareness so the AI also avoids times when you have personal or other appointments.
+</Accordion>
+
+<Accordion title="Can customers cancel via SMS?">
+Yes. The reminder SMS sent 1 hour before the appointment includes a cancel link. When the customer clicks it, the appointment is automatically cancelled, the slot is freed up, and you receive a notification. Customers can also call back and ask the AI to cancel for them.
+</Accordion>
 
 ## Troubleshooting
 
@@ -137,100 +180,8 @@ When the appointment reminder goes out 1 hour before, the customer receives a te
   Disconnect and reconnect Google Calendar from the **Integrations** page. Google OAuth tokens expire after a while, and reconnecting refreshes them.
 </Accordion>
 
-<Accordion title="Can the AI handle rescheduling?">
-  Yes. If a customer calls back and says "I need to move my appointment," the AI will cancel the existing booking and create a new one at the time they choose. It won't create duplicates.
-</Accordion>
-
 ---
 
-## Calendar vs List View
-
-At the top right of the Appointments page, you will see a **view toggle** that lets you switch between two layouts:
-
-### Calendar View
-
-- Shows a **month grid** with dots on days that have appointments booked.
-- Click any day to see the appointments for that date.
-- Use the left and right arrows to navigate between months.
-- Best for getting a visual overview of how busy your schedule is.
-
-### List View
-
-- Shows a **table** with all appointments in a scrollable list.
-- Each row shows: customer name, phone number, service, date, time, duration, and status.
-- Sortable by clicking column headers (e.g. click "Date" to sort chronologically).
-- Best for quickly finding a specific appointment or reviewing recent bookings.
-
-<Tip>
-The view toggle remembers your preference. If you prefer list view, it will stay on list view next time you visit the page.
-</Tip>
-
----
-
-## Filtering Appointments
-
-### Status Tabs
-
-At the top of the appointments list, you will see status tabs that filter which appointments are shown:
-
-| Tab | What it shows |
-|-----|--------------|
-| **All** | Every appointment regardless of status |
-| **Pending** | Appointments awaiting confirmation — the AI booked them but they have not been confirmed yet |
-| **Upcoming** | Confirmed appointments that have not happened yet |
-| **Declined** | Appointments that were cancelled or declined by either party |
-
-Click a tab to filter the list. The count next to each tab shows how many appointments are in that status.
-
-### Search Bar
-
-Above the appointment list, there is a **search bar**. Type a customer's name or phone number to filter the results instantly. The search works across both Calendar and List views.
-
-<Info>
-Combining a status tab with search is the fastest way to find what you need. For example, click **Upcoming** then type "Sarah" to find Sarah's next appointment.
-</Info>
-
----
-
-## Creating an Appointment Manually
-
-Not every booking comes through the AI. You can create appointments by hand for walk-ins, website enquiries, phone calls you take personally, or jobs arranged in person.
-
-<Steps>
-  <Step title="Click + New Appointment">
-    Click the **+ New Appointment** button at the top right of the Appointments page. A form dialog opens.
-  </Step>
-  <Step title="Enter customer name">
-    Type the customer's full name in the **Customer Name** field.
-  </Step>
-  <Step title="Enter phone number">
-    Type the customer's phone number in the **Phone** field. Include the country code (e.g. +447700900000). This is used for SMS confirmations and reminders.
-  </Step>
-  <Step title="Select a service">
-    Choose the service from the **Service** dropdown. This list is populated from the services you have added on your **My Business** page.
-  </Step>
-  <Step title="Pick a date">
-    Click the **Date** field to open a date picker. Select the appointment date.
-  </Step>
-  <Step title="Pick a time">
-    Click the **Time** field and select the appointment start time.
-  </Step>
-  <Step title="Choose a duration">
-    Select the expected duration from the **Duration** dropdown. Options range from **15 minutes** to **2 hours** in 15-minute increments.
-  </Step>
-  <Step title="Add a location (optional)">
-    If the appointment is at a specific location (e.g. the customer's home address), type it in the **Location** field. Leave blank if it is at your usual business address.
-  </Step>
-  <Step title="Add notes (optional)">
-    Use the **Notes** field for any additional information. For example: "Customer has a dog — call before arriving" or "Bring the replacement part from the van."
-  </Step>
-  <Step title="Click Create">
-    Click the **Create** button. The appointment appears on your dashboard, syncs to your connected calendar (Google or Outlook), and the customer receives an SMS confirmation if you have SMS enabled.
-  </Step>
-</Steps>
-
-<Warning>
-Manual appointments do not check your calendar for conflicts. Make sure the time slot is free before creating the appointment. The AI-booked appointments do check for conflicts automatically.
-</Warning>
-
-<Snippet file="snippets/footer.mdx" />
+<Card title="View your appointments" icon="arrow-up-right-from-square" href="https://app.closethecall.com/bookings">
+  Open the Appointments page to see upcoming bookings, create new ones, or manage existing ones.
+</Card>

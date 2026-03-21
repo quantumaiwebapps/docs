@@ -14,7 +14,7 @@ You can find your AI phone number by clicking **Phone** in the left sidebar of y
 
 Depending on your country and preferences, you will get one of these number types:
 
-<CardGroup cols={3}>
+<CardGroup cols={2}>
   <Card title="UK Mobile" icon="mobile">
     **Starts with +447**
 
@@ -30,11 +30,32 @@ Depending on your country and preferences, you will get one of these number type
 
     A US local number with your area code (e.g. +1 212 for New York, +1 310 for Los Angeles). Callers see a familiar local number.
   </Card>
+  <Card title="Australian" icon="globe">
+    **Starts with +61**
+
+    An Australian local or mobile number. Mobile numbers start with +614, landlines use area codes like +612 (Sydney) or +613 (Melbourne). Callers see a local Australian number.
+  </Card>
 </CardGroup>
 
 <Info>
 Your AI phone number is assigned during setup based on your location. We try to match your local area code so callers see a familiar number. If you need a specific area code, contact support.
 </Info>
+
+## How calls reach your AI
+
+```mermaid
+flowchart TD
+    A["Customer wants to call your business"] --> B{"How did they find your number?"}
+    B -->|"Website, Google, card"| C["Dials your AI number directly"]
+    B -->|"Existing business number"| D["Dials your business number"]
+    C --> E["AI picks up within 1 second"]
+    D --> F{"Do you answer?"}
+    F -->|"Yes"| G["You handle the call"]
+    F -->|"No answer / busy"| H["Call forwards to AI number"]
+    H --> E
+    E --> I["AI handles call: greeting, booking, FAQs, lead capture"]
+    I --> J["You get a notification with summary"]
+```
 
 ## Where to put your AI phone number
 
@@ -106,7 +127,7 @@ On the **Phone** page in your dashboard, you will find a **Share** section with:
 
 - **It is yours for as long as you are subscribed.** The number stays the same month to month.
 - **Callers see this number on their phone.** When the AI sends SMS confirmations, they come from this number too.
-- **You can have multiple numbers** on Growth and Domination plans (up to 2 and 5 respectively).
+- **You can have multiple numbers** on Growth and Scale plans (up to 2 and 5 respectively).
 - **Numbers are real phone numbers** registered with the phone network. They are not VoIP-only — they work with any phone.
 
 <Warning>
@@ -115,7 +136,7 @@ If you cancel your subscription, your AI phone number is released after 30 days.
 
 ## Getting a second number
 
-On Growth and Domination plans, you can provision additional numbers. This is useful if you want:
+On Growth and Scale plans, you can provision additional numbers. This is useful if you want:
 
 - A separate number for each location
 - Both a mobile and a landline number
@@ -123,4 +144,26 @@ On Growth and Domination plans, you can provision additional numbers. This is us
 
 Go to **Phone** in your dashboard and click **Add Number** to provision an additional line.
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently asked questions
+
+<Accordion title="Can I port my existing phone number to CloseTheCall?">
+Not at this time. We provision new numbers for you. The recommended approach is to keep your existing number and set up call forwarding so unanswered calls go to your AI number. This way you keep your existing number and get AI backup at the same time.
+</Accordion>
+
+<Accordion title="Can I change my area code after setup?">
+Yes. Contact support and we can provision a new number with a different area code. Your old number will be released, so make sure to update your website, Google listing, and any printed materials before switching.
+</Accordion>
+
+<Accordion title="What happens to my number if I cancel?">
+Your number is held for 30 days after cancellation. If you resubscribe within that window, you get the same number back. After 30 days, the number is released back to the pool and may be assigned to someone else.
+</Accordion>
+
+<Accordion title="Do I keep my number when changing plans?">
+Yes. Upgrading or downgrading your plan does not affect your phone number. It stays the same regardless of which plan you are on.
+</Accordion>
+
+---
+
+<Card title="View your AI phone number" icon="arrow-up-right-from-square" href="https://app.closethecall.com/phone">
+  Open the Phone page to see your number, share it, or provision additional lines.
+</Card>

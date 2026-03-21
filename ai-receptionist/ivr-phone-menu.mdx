@@ -14,6 +14,22 @@ When enabled, your AI receptionist greets the caller and offers a short menu of 
 
 The caller says "I need a price quote" and the AI immediately switches to pricing mode.
 
+## How the IVR flow works
+
+```mermaid
+flowchart TD
+    A["Caller dials your AI number"] --> B["AI answers with greeting + menu options"]
+    B --> C["Caller speaks their choice"]
+    C --> D{"AI understands intent"}
+    D -->|"Book appointment"| E["Switches to booking mode"]
+    D -->|"Get a quote"| F["Switches to pricing mode"]
+    D -->|"Opening hours"| G["Reads out your hours"]
+    D -->|"General question"| H["Answers from Knowledge Base"]
+    D -->|"Speak to someone"| I["Transfers to your phone"]
+    D -->|"Unclear / off-menu"| J["AI asks caller to clarify"]
+    J --> C
+```
+
 ## Why voice-based IVR?
 
 <CardGroup cols={2}>
@@ -52,6 +68,31 @@ The caller says "I need a price quote" and the AI immediately switches to pricin
     Click **Save**. Your AI receptionist will start offering the menu on the next call.
   </Step>
 </Steps>
+
+## IVR settings in your dashboard
+
+Here is what the IVR Phone Menu card looks like in your Receptionist Settings:
+
+```
++----------------------------------------------------------+
+|  IVR Phone Menu                              [Toggle: ON] |
++----------------------------------------------------------+
+|                                                          |
+|  Menu Options (3 of 5 max)                               |
+|                                                          |
+|  +----------------------------------------------------+  |
+|  | 1. Book an appointment           [Booking]    [x]  |  |
+|  +----------------------------------------------------+  |
+|  | 2. Get a price quote             [Pricing]    [x]  |  |
+|  +----------------------------------------------------+  |
+|  | 3. Speak to someone              [Transfer]   [x]  |  |
+|  +----------------------------------------------------+  |
+|                                                          |
+|  [+ Add Option]                                          |
+|                                                          |
+|  [Save Changes]                                          |
++----------------------------------------------------------+
+```
 
 ## Menu option actions
 
@@ -120,4 +161,26 @@ You can have a maximum of 5 menu options. If you need more than 5, combine relat
 You can enable or disable the phone menu at any time. Turning it off does not delete your menu options — they are saved and ready if you turn it back on.
 </Info>
 
-<Snippet file="snippets/footer.mdx" />
+## Frequently asked questions
+
+<Accordion title="Can I change menu options after going live?">
+Yes. Go to **Receptionist Settings**, scroll to the IVR Phone Menu card, and edit, reorder, or remove any option. Changes take effect on the very next call — no restart or redeploy needed.
+</Accordion>
+
+<Accordion title="What if the caller says something not on the menu?">
+The AI does not hang up or give an error. It uses intent matching — if the caller says something close to one of your options, it routes them there. If the request is genuinely unrelated to any menu item, the AI asks the caller to clarify or falls back to General Info mode to answer from your Knowledge Base.
+</Accordion>
+
+<Accordion title="What is the maximum number of menu items?">
+You can have up to **5 menu options**. This is a deliberate limit — research shows callers start forgetting options after 4 or 5 items. If you need more coverage, use the **General Info** action as a catch-all for anything not covered by specific options.
+</Accordion>
+
+<Accordion title="Can I combine IVR with Smart Routing (Squads)?">
+Yes. IVR and Smart Routing work independently. IVR controls what menu the caller hears, while Smart Routing controls which specialised AI assistant handles each topic. When both are enabled, the caller picks a menu option and is routed to the specialist assistant for that topic.
+</Accordion>
+
+---
+
+<Card title="Configure your IVR menu now" icon="arrow-up-right-from-square" href="https://app.closethecall.com/ai-config">
+  Open your Receptionist Settings to enable and customise your phone menu.
+</Card>

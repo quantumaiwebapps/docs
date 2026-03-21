@@ -1,14 +1,118 @@
 ---
 title: "Lead Board"
-description: "Track every potential customer from first call to completed job with the visual Kanban board and powerful table view."
+description: "Track every potential customer from first call to completed job with a Pipedrive-style Kanban board, pipeline metrics, and powerful table view."
 icon: "rectangle-vertical-history"
 ---
 
-Your Lead Board is where you track every person who calls your business. Think of it as a visual pipeline showing exactly where each potential customer stands — from the moment your AI receptionist captures their details to the moment you win (or lose) the job.
+Your Lead Board is where you track every person who calls your business. It's a visual pipeline -- inspired by Pipedrive -- showing exactly where each potential customer stands, from the moment your AI receptionist captures their details to the moment you win (or lose) the job.
 
-## Board View vs Table View
+Open it at [app.closethecall.com/leads](https://app.closethecall.com/leads).
 
-You have two ways to look at your leads. Switch between them using the toggle at the top of the page.
+## Pipeline Summary Bar
+
+At the top of the board, four metrics give you an instant health check of your pipeline:
+
+```
++-------------------+-------------------+-------------------+-------------------+
+| Pipeline Value    | Weighted Value    | Conversion Rate   | Avg Deal Value    |
+|    $12,450        |    $7,320         |    34%            |    $285           |
++-------------------+-------------------+-------------------+-------------------+
+```
+
+| Metric | What It Means |
+|--------|--------------|
+| **Pipeline Value** | Total value of all active leads (not Won or Lost). |
+| **Weighted Value** | Pipeline value adjusted by stage probability. A lead in QUOTED is more likely to convert than one in NEW. |
+| **Conversion Rate** | Percentage of leads that reach WON out of all leads created this period. |
+| **Avg Deal Value** | Average value of WON leads. Helps you understand your typical job size. |
+
+## Board View -- The Kanban
+
+The default view is a 6-column Kanban board. Each column represents a stage in your sales pipeline.
+
+```
+| NEW         | CONTACTED   | QUOTED      | BOOKED      | WON         | LOST        |
+|-------------|-------------|-------------|-------------|-------------|-------------|
+| * J. Smith  | * S. Patel  | * M. Jones  | * R. Brown  | * A. Lee    | * T. Clark  |
+|   Boiler    |   Rewire    |   Bathroom  |   Haircut   |   Roof fix  |   No reply  |
+|   HOT       |   WARM      |   WARM      |   HOT       |   $450      |   COLD      |
+|             |             |             |             |             |             |
+| * D. Kim    | * L. Chen   |             | * F. Ali    |             |             |
+|   Leak      |   AC unit   |             |   Colour    |             |             |
+|   WARM      |   COOL      |             |   WARM      |             |             |
++-------------+-------------+-------------+-------------+-------------+-------------+
+```
+
+### The Six Columns
+
+| Column | What It Means | Example |
+|--------|--------------|---------|
+| **NEW** | Just came in. You haven't looked at it yet. | Someone called about a boiler repair 10 minutes ago. |
+| **CONTACTED** | You've made contact -- called back, texted, or emailed. | You called them back and discussed the job. |
+| **QUOTED** | You've sent a price or quote. Waiting for their decision. | Quote sent for a bathroom refit. |
+| **BOOKED** | Appointment confirmed. Job scheduled. | Haircut booked for Thursday at 2pm. |
+| **WON** | Job completed. Revenue earned. | Roof repair done, invoice paid. |
+| **LOST** | They went elsewhere or stopped responding. | No reply after 3 follow-ups. |
+
+### Drag-and-Drop
+
+Click and hold any lead card, then drag it to the column that matches its current status. The change is **instant and optimistic** -- the UI updates immediately while the save happens in the background. No loading spinners, no page refreshes.
+
+<Tip>
+Drag-and-drop also works on mobile and tablet. Tap and hold, then drag.
+</Tip>
+
+## Temperature Dots
+
+Every lead card shows a coloured temperature dot based on the AI's scoring of the call.
+
+| Dot | Temperature | Score | What It Means |
+|-----|------------|-------|---------------|
+| Red | **HOT** | 80-100 | Ready to buy now. Call them back immediately. |
+| Orange | **WARM** | 60-79 | Interested but needs a nudge. Follow up today. |
+| Yellow | **COOL** | 40-59 | Might be shopping around. Worth a follow-up this week. |
+| Blue | **COLD** | 0-39 | Low intent or just asking questions. Check in later. |
+
+<Tip>
+Focus your time on HOT and WARM leads first. Businesses that call back within 5 minutes are 21x more likely to win the job.
+</Tip>
+
+## How Lead Scoring Works
+
+The AI evaluates 7 factors from each call to calculate the temperature:
+
+1. **Urgency** -- Did they say "emergency," "ASAP," or "today"?
+2. **Service match** -- Does the service they need match what you offer?
+3. **Budget signals** -- Did they ask about pricing without flinching?
+4. **Timeline** -- Do they want something done this week or "sometime next year"?
+5. **Decision authority** -- Are they the homeowner or calling on someone else's behalf?
+6. **Contact completeness** -- Did they provide name, phone, email, and address?
+7. **Engagement** -- How long was the call? Did they ask detailed questions?
+
+<Info>
+Lead scores update automatically. You never need to calculate anything yourself.
+</Info>
+
+## Table View
+
+Switch to Table View using the toggle at the top of the page. Table view gives you:
+
+- **Search** -- Type a name, phone number, or service to find a lead instantly
+- **Sort** -- Click any column header (Name, Date, Temperature, Status, Value) to sort
+- **Filter** -- Use dropdowns to show only specific stages or temperatures
+- **Bulk actions** -- Select multiple leads with checkboxes to move them all at once
+
+```
++--------+---------------+----------+--------+--------+---------+
+| Temp   | Name          | Service  | Stage  | Value  | Date    |
++--------+---------------+----------+--------+--------+---------+
+| * HOT  | J. Smith      | Boiler   | NEW    | $120   | 2h ago  |
+| * WARM | S. Patel      | Rewire   | CONTD  | $800   | 5h ago  |
+| * WARM | M. Jones      | Bathroom | QUOTED | $3,200 | 1d ago  |
+| * COOL | L. Chen       | AC unit  | CONTD  | $450   | 2d ago  |
+| * COLD | T. Clark      | Enquiry  | LOST   | --     | 5d ago  |
++--------+---------------+----------+--------+--------+---------+
+```
 
 <CardGroup cols={2}>
   <Card title="Board View" icon="columns-3">
@@ -18,67 +122,6 @@ You have two ways to look at your leads. Switch between them using the toggle at
     Searchable, sortable list. Better for finding specific leads or working through a long list. Great on mobile.
   </Card>
 </CardGroup>
-
-## The Five Columns
-
-Every lead sits in one of five columns. Drag a lead card from one column to the next as you work with them.
-
-| Column | What It Means | Example |
-|--------|--------------|---------|
-| **New** | Just came in. You haven't looked at it yet. | Someone called about a boiler repair 10 minutes ago. |
-| **In Progress** | You've made contact or sent a quote. | You called them back and discussed the job. |
-| **Qualified** | They're serious and ready to book. | They've agreed on a price and want to schedule. |
-| **Won** | Job booked or completed. Money in the bank. | Appointment confirmed, deposit paid. |
-| **Lost** | They went elsewhere or stopped responding. | No reply after 3 follow-ups. |
-
-<Steps>
-  <Step title="Drag to move a lead">
-    Click and hold any lead card, then drag it to the column that matches its current status. The change saves automatically.
-  </Step>
-  <Step title="Click for details">
-    Click any lead card to open the full detail view — call recording, notes, contact info, and quick actions.
-  </Step>
-</Steps>
-
-## Temperature Badges
-
-Your AI receptionist scores every lead automatically based on the call. You'll see a coloured badge on each lead card.
-
-| Badge | Temperature | What It Means |
-|-------|------------|---------------|
-| 🔴 **HOT** | 80-100 | Ready to buy now. Call them back immediately. |
-| 🟠 **WARM** | 60-79 | Interested but needs a nudge. Follow up today. |
-| 🟡 **COOL** | 40-59 | Might be shopping around. Worth a follow-up this week. |
-| 🔵 **COLD** | 0-39 | Low intent or just asking questions. Check in later. |
-
-<Tip>
-Focus your time on HOT and WARM leads first. These are the people most likely to book right now. A quick callback within 5 minutes can double your conversion rate.
-</Tip>
-
-## How Lead Scoring Works
-
-The AI looks at 7 factors from the call to calculate each lead's score:
-
-1. **Urgency** — Did they say "emergency," "ASAP," or "today"? Higher urgency = higher score.
-2. **Service match** — Does the service they need match what you offer?
-3. **Budget signals** — Did they ask about pricing without flinching, or are they price-shopping?
-4. **Timeline** — Do they want something done this week or "sometime next year"?
-5. **Decision authority** — Are they the homeowner/decision-maker, or calling on someone else's behalf?
-6. **Contact completeness** — Did they provide their name, phone, email, and address?
-7. **Engagement** — How long was the call? Did they ask detailed questions?
-
-<Info>
-Lead scores update automatically. You never need to calculate anything yourself. The AI does it all during the call.
-</Info>
-
-## Using Table View
-
-Switch to Table View when you need to:
-
-- **Search** — Type a name, phone number, or service into the search bar to find a specific lead instantly.
-- **Sort** — Click any column header (Name, Date, Temperature, Status) to sort ascending or descending.
-- **Filter** — Use the status dropdown to show only New leads, only HOT leads, or any combination.
-- **Bulk actions** — Select multiple leads using the checkboxes to move them all to a new status at once.
 
 ## Quick Actions on Each Lead
 
@@ -102,7 +145,7 @@ Click any lead to open its detail panel. From there you can:
 ## Tips for Managing Your Board
 
 <Accordion title="How often should I check my lead board?">
-  At minimum, check it every morning and every evening. HOT leads should be contacted within 5 minutes if possible — businesses that call back within 5 minutes are 21x more likely to win the job.
+  At minimum, check it every morning and every evening. HOT leads should be contacted within 5 minutes if possible.
 </Accordion>
 
 <Accordion title="What if a lead calls back again?">
@@ -110,11 +153,13 @@ Click any lead to open its detail panel. From there you can:
 </Accordion>
 
 <Accordion title="Can I add leads manually?">
-  Yes. Click the **+ New Lead** button at the top of the board to create a lead by hand — useful for walk-ins, website enquiries, or referrals that didn't come through a phone call.
+  Yes. Click the **+ New Lead** button at the top of the board to create a lead by hand -- useful for walk-ins, website enquiries, or referrals.
 </Accordion>
 
 <Accordion title="How do I delete a lead?">
-  Open the lead detail panel and click **Delete** at the bottom. This is permanent and cannot be undone. If you just lost the job, move the lead to the **Lost** column instead — that way you keep the history.
+  Open the lead detail panel and click **Delete** at the bottom. This is permanent. If you just lost the job, move the lead to **Lost** instead -- that way you keep the history.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+<Accordion title="Can I assign a value to a lead?">
+  Yes. Click any lead to open the detail panel and enter a value. This feeds into the Pipeline Value and Weighted Value calculations in the summary bar.
+</Accordion>

@@ -23,6 +23,21 @@ Connecting Google Calendar gives your AI receptionist access to your real schedu
   </Card>
 </CardGroup>
 
+## How the sync works
+
+```mermaid
+flowchart LR
+    A["Caller asks to book"] --> B["AI calls check_availability"]
+    B --> C["Google Calendar API: fetch busy times"]
+    C --> D["AI offers open slots to caller"]
+    D --> E["Caller picks a time"]
+    E --> F["AI calls book_appointment"]
+    F --> G["Appointment saved in CloseTheCall"]
+    F --> H["Calendar event created in Google"]
+    G <--> H
+    H --> I["Customer gets SMS confirmation"]
+```
+
 ## How to Connect
 
 <Steps>
@@ -96,4 +111,8 @@ After disconnecting, your AI receptionist will fall back to using your configure
   Yes. Google Workspace accounts work exactly the same way. Your Workspace admin may need to approve the CloseTheCall app in the Google Admin Console if your organisation restricts third-party apps.
 </Accordion>
 
-<Snippet file="snippets/footer.mdx" />
+---
+
+<Card title="Connect Google Calendar" icon="arrow-up-right-from-square" href="https://app.closethecall.com/integrations">
+  Open the Integrations page to connect your Google Calendar in one click.
+</Card>
