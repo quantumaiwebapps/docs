@@ -12,7 +12,7 @@ Top-level metrics:
 - **Total Calls** — calls handled by all client AI receptionists
 - **Total Leads** — leads captured across all clients
 - **Total Appointments** — bookings made by all client AIs
-- **Revenue** — total client deposits over the selected period
+- **Revenue** — your agency subscription status and client activity metrics
 
 Use the **date range selector** (7 days, 30 days, 90 days) to adjust the time window.
 
@@ -20,7 +20,7 @@ Use the **date range selector** (7 days, 30 days, 90 days) to adjust the time wi
 
 ## Revenue Trend Chart
 
-A bar chart showing monthly revenue over the past 6 months. Revenue is calculated from client wallet deposits (before the 5% platform fee is deducted).
+A bar chart showing monthly activity over the past 6 months. Revenue tracking shows your agency subscription status and client activity metrics.
 
 Hover over any bar to see the exact amount and client count for that month.
 
@@ -80,7 +80,7 @@ Every client receives a daily health score from 0 to 100, calculated from 6 weig
 | **Call Volume** | 30% | Number of calls in the last 7 days vs the client's historical average |
 | **Lead Conversion** | 20% | Percentage of calls that result in a captured lead |
 | **Knowledge Base** | 15% | Intelligence score — category coverage and article quality |
-| **Wallet Balance** | 15% | Current balance relative to weekly usage (how many days of calls can they afford) |
+| **Account Activity** | 15% | Recent client engagement — logins, settings changes, and platform usage |
 | **Response Rate** | 10% | Percentage of calls answered by AI (vs missed or failed) |
 | **Recent Activity** | 10% | Last login date, settings changes, knowledge base updates |
 
@@ -102,12 +102,12 @@ Scores map to four temperature labels:
   <Card title="At Risk" icon="face-meh">
     **40–59**
 
-    Declining. Check wallet, call volume, or KB gaps.
+    Declining. Check call volume, KB gaps, or client engagement.
   </Card>
   <Card title="Critical" icon="face-frown">
     **0–39**
 
-    Immediate attention. May be inactive or out of funds.
+    Immediate attention. May be inactive or misconfigured.
   </Card>
 </CardGroup>
 
@@ -123,7 +123,7 @@ Configure automated alerts so you are notified when clients need attention. Navi
 
 | Alert | Default Threshold | What Triggers It |
 |-------|-------------------|-----------------|
-| **Low Wallet** | Balance below $10 | Client's wallet balance drops below your threshold |
+| **Low Activity** | No calls in 3 days | Client's call volume drops below your threshold |
 | **Inactive** | No calls in 7 days | Client has not received any calls in N days |
 | **Usage Limit** | 80% of plan minutes | Client has used N% of their included minutes |
 | **Health Drop** | Score drops below 40 | Client's health score falls into Critical range |
@@ -132,7 +132,7 @@ Configure automated alerts so you are notified when clients need attention. Navi
 
 Each alert type has two settings:
 - **Enabled/Disabled toggle** — turn the alert on or off
-- **Threshold** — the value that triggers the alert (e.g., $10 for low wallet, 7 days for inactive)
+- **Threshold** — the value that triggers the alert (e.g., 3 days for low activity, 7 days for inactive)
 
 ### How Alerts Are Delivered
 
@@ -150,7 +150,7 @@ Alerts are checked daily at 9:00 AM ET. All triggered alerts are batched into a 
 Click **Download CSV** on the analytics page to export a spreadsheet containing:
 - Client name, email, and plan
 - Call count, lead count, appointment count
-- Total deposited, total used, current balance
+- Total calls handled, leads captured
 - Health score and temperature
 - Last activity date
 
