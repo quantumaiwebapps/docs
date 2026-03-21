@@ -1,0 +1,79 @@
+---
+title: "Chat Widget Setup"
+description: "Add an AI chat widget to your website in under 5 minutes. Your AI answers questions, captures leads, and books appointments — via text."
+icon: "message-bot"
+---
+
+## What the Chat Widget Does
+
+The chat widget puts your AI receptionist on your website as a text chat bubble. Visitors can ask questions, request quotes, and book appointments without picking up the phone. It uses the same knowledge base and booking logic as your phone AI.
+
+<Tip>
+  The chat widget is included in all plans at no extra cost. It uses the same AI knowledge as your phone receptionist.
+</Tip>
+
+## Setting Up Your Chat Widget
+
+Go to **Chat Widget** in the left sidebar. You will see a 3-step wizard.
+
+<Steps>
+  <Step title="Customise">
+    Set the look and feel of your widget:
+    - **Primary colour** — matches your brand (hex code or colour picker)
+    - **Position** — bottom-right or bottom-left of the screen
+    - **Greeting message** — what the widget says when a visitor opens it (e.g. "Hi! How can I help you today?")
+    - **Widget title** — your business name shown in the chat header
+
+    A live preview appears on the right so you can see exactly how it will look.
+  </Step>
+  <Step title="Add Domains">
+    Add every domain where the widget will appear. This is a security whitelist — the widget will only load on these domains.
+
+    Example domains:
+    - `yourbusiness.com`
+    - `www.yourbusiness.com`
+
+    <Warning>
+      If you forget to add a domain, the widget will not load on that site. Make sure to include both `www` and non-`www` versions if you use both.
+    </Warning>
+  </Step>
+  <Step title="Install">
+    Copy the embed script tag shown on screen. Paste it into your website, just before the closing `</body>` tag.
+
+    ```html
+    <script src="https://api.closethecall.com/widget/YOUR_TOKEN/embed.js" async></script>
+    ```
+
+    If you use a website builder like Wix, Squarespace, or WordPress, paste this into the "custom code" or "header/footer scripts" section.
+  </Step>
+</Steps>
+
+## How It Works for Your Visitors
+
+1. A small chat bubble appears in the corner of your website
+2. The visitor clicks it and types a message
+3. Your AI responds instantly using your knowledge base
+4. The AI can capture lead details, check appointment availability, and book appointments — all through text
+5. The conversation is saved and appears in your **Conversations** page under the WEBCHAT channel
+
+## Rate Limiting
+
+To prevent abuse, each visitor is limited to **20 messages per minute**. This is more than enough for a normal conversation and protects against bots spamming your widget.
+
+## Viewing Chat Conversations
+
+All chat widget conversations appear on your **Conversations** page. They are labelled as the **WEBCHAT** channel so you can filter and find them easily.
+
+<Info>
+  If a visitor provides their name, email, or phone number during the chat, a lead is automatically created on your Leads page.
+</Info>
+
+<Accordion title="Common website builder instructions">
+  **WordPress**: Go to Appearance > Theme File Editor > footer.php. Paste the script before `</body>`. Or use a plugin like "Insert Headers and Footers".
+
+  **Wix**: Go to Settings > Custom Code > Add Custom Code. Paste the script, set placement to "Body - end".
+
+  **Squarespace**: Go to Settings > Advanced > Code Injection. Paste into the "Footer" field.
+
+  **Shopify**: Go to Online Store > Themes > Edit Code > theme.liquid. Paste before `</body>`.
+</Accordion>

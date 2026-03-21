@@ -1,0 +1,83 @@
+---
+title: "Proactive Outbound Calls"
+description: "Let your AI automatically follow up with leads, chase quotes, and check in after appointments."
+icon: "phone-arrow-up-right"
+---
+
+## What Proactive Outbound Is
+
+Proactive outbound lets your AI receptionist make follow-up calls automatically — without you lifting a finger. Your AI calls leads and customers at the right time based on rules you set.
+
+<CardGroup cols={3}>
+  <Card title="Lead Follow-Up" icon="user-clock">
+    Automatically call back leads who enquired but did not book.
+  </Card>
+  <Card title="Quote Follow-Up" icon="file-invoice">
+    Chase up customers who received a quote but have not responded.
+  </Card>
+  <Card title="Satisfaction Check" icon="face-smile">
+    Call customers after an appointment to check they are happy.
+  </Card>
+</CardGroup>
+
+## How to Enable It
+
+<Steps>
+  <Step title="Go to Automations">
+    Click **Automations** in the left sidebar.
+  </Step>
+  <Step title="Find Proactive Outbound">
+    Look for the **Proactive Outbound** card.
+  </Step>
+  <Step title="Toggle it on">
+    Switch the toggle to enabled.
+  </Step>
+  <Step title="Configure your rules">
+    Set the timing for each follow-up type:
+
+    - **Lead follow-up** — call after N days if no booking made (default: 2 days)
+    - **Quote follow-up** — call after N days if no response to quote (default: 3 days)
+    - **Satisfaction check** — call N days after a completed appointment (default: 1 day)
+  </Step>
+  <Step title="Save">
+    Click **Save**. Your AI will start making follow-up calls based on your rules.
+  </Step>
+</Steps>
+
+## Safety Guardrails
+
+Proactive outbound has built-in limits to protect your reputation and your plan minutes:
+
+| Rule | Limit |
+|------|-------|
+| Maximum calls per day | **5 per contact** across all automation types |
+| Calling hours | **Business hours only** — never early morning or late night |
+| Minutes used | Counts toward your **included plan minutes** |
+| Duplicate prevention | A contact will not be called for the same reason twice |
+
+<Warning>
+  Outbound calls use your included plan minutes. If you are close to your limit, disable proactive outbound or increase your plan to avoid overages.
+</Warning>
+
+## What the AI Says
+
+Your AI uses the context of why it is calling:
+
+- **Lead follow-up**: "Hi, I'm calling from [Business Name]. You enquired about [service] recently and I wanted to check if you'd like to go ahead and book."
+- **Quote follow-up**: "Hi, I'm calling from [Business Name]. We sent you a quote for [service] and I wanted to see if you had any questions."
+- **Satisfaction check**: "Hi, I'm calling from [Business Name]. You had an appointment with us recently and I just wanted to check everything went well."
+
+The AI then has a natural conversation, can answer questions, and book follow-up appointments if needed.
+
+<Tip>
+  Satisfaction check calls are a great way to get Google reviews. If the customer says they are happy, the AI can ask them to leave a review.
+</Tip>
+
+## Viewing Results
+
+All outbound calls appear in your **Call History** with an "Outbound" label. You can see:
+
+- Which automation triggered the call
+- Whether the customer answered
+- The call transcript and outcome
+- Any appointments or leads created from the follow-up

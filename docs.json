@@ -47,7 +47,10 @@
           "ai-receptionist/knowledge-base",
           "ai-receptionist/smart-routing",
           "ai-receptionist/ivr-phone-menu",
-          "ai-receptionist/testing"
+          "ai-receptionist/testing",
+          "ai-receptionist/bilingual",
+          "ai-receptionist/email-replies",
+          "ai-receptionist/hipaa"
         ]
       },
       {
@@ -55,7 +58,8 @@
         "pages": [
           "phone-routing/ai-phone-number",
           "phone-routing/call-forwarding-setup",
-          "phone-routing/routing-modes"
+          "phone-routing/routing-modes",
+          "phone-routing/after-hours"
         ]
       },
       {
@@ -74,7 +78,14 @@
       {
         "group": "Quotes & Invoices",
         "pages": [
-          "quotes-invoices/how-quotes-work"
+          "quotes-invoices/how-quotes-work",
+          "quotes-invoices/quote-settings"
+        ]
+      },
+      {
+        "group": "Voicemails",
+        "pages": [
+          "voicemails/overview"
         ]
       },
       {
@@ -84,15 +95,35 @@
         ]
       },
       {
+        "group": "Chat Widget",
+        "pages": [
+          "chat-widget/setup"
+        ]
+      },
+      {
+        "group": "Campaigns",
+        "pages": [
+          "campaigns/overview"
+        ]
+      },
+      {
+        "group": "Locations",
+        "pages": [
+          "locations/multi-location"
+        ]
+      },
+      {
         "group": "Automations",
         "pages": [
-          "automations/overview"
+          "automations/overview",
+          "automations/proactive-outbound"
         ]
       },
       {
         "group": "Integrations",
         "pages": [
           "integrations/google-calendar",
+          "integrations/outlook-calendar",
           "integrations/crm-hubspot-salesforce-ghl",
           "integrations/zapier"
         ]
@@ -101,7 +132,8 @@
         "group": "Settings & Account",
         "pages": [
           "settings/account-security",
-          "settings/team-management"
+          "settings/team-management",
+          "settings/notifications"
         ]
       },
       {

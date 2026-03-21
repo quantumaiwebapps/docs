@@ -1,0 +1,72 @@
+---
+title: "Outlook Calendar"
+description: "Connect Outlook Calendar so your AI receptionist can check your availability and add bookings automatically."
+icon: "calendar"
+---
+
+## What It Does
+
+When you connect Outlook Calendar, your AI receptionist can:
+
+- **Check your real availability** before offering appointment times to callers
+- **Create calendar events** automatically when an appointment is booked
+- **Avoid double-bookings** by reading your existing calendar entries
+
+This works the same way as the Google Calendar integration, but for Microsoft Outlook and Office 365 users.
+
+## Connecting Outlook Calendar
+
+<Steps>
+  <Step title="Go to Integrations">
+    Click **Integrations** in the left sidebar.
+  </Step>
+  <Step title="Find Outlook Calendar">
+    Scroll to the Outlook Calendar card and click **Connect**.
+  </Step>
+  <Step title="Sign in to Microsoft">
+    A Microsoft login window will appear. Sign in with the Microsoft account that has your business calendar.
+  </Step>
+  <Step title="Grant permissions">
+    Microsoft will ask you to allow CloseTheCall to read and write calendar events. Click **Accept**.
+  </Step>
+  <Step title="Confirm connection">
+    You will be redirected back to CloseTheCall. The Outlook Calendar card will show a green "Connected" badge.
+  </Step>
+</Steps>
+
+<Tip>
+  Use a shared calendar if multiple people manage your bookings. This way, the AI sees everyone's availability in one place.
+</Tip>
+
+## What Syncs
+
+| Direction | What happens |
+|-----------|-------------|
+| **CloseTheCall to Outlook** | When your AI books an appointment, a calendar event is created in Outlook with the customer name, service, and time. |
+| **Outlook to CloseTheCall** | When checking availability, the AI reads your Outlook calendar to see which times are already taken. |
+
+<Info>
+  Only events on your primary calendar are checked for availability. If you use multiple calendars, make sure your appointments are on the primary one.
+</Info>
+
+## Disconnecting
+
+Go to **Integrations**, find the Outlook Calendar card, and click **Disconnect**. Your existing calendar events will not be deleted, but new appointments will no longer sync.
+
+## Troubleshooting
+
+<Accordion title="Connection fails or shows an error">
+  Make sure you are signing in with a Microsoft 365 or Outlook.com account. Older on-premise Exchange accounts are not supported. Try clearing your browser cookies and connecting again.
+</Accordion>
+
+<Accordion title="AI offers times that are already booked">
+  Check that the busy events are on your **primary** calendar, not a secondary or shared calendar. The AI only checks the primary calendar for conflicts.
+</Accordion>
+
+<Accordion title="Calendar events not appearing">
+  After booking, it can take up to 30 seconds for the event to appear in Outlook. If events consistently do not appear, disconnect and reconnect the integration.
+</Accordion>
+
+<Accordion title="Wrong time zone on events">
+  Make sure your time zone is set correctly in both CloseTheCall (My Business page) and in Outlook settings. Mismatched time zones can cause events to appear at the wrong time.
+</Accordion>

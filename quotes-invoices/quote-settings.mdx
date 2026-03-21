@@ -1,0 +1,103 @@
+---
+title: "Quote Settings"
+description: "Configure how your AI handles quotes — auto-send, validity period, disclaimers, and the review process."
+icon: "file-invoice-dollar"
+---
+
+## What Quote Settings Control
+
+When your AI receptionist gives a customer a price estimate during a call, it can optionally send a formal quote by SMS or email. These settings control when and how that happens.
+
+## Auto-Send Quotes
+
+By default, auto-send is **off**. When enabled, your AI will automatically send a quote to the customer after a call if:
+
+1. The AI is **confident** about the price (based on your knowledge base)
+2. The service mentioned **matches** a service in your knowledge base with pricing
+
+<Steps>
+  <Step title="Go to Quotes & Invoices">
+    Click **Quotes & Invoices** in the left sidebar, then open **Settings**.
+  </Step>
+  <Step title="Toggle Auto-Send">
+    Switch **Auto-Send Quotes** to on.
+  </Step>
+  <Step title="Save">
+    Click **Save**. Your AI will now send quotes automatically when conditions are met.
+  </Step>
+</Steps>
+
+<Info>
+  When auto-send is off, quotes are created as drafts. You can review and send them manually from the Quotes page.
+</Info>
+
+## Quote Validity Period
+
+Set how many days a quote remains valid. The default is **14 days**.
+
+The validity period is shown on the quote sent to the customer, for example: "This quote is valid for 14 days from the date of issue."
+
+You can change this to any number of days that suits your business. Common choices:
+
+| Business Type | Suggested Validity |
+|--------------|-------------------|
+| Emergency services (plumbing, locksmith) | 7 days |
+| General trades (electrician, HVAC) | 14 days |
+| Larger projects (renovation, landscaping) | 30 days |
+
+## Custom Disclaimer Text
+
+Add a disclaimer that appears at the bottom of every quote. This is useful for:
+
+- Terms and conditions references
+- Liability limitations
+- Payment terms
+- Warranty information
+
+For example:
+> "All prices are estimates and may vary based on final assessment. Payment due on completion. 12-month warranty on all work."
+
+<Steps>
+  <Step title="Enter your disclaimer">
+    In the Quote Settings page, find the **Disclaimer** text area and type your text.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The disclaimer will appear on all future quotes.
+  </Step>
+</Steps>
+
+## How Auto-Send Works
+
+When auto-send is enabled, this is what happens after a call:
+
+<Steps>
+  <Step title="Call ends">
+    Your AI finishes the call with the customer.
+  </Step>
+  <Step title="AI evaluates confidence">
+    The AI checks whether it discussed pricing and whether the prices match your knowledge base. If confidence is low (e.g. the customer described an unusual job), the quote is saved as a **draft** for your review.
+  </Step>
+  <Step title="Quote created">
+    A quote is generated with the service, price, validity period, and your disclaimer.
+  </Step>
+  <Step title="Sent to customer">
+    The quote is sent via SMS (and email if the customer provided one).
+  </Step>
+</Steps>
+
+<Warning>
+  Auto-send only works when pricing information is in your knowledge base. If your AI does not have pricing for a service, it will create a draft instead of sending automatically.
+</Warning>
+
+## Draft Review Process
+
+When auto-send is off, or when the AI is not confident enough to send automatically:
+
+1. The quote appears on your **Quotes** page as a **Draft**
+2. You can review the details, adjust the price if needed, and add line items
+3. Click **Send** to deliver it to the customer
+4. The customer receives the quote by SMS and/or email
+
+<Tip>
+  Even with auto-send on, we recommend checking your Quotes page regularly. Some quotes will be saved as drafts when the AI is unsure, and those need your attention.
+</Tip>

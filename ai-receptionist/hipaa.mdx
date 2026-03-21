@@ -1,0 +1,92 @@
+---
+title: "HIPAA Compliance Mode"
+description: "Protect patient data with automatic PHI redaction, data retention controls, and recording consent."
+icon: "shield-check"
+---
+
+## Who Needs This
+
+HIPAA mode is designed for businesses that handle protected health information (PHI):
+
+- **Dental practices**
+- **Medical offices**
+- **Therapy and counselling practices**
+- **Physiotherapy clinics**
+- **Any healthcare-adjacent business**
+
+<Warning>
+  If you handle patient health data in any capacity, you should enable HIPAA mode. Non-compliance with HIPAA can result in significant fines.
+</Warning>
+
+## What HIPAA Mode Does
+
+When enabled, HIPAA mode adds three layers of protection:
+
+### 1. Automatic PHI Redaction
+
+Sensitive information is automatically removed from call transcripts **before** they are stored. The following patterns are detected and redacted:
+
+| Data Type | Example | Stored As |
+|-----------|---------|-----------|
+| Social Security Numbers | 123-45-6789 | [SSN REDACTED] |
+| Credit card numbers | 4111 1111 1111 1111 | [CARD REDACTED] |
+| Dates of birth | born on March 5th 1990 | [DOB REDACTED] |
+| Medical record numbers | MRN 12345678 | [MRN REDACTED] |
+| Insurance ID numbers | Policy ABC-123456 | [INSURANCE REDACTED] |
+
+<Info>
+  Redaction happens automatically in real time. You do not need to manually review transcripts. The original unredacted data is never stored.
+</Info>
+
+### 2. Data Retention Period
+
+Choose how long call data (transcripts, recordings, summaries) is kept:
+
+- **30 days**
+- **60 days**
+- **90 days**
+- **180 days**
+- **365 days**
+
+After the retention period, data is automatically and permanently deleted. This helps you meet data minimisation requirements.
+
+### 3. Recording Consent Disclaimer
+
+When enabled, every call begins with a short consent disclaimer before the AI greeting, for example:
+
+> "This call may be recorded for quality and training purposes."
+
+You can customise the exact wording to match your compliance requirements.
+
+## Enabling HIPAA Mode
+
+<Steps>
+  <Step title="Go to Receptionist Settings">
+    Click **Receptionist Settings** in the left sidebar.
+  </Step>
+  <Step title="Find the HIPAA section">
+    Scroll down to the **HIPAA Compliance** card.
+  </Step>
+  <Step title="Toggle HIPAA mode on">
+    Switch the toggle to enabled. You will see a confirmation warning.
+  </Step>
+  <Step title="Set your data retention period">
+    Choose how many days to keep call data. We recommend 90 days for most healthcare businesses.
+  </Step>
+  <Step title="Enable recording consent (recommended)">
+    Toggle on recording consent and review the default disclaimer text. Edit it if your compliance team requires specific wording.
+  </Step>
+  <Step title="Save">
+    Click **Save**. HIPAA protections take effect on all future calls immediately.
+  </Step>
+</Steps>
+
+<Tip>
+  HIPAA mode does not affect how your AI handles calls — it only changes how data is stored and what is said at the start of the call. Your AI will still book appointments, capture leads, and answer questions as normal.
+</Tip>
+
+## Important Notes
+
+- HIPAA mode applies to **future calls only**. Existing transcripts are not retroactively redacted.
+- This feature helps you comply with HIPAA, but it is not a substitute for a full compliance programme. Consult your compliance officer.
+- Recording consent is a separate toggle — you can use PHI redaction without the consent disclaimer, or vice versa.
