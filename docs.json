@@ -36,7 +36,8 @@
           "getting-started/call-forwarding",
           "getting-started/billing-plans",
           "getting-started/my-business",
-          "getting-started/glossary"
+          "getting-started/glossary",
+          "getting-started/faq"
         ]
       },
       {
@@ -92,9 +93,16 @@
         ]
       },
       {
+        "group": "Call Management",
+        "pages": [
+          "calls/call-detail"
+        ]
+      },
+      {
         "group": "Conversations",
         "pages": [
-          "conversations/overview"
+          "conversations/overview",
+          "conversations/sms-setup"
         ]
       },
       {
@@ -143,7 +151,8 @@
       {
         "group": "Troubleshooting",
         "pages": [
-          "troubleshooting/common-issues"
+          "troubleshooting/common-issues",
+          "troubleshooting/error-scenarios"
         ]
       },
       {

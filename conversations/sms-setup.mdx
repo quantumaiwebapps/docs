@@ -1,0 +1,128 @@
+---
+title: "SMS & Text Messaging Setup"
+description: "How to enable SMS auto-reply, send booking confirmations, and manage customer text conversations"
+icon: "message-sms"
+---
+
+## How SMS Works
+
+Your AI phone number can send and receive text messages through Twilio. When a customer texts your AI number, the AI reads the message and replies using the same Knowledge Base it uses for phone calls.
+
+This means your AI gives consistent answers whether someone calls or texts.
+
+---
+
+## Enabling SMS Auto-Reply
+
+<Steps>
+  <Step title="Go to Conversations">
+    Click **Conversations** in the sidebar.
+  </Step>
+  <Step title="Toggle SMS Auto-Reply ON">
+    In the page header, you'll see the **"SMS Auto-Reply"** toggle. Turn it **ON** (green).
+  </Step>
+  <Step title="That's it">
+    Your AI number will now automatically reply to incoming text messages. No further configuration needed.
+  </Step>
+</Steps>
+
+<Info>
+SMS auto-reply uses the same AI knowledge as your phone receptionist. If you've set up your Knowledge Base for calls, SMS replies are ready to go.
+</Info>
+
+---
+
+## What Happens When a Customer Texts
+
+1. Customer sends a text to your AI phone number
+2. The AI reads the message and generates a reply based on your Knowledge Base
+3. The reply is sent back as an SMS from your AI number
+4. The full conversation appears on your **Conversations** page
+5. You can **take over** the conversation at any time by typing a manual reply
+
+---
+
+## Automatic SMS Confirmations
+
+When the AI books an appointment during a phone call, an SMS confirmation is sent automatically to the customer. This includes:
+
+- Business name
+- Appointment date and time
+- Service booked
+
+**No setup needed** — this happens automatically when "Book Appointments" is enabled in Receptionist Settings.
+
+The confirmation SMS is sent from your AI phone number (not a generic number), so the customer sees a consistent sender.
+
+---
+
+## SMS Opt-Out
+
+Customers can opt out of SMS at any time:
+
+- Customer texts **STOP** to your AI number
+- They're immediately removed from all future SMS messages
+- An **"Opted Out"** badge appears on their conversation
+- The customer can text **START** to re-subscribe at any time
+
+<Warning>
+You cannot manually override an opt-out. This is required by law (TCPA in the US, PECR in the UK). The customer must text START themselves to re-subscribe.
+</Warning>
+
+---
+
+## Checking Opt-Out Status
+
+1. Go to **Conversations** in the sidebar
+2. Look for the **"Opted Out"** badge next to the customer's conversation
+3. Opted-out customers still appear in your Leads list — you can see their info and call history, but SMS won't be sent to them
+
+---
+
+## Troubleshooting SMS
+
+### SMS not sending
+
+| Possible Cause | Solution |
+|----------------|----------|
+| SMS Auto-Reply is OFF | Go to **Conversations** → toggle it ON |
+| Customer opted out | Check for "Opted Out" badge — customer needs to text START |
+| Wrong number format | Numbers must be in international format: **+44** for UK, **+1** for US (not 044 or 01) |
+| Carrier blocking | Some carriers block automated messages. Ask the customer to text your AI number first to "whitelist" the conversation |
+| No phone number provisioned | Go to **Phone** page — make sure you have an active AI number |
+
+### Customer says they didn't receive the text
+
+1. Check the **Conversations** page — does the message show as sent?
+2. Ask the customer to check their spam/junk folder (some phones filter unknown senders)
+3. Verify the customer's phone number is correct on their lead card
+4. If the message shows as sent but wasn't received, the carrier may be filtering it — contact support with the customer's number
+
+---
+
+## International Numbers
+
+| Country | Format | Example |
+|---------|--------|---------|
+| UK | +44 followed by 10 digits | +447700900123 |
+| US | +1 followed by 10 digits | +12025551234 |
+| AU | +61 followed by 9 digits | +61412345678 |
+
+SMS works with UK, US, and AU numbers. Messages are sent in the local format for the customer's country.
+
+---
+
+## Character Limits
+
+- A single SMS segment is **160 characters**
+- Longer messages are automatically split into multiple segments and reassembled on the customer's phone
+- The AI keeps replies concise, but detailed answers may span 2-3 segments
+- There's no extra charge for multi-segment messages — SMS is included in your plan
+
+---
+
+## Cost
+
+SMS is **included in your plan** at no extra charge. There are no per-message fees, no setup costs, and no limits on the number of texts sent or received.
+
+<Snippet file="snippets/footer.mdx" />

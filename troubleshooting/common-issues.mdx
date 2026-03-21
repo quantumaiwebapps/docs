@@ -11,8 +11,8 @@ icon: "wrench"
 | AI gives wrong prices | Pricing not in Knowledge Base | Go to **Knowledge Base** → add PRICING articles with your rates |
 | AI says "I don't know" to a question | Missing knowledge for that topic | Check which **Knowledge Base category** is empty → add articles |
 | Calls aren't being forwarded | Carrier forwarding not set up | Follow the **Call Forwarding** guide for your specific carrier |
-| SMS confirmations not sending | Phone number issue | Contact support — we'll check your Twilio number configuration |
-| "Request failed" error toast | Temporary server issue | Wait 30 seconds and refresh. If persistent, contact support. |
+| SMS confirmations not sending | Phone number or opt-out issue | Check **Conversations** → verify SMS Auto-Reply is ON. Check customer hasn't opted out. Verify number format (+44 not 0). If still stuck, [contact support](https://app.closethecall.com/support) with the customer's number. |
+| "Request failed" error toast | Temporary server issue | Wait 30 seconds and refresh the page. Try logging out and back in. If persistent, clear browser cache and try in incognito mode. If still stuck, [contact support](https://app.closethecall.com/support) with a screenshot. |
 | AI hangs up too early | Silence timeout too short | Go to **Receptionist Settings** → increase silence re-engagement timeout |
 | No leads appearing after calls | Lead capture is disabled | Go to **Receptionist Settings** → enable **"Capture Lead Info"** |
 | No appointments appearing | Booking is disabled | Go to **Receptionist Settings** → enable **"Book Appointments"** |
@@ -20,6 +20,23 @@ icon: "wrench"
 | AI doesn't know my business hours | Hours not in Knowledge Base | Go to **Knowledge Base** → add HOURS article, or **My Business** → set hours |
 | Dashboard shows 0 calls | Forwarding not working or no calls yet | Call your AI number directly to test. Check forwarding setup. |
 | Conversations page is empty | SMS auto-reply is off | Toggle **"SMS Auto-Reply"** ON in the Conversations page header |
+| AI sounds robotic or glitchy | Voice quality issue | Go to **Receptionist Settings** → try a different voice (Sarah and Alice tend to sound most natural). If audio is choppy, this is usually a caller's poor mobile signal, not the AI. |
+| Appointment booked but no SMS sent | Missing phone config | Check that your AI has a provisioned phone number on the **Phone** page. SMS confirmations are sent from your AI number — if there's no number, SMS can't send. Also check customer hasn't opted out. |
+| Lead info is wrong or incomplete | Caller didn't provide details | Edit the lead directly: go to **Leads** → click the lead → **Edit**. The AI captures what the caller says — if they gave a wrong number or skipped their name, you can fix it manually. |
+| Want to delete all my data | GDPR data deletion | Go to **Account Settings** → scroll to **Danger Zone** → click **Delete Account**. Your data is deleted after a 30-day grace period. For deleting a specific call recording, [contact support](https://app.closethecall.com/support). |
+| Forgot my password | Can't log in | Click **"Forgot Password"** on the login page. Enter your email and check your inbox (including spam folder) for a reset link. The link expires after 1 hour. If you don't receive it, try again with the exact email you registered with. If still stuck, [contact support](https://app.closethecall.com/support). |
+
+## What to Include When Contacting Support
+
+If the fixes above didn't solve your problem, submit a support ticket. **Include these details** so we can help you faster:
+
+1. **Your business name** (as shown in your dashboard)
+2. **What you were trying to do** (e.g., "book an appointment", "connect Google Calendar")
+3. **What happened instead** (e.g., "got a red error toast saying 'Request failed'")
+4. **Screenshot of the error** — this is the single most helpful thing you can provide
+5. **Your browser** (Chrome, Safari, Firefox, Edge) and device (desktop, iPhone, Android)
+6. **When it happened** — date and approximate time, so we can check server logs
+7. **Steps to reproduce** — can you make it happen again, or was it a one-time thing?
 
 ## Still Stuck?
 

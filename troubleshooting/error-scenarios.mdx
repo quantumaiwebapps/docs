@@ -1,0 +1,265 @@
+---
+title: "Error Scenarios & Edge Cases"
+description: "Every error and edge case you might hit — with actionable solutions, not just 'contact support'"
+icon: "triangle-exclamation"
+---
+
+## Error Scenarios
+
+These are real problems you might encounter, with step-by-step fixes.
+
+### 1. Phone Provisioning Fails
+
+Your AI number didn't get assigned during signup.
+
+**Fix:**
+1. Check you selected the correct country (UK, US, or AU only)
+2. Try a different area code — some areas have limited number availability
+3. Verify your payment method is active (Stripe needs a valid card on file)
+4. Go to **Phone** page in sidebar → click **"Provision Number"** to retry
+5. If still failing after 3 attempts, contact support with your country and preferred area code
+
+### 2. Stripe Payment Fails
+
+Checkout or subscription renewal didn't go through.
+
+**Fix:**
+1. Check your card hasn't expired — go to **Billing** → **Manage Subscription** → update card
+2. Try a different card entirely (some cards block recurring international payments)
+3. If you see a **3D Secure** popup, complete the verification in your banking app
+4. Contact your bank — they may have flagged the charge as suspicious
+5. If still stuck, contact support and we'll send you a fresh payment link
+
+### 3. Calendar OAuth Fails
+
+Google Calendar or Outlook won't connect.
+
+**Fix:**
+1. Go to **Integrations** → click **Disconnect** on the calendar, then **Connect** again
+2. Make sure you're signing into the **correct Google/Microsoft account** (not a personal one if you want your work calendar)
+3. Clear your browser cookies for `accounts.google.com` or `login.microsoftonline.com`
+4. Try in an **incognito/private window** — browser extensions can interfere
+5. If you see "App not verified" on Google, click **Advanced** → **Go to CloseTheCall** — this is safe
+6. If still stuck, contact support with a screenshot of the error
+
+### 4. SMS Delivery Fails
+
+Customer didn't receive the SMS confirmation or auto-reply.
+
+**Fix:**
+1. Check the customer hasn't **opted out** — look for "Opted Out" badge on their conversation
+2. Verify the phone number format: use **+44** (not 0) for UK, **+1** for US
+3. Some carriers block automated messages — ask the customer to text your AI number first (this "whitelists" the conversation)
+4. Go to **Conversations** → check if the message shows as "Sent" or "Failed"
+5. If still stuck, contact support with the customer's phone number and we'll check Twilio logs
+
+### 5. VAPI Sync Fails
+
+Changes you made in settings aren't reflected in how the AI answers.
+
+**Fix:**
+1. Click the **"Sync to AI"** button again (it's on the Receptionist Settings page)
+2. Wait **30 seconds** — sync isn't instant, especially for Knowledge Base changes
+3. Check your internet connection — sync requires a stable connection
+4. Make a test call to verify the AI is using updated information
+5. If the AI still uses old info after 2 minutes, contact support
+
+### 6. Recording Missing
+
+A call happened but there's no recording to play back.
+
+**Fix:**
+1. Calls shorter than **5 seconds** aren't recorded (caller hung up too fast)
+2. Check if **recording is disabled** in HIPAA settings — go to **Receptionist Settings** → HIPAA section
+3. Network issues during the call can occasionally prevent recording upload
+4. Recordings are kept for your plan's retention period — check **HIPAA settings** for your configured retention days
+5. If a specific important call is missing, contact support with the call date and caller number
+
+### 7. Knowledge Base Articles Conflict
+
+AI gives inconsistent answers because multiple articles cover the same topic.
+
+**Fix:**
+1. Go to **Knowledge Base** → search for the topic in question
+2. The AI prioritises **pinned articles first**, then the article with the **highest confidence score**
+3. **Remove duplicates** — if two articles cover the same service, merge them into one
+4. Use **Pin** (star icon) on the article you want the AI to prefer
+5. After changes, the AI syncs automatically — make a test call to verify
+
+### 8. Two Calendars Conflict
+
+You connected both Google Calendar and Outlook, and bookings are going to the wrong one.
+
+**Fix:**
+1. **Google Calendar takes priority** — if both are connected, the AI checks Google first
+2. Appointments are created in whichever calendar was connected **first**
+3. To switch: **disconnect** the calendar you don't want (Integrations page), keep the one you do
+4. The AI checks availability across **both** calendars to avoid double-bookings, regardless of which one gets the event
+
+### 9. Test Calls Use Real Minutes
+
+You didn't realise test calls count.
+
+**What to know:**
+1. **Yes, test calls count toward your monthly minutes** — typically 1-2 minutes per test call
+2. Budget **5-10 test calls** when setting up (that's roughly 10-20 minutes)
+3. You can also use the **Browser Call** feature in AI Config → Test page (still uses minutes, but more convenient)
+4. Check your remaining minutes on the **Billing** page
+
+### 10. AI Busy / Can't Handle Multiple Calls
+
+Two customers called at the same time and one didn't get through.
+
+**What to know:**
+1. VAPI handles **concurrent calls** up to your plan limit
+2. If the limit is reached, the next caller gets your **voicemail message**
+3. Voicemails appear on the **Voicemails** page with AI transcription
+4. Upgrade your plan for higher concurrent call limits
+5. The AI processes calls independently — each caller gets a fresh conversation
+
+### 11. Automations Not Firing
+
+You set up automations but nothing is happening.
+
+**Fix:**
+1. Go to **Receptionist Settings** → make sure **"Capture Lead Info"** is toggled ON — automations need lead data to trigger
+2. Check the specific automation is **enabled** (green toggle) on the Automations page
+3. Automations only fire on **new events** — they won't retroactively process old calls
+4. SMS-based automations (missed call textback, review requests) require the customer to have a valid phone number
+5. Check the **Conversations** page to see if SMS messages were sent
+6. If still stuck, contact support with which automation isn't firing
+
+### 12. Opted-Out Customer
+
+A customer texted STOP and now can't receive any messages.
+
+**What to know:**
+1. The customer is still in your **Leads** list — you can see their info and call history
+2. SMS won't send to them — look for the **"Opted Out"** badge on their conversation
+3. The customer can text **START** to your AI number to re-subscribe
+4. You **cannot** manually override an opt-out — this is required by law (TCPA/GDPR)
+5. You can still call the customer manually using the number on their lead card
+
+---
+
+## Edge Cases
+
+Unusual situations that aren't bugs — they're just how things work.
+
+### No Website During Signup
+
+You don't have a website and couldn't provide a URL during registration.
+
+**What to do:**
+1. During signup, select your **industry** — the AI loads a template with common services, pricing, and FAQs for your trade
+2. After signup, go to **Knowledge Base** → manually add articles about your services, pricing, hours, and FAQs
+3. Go to **My Business** → fill in your business details, service area, and hours
+4. The AI works perfectly without a website — it just needs Knowledge Base articles
+
+### Outside UK/US/AU
+
+You're in a country where we don't provision phone numbers.
+
+**What to do:**
+1. Phone numbers are currently available in **UK, US, and AU only**
+2. Contact support with your country — we may be able to arrange a number through our provider
+3. If you already have a VoIP number, we may be able to port it (contact support to discuss)
+
+### Multiple Phone Numbers
+
+You want different numbers for different services or locations.
+
+**What to do:**
+1. Each **Location** can have its own phone number — set up locations in the **Locations** page
+2. Provision a number for each location individually
+3. Each location's number connects to the same AI but can have location-specific knowledge
+
+### Different Phone Each Call
+
+The same customer calls from different numbers each time.
+
+**What to know:**
+1. Caller intelligence matches by **phone number** — a different phone is treated as a new caller
+2. The AI won't recognise them as a returning customer from a different number
+3. If they give their name, the AI creates a new lead entry
+4. You can manually merge duplicate leads in the Leads page
+
+### Minutes Don't Roll Over
+
+You had 200 unused minutes this month.
+
+**What to know:**
+1. Unused minutes **expire at the end of each billing cycle** — they don't carry over
+2. Your minute allowance resets on your billing date each month
+3. Check your usage on the **Billing** page to see how many minutes you've used
+4. If you consistently have excess minutes, consider downgrading. If you're running out, upgrade.
+
+### After Cancellation
+
+You cancelled your subscription — what happens now.
+
+**What to know:**
+1. Your AI **stops answering calls** immediately when the subscription ends
+2. Your **data is kept for 30 days** — you can re-subscribe and everything comes back
+3. Your **phone number is released** and may be assigned to someone else
+4. Call recordings are deleted according to your data retention settings
+
+### Re-Subscribe After Cancellation
+
+You want to come back after cancelling.
+
+**What to know:**
+1. If within **30 days**: your data is restored automatically when you re-subscribe
+2. You'll get a **new phone number** — your old one may have been reassigned
+3. You'll need to **update call forwarding** with your carrier to point to the new number
+4. If beyond 30 days: your data has been permanently deleted (GDPR compliance)
+
+### Flexible Business Hours
+
+You don't have fixed opening hours.
+
+**What to do:**
+1. Toggle **"Open 24/7"** in My Business → the AI answers at all times without mentioning hours
+2. Or leave hours **blank** — the AI won't mention specific hours to callers
+3. Use **After Hours** settings if you want a different message outside certain times
+4. The AI adapts — if you don't set hours, it simply doesn't reference them
+
+### Coverage Distance
+
+You set a service radius but a customer outside it is calling.
+
+**What to know:**
+1. The coverage distance is **informational only** — the AI mentions your service area but doesn't refuse customers
+2. The AI might say "We typically cover a 20-mile radius from Birmingham" but will still take the booking
+3. You decide whether to serve customers outside your area — the AI just captures the lead
+
+### Delete a Specific Recording
+
+A customer wants their call recording deleted (GDPR right).
+
+**What to do:**
+1. Go to **Calls** → find the specific call → open the call detail
+2. Contact support with the **call date, time, and caller phone number**
+3. We'll delete the recording within 48 hours and confirm by email
+4. For bulk deletion, use the **Account Settings** → **Delete My Data** option (deletes everything)
+
+### Lead Without a Name
+
+The caller didn't give their name.
+
+**What to know:**
+1. The AI creates the lead with their **phone number only** — the name shows as "Unknown"
+2. You can manually edit the lead to add a name later
+3. The AI will try to ask for a name, but some callers skip it — that's fine, the lead is still captured
+4. If "Capture Lead Info" is on, the AI always saves at minimum the phone number
+
+### Duplicate Automation Messages
+
+You're worried a customer might get the same automated text twice.
+
+**What to know:**
+1. The system **deduplicates automatically** — maximum 1 SMS per contact per event type
+2. For example, a customer won't get two "appointment reminder" texts for the same booking
+3. Different automation types can still fire for the same customer (e.g., booking confirmation AND reminder — those are different events)
+
+<Snippet file="snippets/footer.mdx" />

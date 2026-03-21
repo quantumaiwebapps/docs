@@ -1,0 +1,127 @@
+---
+title: "Understanding Your Call Details"
+description: "Everything shown on the call detail page — recordings, transcripts, summaries, sentiment, and more"
+icon: "phone-arrow-down-left"
+---
+
+## Opening a Call Detail
+
+Click any call row in the **Recent Calls** table on your Dashboard, or go to the **Calls** page in the sidebar and click any call. This opens the full detail view for that call.
+
+---
+
+## Recording Playback
+
+Every call is recorded automatically (unless disabled in HIPAA settings).
+
+- **Play/Pause**: click the play button to hear the full conversation
+- **Scrub Timeline**: drag the playback bar to jump to any point in the call
+- **Download**: click the download icon to save the recording as an audio file
+
+<Info>
+**Privacy note:** Recordings are kept according to your data retention settings. Configure this in **Receptionist Settings** → **HIPAA Compliance** → **Data Retention**. Default is to keep recordings indefinitely.
+</Info>
+
+<Warning>
+If **Recording Consent (TCPA)** is enabled, the AI plays a disclaimer at the start of every call: "This call may be recorded for quality purposes." This is required by law in many US states and recommended in the UK.
+</Warning>
+
+---
+
+## AI Transcript
+
+The full text of everything said on the call — both the AI and the caller.
+
+- The transcript is generated automatically by the AI's speech-to-text engine
+- It's **not editable** — it's a factual record of what was detected
+- Each speaker is labelled (AI vs Caller)
+
+<Note>
+**Accuracy note:** AI transcription isn't perfect. Heavy accents, background noise (traffic, machinery, music), and technical industry terms can cause errors. The transcript is a best-effort representation, not a legal document.
+</Note>
+
+---
+
+## AI Summary
+
+A 2-3 sentence summary of the call, written by the AI.
+
+This tells you:
+- **What the caller wanted** (e.g., "Caller needed an emergency plumber for a burst pipe")
+- **What was agreed** (e.g., "Appointment booked for Tuesday 2pm")
+- **Any follow-up needed** (e.g., "Caller asked for a callback with a quote")
+
+The summary is generated automatically at the end of each call.
+
+---
+
+## Sentiment Badge
+
+Each call gets a sentiment rating based on the caller's tone and language:
+
+| Badge | Colour | What It Means |
+|-------|--------|---------------|
+| **Positive** | Green | Caller was happy, satisfied, or enthusiastic |
+| **Neutral** | Grey | Standard enquiry, no strong emotion either way |
+| **Negative** | Red | Caller was frustrated, upset, or complained |
+
+The AI detects sentiment through a combination of:
+- **Language analysis** — words like "terrible", "thank you so much", "frustrated"
+- **Tone indicators** — speech patterns detected during transcription
+- **Call outcome** — calls that end with a booking tend to be rated more positively
+
+---
+
+## Disposition
+
+The disposition tells you what happened on the call:
+
+| Disposition | What It Means |
+|-------------|---------------|
+| **NEW_LEAD** | Caller enquired about services — their info was captured as a lead |
+| **BOOKED** | An appointment was successfully scheduled |
+| **CALLBACK_REQUESTED** | Caller asked for a callback from a real person |
+| **FAQ_ANSWERED** | Caller had a question that was answered — no lead needed |
+| **TRANSFERRED** | Call was transferred to your personal number |
+| **SPAM** | Robocall, telemarketer, or irrelevant call |
+| **NO_ACTION** | Call was too short or unclear — no action taken |
+
+---
+
+## Duration
+
+Total call time displayed in **minutes:seconds** format (e.g., 3:42).
+
+This is the actual talk time from when the AI answered to when the call ended. It counts toward your monthly minutes allowance.
+
+---
+
+## Caller Info
+
+- **Phone number**: the number that called, displayed in international format
+- **Name**: if the caller gave their name during the call, it appears here. Otherwise shows "Unknown"
+- **Returning caller**: if this phone number has called before, you'll see a "Returning" indicator. The AI also knows they've called before and can reference previous interactions.
+
+---
+
+## Troubleshooting
+
+### What if the recording is missing?
+
+Possible reasons:
+1. **Call was too short** — calls under 5 seconds typically don't generate a recording
+2. **Network issue** — a connection drop during the call can prevent the recording from uploading
+3. **Recording disabled** — check if HIPAA mode has recording turned off in **Receptionist Settings**
+4. **Still processing** — very long calls can take a few minutes to process. Refresh the page.
+
+### What if the transcript is wrong?
+
+AI transcription has limitations:
+- **Heavy accents** can cause misheard words
+- **Background noise** (construction, traffic, wind) reduces accuracy
+- **Technical terms** specific to your industry may be transcribed phonetically
+- **Overlapping speech** (caller talking over the AI) is hard to separate
+
+The transcript cannot be manually edited — it's an automated record. If accuracy is critical for your business, listen to the recording instead.
+
+<Snippet file="snippets/footer.mdx" />
