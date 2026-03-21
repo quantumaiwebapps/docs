@@ -141,4 +141,96 @@ When the appointment reminder goes out 1 hour before, the customer receives a te
   Yes. If a customer calls back and says "I need to move my appointment," the AI will cancel the existing booking and create a new one at the time they choose. It won't create duplicates.
 </Accordion>
 
+---
+
+## Calendar vs List View
+
+At the top right of the Appointments page, you will see a **view toggle** that lets you switch between two layouts:
+
+### Calendar View
+
+- Shows a **month grid** with dots on days that have appointments booked.
+- Click any day to see the appointments for that date.
+- Use the left and right arrows to navigate between months.
+- Best for getting a visual overview of how busy your schedule is.
+
+### List View
+
+- Shows a **table** with all appointments in a scrollable list.
+- Each row shows: customer name, phone number, service, date, time, duration, and status.
+- Sortable by clicking column headers (e.g. click "Date" to sort chronologically).
+- Best for quickly finding a specific appointment or reviewing recent bookings.
+
+<Tip>
+The view toggle remembers your preference. If you prefer list view, it will stay on list view next time you visit the page.
+</Tip>
+
+---
+
+## Filtering Appointments
+
+### Status Tabs
+
+At the top of the appointments list, you will see status tabs that filter which appointments are shown:
+
+| Tab | What it shows |
+|-----|--------------|
+| **All** | Every appointment regardless of status |
+| **Pending** | Appointments awaiting confirmation — the AI booked them but they have not been confirmed yet |
+| **Upcoming** | Confirmed appointments that have not happened yet |
+| **Declined** | Appointments that were cancelled or declined by either party |
+
+Click a tab to filter the list. The count next to each tab shows how many appointments are in that status.
+
+### Search Bar
+
+Above the appointment list, there is a **search bar**. Type a customer's name or phone number to filter the results instantly. The search works across both Calendar and List views.
+
+<Info>
+Combining a status tab with search is the fastest way to find what you need. For example, click **Upcoming** then type "Sarah" to find Sarah's next appointment.
+</Info>
+
+---
+
+## Creating an Appointment Manually
+
+Not every booking comes through the AI. You can create appointments by hand for walk-ins, website enquiries, phone calls you take personally, or jobs arranged in person.
+
+<Steps>
+  <Step title="Click + New Appointment">
+    Click the **+ New Appointment** button at the top right of the Appointments page. A form dialog opens.
+  </Step>
+  <Step title="Enter customer name">
+    Type the customer's full name in the **Customer Name** field.
+  </Step>
+  <Step title="Enter phone number">
+    Type the customer's phone number in the **Phone** field. Include the country code (e.g. +447700900000). This is used for SMS confirmations and reminders.
+  </Step>
+  <Step title="Select a service">
+    Choose the service from the **Service** dropdown. This list is populated from the services you have added on your **My Business** page.
+  </Step>
+  <Step title="Pick a date">
+    Click the **Date** field to open a date picker. Select the appointment date.
+  </Step>
+  <Step title="Pick a time">
+    Click the **Time** field and select the appointment start time.
+  </Step>
+  <Step title="Choose a duration">
+    Select the expected duration from the **Duration** dropdown. Options range from **15 minutes** to **2 hours** in 15-minute increments.
+  </Step>
+  <Step title="Add a location (optional)">
+    If the appointment is at a specific location (e.g. the customer's home address), type it in the **Location** field. Leave blank if it is at your usual business address.
+  </Step>
+  <Step title="Add notes (optional)">
+    Use the **Notes** field for any additional information. For example: "Customer has a dog — call before arriving" or "Bring the replacement part from the van."
+  </Step>
+  <Step title="Click Create">
+    Click the **Create** button. The appointment appears on your dashboard, syncs to your connected calendar (Google or Outlook), and the customer receives an SMS confirmation if you have SMS enabled.
+  </Step>
+</Steps>
+
+<Warning>
+Manual appointments do not check your calendar for conflicts. Make sure the time slot is free before creating the appointment. The AI-booked appointments do check for conflicts automatically.
+</Warning>
+
 <Snippet file="snippets/footer.mdx" />

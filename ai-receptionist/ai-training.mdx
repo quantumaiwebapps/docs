@@ -1,0 +1,170 @@
+---
+title: "AI Training & Scenarios"
+description: "Test your AI receptionist with simulated calls to make sure it handles every situation correctly before a real customer calls."
+icon: "flask"
+---
+
+AI Training lets you test your AI receptionist without making real phone calls. You create scenarios (example customer situations), run them as text-based simulations, and see exactly how the AI responds. Think of it as a dress rehearsal for your receptionist.
+
+To get here, click **AI Training** in the left sidebar.
+
+---
+
+## Why Use AI Training?
+
+- **After changing your Knowledge Base** — Added new services or pricing? Run a test to make sure the AI mentions them correctly.
+- **After updating your greeting** — Make sure the new greeting sounds natural and flows into the conversation.
+- **After adding new services** — Verify the AI can book or describe the new service accurately.
+- **Before going live** — Run all your scenarios to build confidence before forwarding your phone number.
+- **After a bad call** — If a real call went poorly, create a scenario from it and train the AI to handle it better.
+
+---
+
+## The Scenario List
+
+When you open the AI Training page, you see a list of all your created scenarios. Each row shows:
+
+| Column | What it shows |
+|--------|--------------|
+| **Title** | The name you gave the scenario (e.g. "Emergency callout request") |
+| **Customer Message** | The opening line the simulated customer says |
+| **Expected Outcome** | What should happen (e.g. "AI books an emergency appointment") |
+| **Result** | Pass or Fail badge from the last test run |
+| **Pass Rate** | How often this scenario passes across all runs (e.g. "4/5 — 80%") |
+
+If you have not created any scenarios yet, you will see an empty state prompting you to create your first one.
+
+---
+
+## Creating a Scenario
+
+<Steps>
+  <Step title="Click Create Scenario">
+    Click the **Create Scenario** button at the top right of the page. A form dialog opens.
+  </Step>
+  <Step title="Enter a title">
+    Give the scenario a descriptive name. Examples:
+    - "Customer wants emergency boiler repair"
+    - "Caller asks about pricing for a haircut"
+    - "Returning customer wants to reschedule"
+  </Step>
+  <Step title="Enter the customer message">
+    Type what the simulated customer will say at the start of the call. Write it exactly as a real person would speak. Examples:
+    - "Hi, my boiler has stopped working and there's no hot water. Can someone come out today?"
+    - "How much do you charge for a men's haircut?"
+    - "I booked an appointment for Tuesday but I need to move it to Thursday."
+  </Step>
+  <Step title="Enter the expected outcome">
+    Describe what the AI should do in response. Be specific. Examples:
+    - "AI should ask for the caller's address and try to book an emergency appointment for today."
+    - "AI should quote the haircut price from the pricing list and offer to book."
+    - "AI should look up the existing appointment and offer to reschedule to Thursday."
+  </Step>
+  <Step title="Save the scenario">
+    Click **Create** to save. The scenario appears in your list, ready to be tested.
+  </Step>
+</Steps>
+
+---
+
+## Auto-Generate from Call History
+
+Instead of writing scenarios from scratch, you can create them from real calls that have already happened.
+
+<Steps>
+  <Step title="Click Auto-Generate">
+    Look for the **Auto-Generate from Call History** button on the AI Training page.
+  </Step>
+  <Step title="Select a past call">
+    A list of your recent calls appears. Pick one that represents a situation you want to test (e.g. a tricky question the AI struggled with).
+  </Step>
+  <Step title="Review the generated scenario">
+    The system uses AI to analyse the call transcript and create a scenario automatically — the customer's opening message and the expected outcome are pre-filled based on what actually happened.
+  </Step>
+  <Step title="Edit if needed and save">
+    Adjust the title, customer message, or expected outcome if the auto-generated version is not quite right. Then click **Create**.
+  </Step>
+</Steps>
+
+<Tip>
+Auto-generate is the fastest way to build a library of realistic test scenarios. After every week of live calls, pick 2-3 interesting calls and generate scenarios from them. Over time, you will build comprehensive coverage.
+</Tip>
+
+---
+
+## Running a Test
+
+<Steps>
+  <Step title="Find the scenario you want to test">
+    In the scenario list, locate the scenario.
+  </Step>
+  <Step title="Click Run Test">
+    Click the **Run Test** button on the scenario row. The system sends the customer message to your AI as a text-based simulation (no actual phone call is made).
+  </Step>
+  <Step title="Wait for results">
+    The test takes a few seconds. A loading indicator shows while the AI processes the conversation.
+  </Step>
+  <Step title="Review the AI response">
+    The results panel shows:
+    - **AI Response** — The full text of what the AI said in response to the customer message.
+    - **Pass / Fail** — An AI evaluator compares the response to your expected outcome and marks it as Pass (green) or Fail (red).
+    - **Evaluation Notes** — A brief explanation of why it passed or failed.
+  </Step>
+</Steps>
+
+<Info>
+Tests are text-based simulations, not real voice calls. They test the AI's logic, knowledge, and decision-making. The actual voice quality and tone are not tested here — for that, use the **Test AI** page to make a real call.
+</Info>
+
+---
+
+## Performance Stats
+
+At the top of the AI Training page, you will see summary statistics:
+
+- **Total Scenarios** — How many scenarios you have created
+- **Overall Pass Rate** — The percentage of scenarios that passed their most recent test (e.g. "85% pass rate")
+- **Last Tested** — When you last ran any test
+
+### Per-Scenario Tracking
+
+Each scenario tracks its own history. Click into a scenario to see:
+- How many times it has been tested
+- The pass/fail result of each run
+- Whether performance has improved or declined over time
+
+---
+
+## Deleting a Scenario
+
+<Steps>
+  <Step title="Find the scenario">
+    Locate it in the scenario list.
+  </Step>
+  <Step title="Click Delete">
+    Click the **trash icon** or **Delete** button on the scenario row.
+  </Step>
+  <Step title="Confirm deletion">
+    A confirmation dialog asks if you are sure. Click **Delete** to confirm. The scenario and all its test history are permanently removed.
+  </Step>
+</Steps>
+
+---
+
+## Best Practices
+
+<Accordion title="How many scenarios should I create?">
+Start with 5 to 10 covering your most common call types: booking requests, pricing questions, emergency calls, after-hours enquiries, and returning customers. Add more as you encounter new situations in real calls.
+</Accordion>
+
+<Accordion title="What if a scenario keeps failing?">
+This means the AI does not have enough information to handle that situation. Check your **Knowledge Base** and **My Business** page — is the relevant information there? Add it, then run the test again.
+</Accordion>
+
+<Accordion title="How often should I run tests?">
+Run all your scenarios after any change to your AI configuration: greeting updates, Knowledge Base edits, new services, pricing changes, or additional instructions. A full test run takes under a minute.
+</Accordion>
+
+<Accordion title="Can I test in different languages?">
+If you have enabled **Bilingual Mode** in your AI settings, you can write scenarios in your secondary language. The AI will respond in that language, and the evaluator will assess the response accordingly.
+</Accordion>

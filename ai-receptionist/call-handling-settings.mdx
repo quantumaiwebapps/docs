@@ -1,0 +1,282 @@
+---
+title: "Call Handling Settings"
+description: "Configure exactly how your AI receptionist handles calls — what it collects, how it books, when it transfers, and more."
+icon: "sliders"
+---
+
+This page covers every setting on the **Receptionist Settings** page (Tab 2: Call Handling). To get here, click **Receptionist** in the left sidebar, then click the **Call Handling** tab at the top.
+
+Every toggle, dropdown, and text field on this page controls how your AI behaves during live calls. Changes take effect after you click **Save Changes** and then **Sync with VAPI**.
+
+---
+
+## Information Collection
+
+These toggles control what your AI asks callers for during a conversation.
+
+### Collect Customer Name
+
+<Steps>
+  <Step title="Find the toggle">
+    Look for **Collect Customer Name** near the top of the Call Handling tab.
+  </Step>
+  <Step title="Toggle it on or off">
+    - **On** — The AI will ask "Can I get your name?" early in the call. The name is saved to the lead record.
+    - **Off** — The AI will not ask for a name. The caller can still volunteer it and the AI will note it.
+  </Step>
+</Steps>
+
+<Tip>
+Leave this on for most businesses. Having a name lets the AI greet returning callers personally on future calls.
+</Tip>
+
+### Collect Job Details
+
+<Steps>
+  <Step title="Toggle on Collect Job Details">
+    When turned on, the AI asks the caller to describe what they need done.
+  </Step>
+  <Step title="Default questions">
+    The system includes sensible default questions for your industry (e.g. "Can you describe the issue?" for plumbers). These appear below the toggle as reference text.
+  </Step>
+  <Step title="Custom questions (tag input)">
+    Below the defaults, you will see a tag input field. Type a custom question and press **Enter** to add it. Click the **X** on any tag to remove it. Examples:
+    - "Is this an emergency?"
+    - "How many rooms need cleaning?"
+    - "What brand is your boiler?"
+  </Step>
+</Steps>
+
+<Info>
+Custom questions are asked in addition to the defaults, not instead of them. The AI weaves them into the conversation naturally — it does not read them out like a checklist.
+</Info>
+
+### Collect Location
+
+<Steps>
+  <Step title="Toggle on Collect Location">
+    The AI will ask the caller where they are located.
+  </Step>
+  <Step title="Choose precision">
+    A dropdown appears with two options:
+    - **Full Address** — The AI asks for a full street address (best for businesses that travel to the customer, like plumbers or electricians).
+    - **Area Only** — The AI asks for just the town or postcode area (best for businesses where the customer comes to you, like salons).
+  </Step>
+</Steps>
+
+### Collect Availability
+
+<Steps>
+  <Step title="Toggle on Collect Availability">
+    The AI asks when the caller is available.
+  </Step>
+  <Step title="Choose precision">
+    - **Exact Times** — The AI asks for specific dates and times ("Are you free Tuesday at 2pm?").
+    - **Time Windows** — The AI asks for general availability ("Are mornings or afternoons better for you?").
+  </Step>
+</Steps>
+
+<Tip>
+Use **Time Windows** if you handle your own scheduling. Use **Exact Times** if you want the AI to book directly into your calendar.
+</Tip>
+
+---
+
+## Booking Mode
+
+Three large cards let you choose how your AI handles appointment requests. Click the card to select it — the active card shows a blue border.
+
+### Just Take Messages
+
+The AI collects the caller's name, phone, and what they need, then tells them you will call back. No appointment is created. Best for businesses that want to personally handle all scheduling.
+
+### I'll Follow Up
+
+The AI collects full details including the caller's preferred times, saves everything as a lead, and tells the caller you will confirm the appointment. You review and confirm from your dashboard. Best for businesses that need to check schedules or prepare quotes first.
+
+### Take Bookings
+
+The AI checks your calendar in real time, offers available slots, and books the appointment on the spot. The customer gets an SMS confirmation immediately. Best for businesses with predictable schedules (salons, dental practices, consultants).
+
+<Warning>
+If you select **Take Bookings** without connecting a calendar (Google or Outlook), the AI will use your configured business hours to determine availability. Connect a calendar from the **Integrations** page for the most accurate booking.
+</Warning>
+
+---
+
+## Feature Toggles
+
+### Capture Lead Info
+
+- **On** — Every caller is saved as a lead with their name, phone number, and call details. Leads appear on your **Leads** page and sync to any connected CRM (HubSpot, Salesforce, GoHighLevel).
+- **Off** — The AI still answers calls and helps callers, but does not save their information as a lead. Use this only if you do not want to track individual callers.
+
+### Book Appointments
+
+- **On** — The AI can create appointments during calls (if your Booking Mode is set to "Take Bookings"). The `book_appointment` and `check_availability` functions are active.
+- **Off** — The AI will not offer to book. Even if a caller asks, the AI will say "I can take your details and have someone call you back to arrange a time."
+
+### Caller Intelligence
+
+- **On** — When someone calls, the AI looks up their phone number in your records. If they have called before, the AI knows their name, past bookings, and previous issues. It greets them personally: "Hi Sarah! Thanks for calling back."
+- **Off** — Every caller is treated as a new caller, even if they have called before.
+
+<Tip>
+Caller Intelligence is one of the most impressive features for your customers. A returning caller hearing "Welcome back, Sarah — last time you had a boiler issue, is this about the same thing?" builds enormous trust.
+</Tip>
+
+### Pricing Behaviour
+
+<Steps>
+  <Step title="Toggle on Pricing Behaviour">
+    When enabled, the AI will discuss your pricing during calls.
+  </Step>
+  <Step title="Enter pricing details">
+    A textarea appears below the toggle. Type your pricing information here in plain English. For example:
+    - "Callout fee is 50 pounds. Hourly rate is 80 pounds. Emergency calls are 120 pounds flat rate."
+    - "Haircut starts at 25 pounds. Colour starts at 60 pounds. We don't give exact quotes over the phone for colour — tell them to book a consultation."
+  </Step>
+</Steps>
+
+<Info>
+If you leave this off, the AI will say something like "Pricing depends on the job — I'll have someone get back to you with a quote." This is often the safest option if your pricing varies a lot.
+</Info>
+
+### Transfer to Human
+
+<Steps>
+  <Step title="Toggle on Transfer to Human">
+    This lets the AI transfer the call to a real person when needed (e.g. the caller insists on speaking to someone, or the question is too complex).
+  </Step>
+  <Step title="Enter the transfer phone number">
+    A phone number input appears. Enter the mobile or landline number you want calls transferred to. Include the country code (e.g. +447700900000 or +14155551234).
+  </Step>
+</Steps>
+
+When a transfer happens, the caller hears "Let me put you through to someone who can help" and the call is forwarded to your number. If you do not answer, the AI picks back up and takes a message.
+
+### Voicemail Detection
+
+<Steps>
+  <Step title="Toggle on Voicemail Detection">
+    When enabled, the AI detects if the call was answered by a voicemail machine (answering machine, business voicemail system).
+  </Step>
+  <Step title="Enter voicemail message">
+    A textarea appears. Type the message you want the AI to leave on the voicemail. For example: "Hi, this is a return call from Smith Plumbing. We received your enquiry and will try again shortly."
+  </Step>
+</Steps>
+
+<Info>
+This is useful when your AI makes outbound calls or callback calls. Without voicemail detection, the AI might try to have a conversation with a voicemail greeting.
+</Info>
+
+### Silence Re-engagement
+
+If the caller goes silent during the call, the AI will gently prompt them to keep the conversation going.
+
+<Steps>
+  <Step title="Toggle on Silence Re-engagement">
+    Enables the feature.
+  </Step>
+  <Step title="Set the delay">
+    Use the **slider** to choose how many seconds of silence before the AI speaks up. The range is **5 to 30 seconds**. The default is 10 seconds.
+  </Step>
+  <Step title="Edit the phrases">
+    Below the slider, you will see a list of re-engagement phrases the AI will use. Examples: "Are you still there?", "Take your time — I'm here whenever you're ready."
+    - To **add** a phrase, type in the input field and click the **Add** button (or press Enter).
+    - To **remove** a phrase, click the **X** next to it.
+    - The AI picks a random phrase each time so it does not sound repetitive.
+  </Step>
+</Steps>
+
+### Recording Consent (TCPA)
+
+<Steps>
+  <Step title="Toggle on Recording Consent">
+    When enabled, the AI plays a consent disclaimer at the very beginning of every call, before the greeting.
+  </Step>
+  <Step title="Edit the disclaimer">
+    A textarea shows the default disclaimer text: "This call may be recorded for quality and training purposes." You can edit this to match your legal requirements.
+  </Step>
+</Steps>
+
+<Warning>
+In many US states and UK regulations, you are required to inform callers that calls are being recorded. If you record calls, keep this toggle on. Consult your solicitor or attorney if you are unsure about your local laws.
+</Warning>
+
+---
+
+## Additional Instructions
+
+At the bottom of the settings, you will find a large **Additional Instructions** textarea. This is a free-text field where you can give your AI any extra guidance that does not fit into the toggles above.
+
+**Good things to put here:**
+- "Never discuss competitor pricing"
+- "If someone asks about our warranty, tell them it's 2 years parts and labour"
+- "Always ask emergency callers if anyone is in danger before taking details"
+- "If someone is rude, stay calm and offer to transfer to a manager"
+- "We do not service areas outside the M25"
+
+<Tip>
+Think of Additional Instructions as a note to a human receptionist. Write in plain English. The AI understands natural language — you do not need any special formatting or code.
+</Tip>
+
+---
+
+## Saving and Syncing
+
+### Save Changes Button
+
+Click **Save Changes** at the bottom of the page to save your settings to the database. This saves everything on the page — toggles, text fields, booking mode, and additional instructions.
+
+### Sync with VAPI Button
+
+After saving, click **Sync with VAPI** to push your updated settings to the AI voice provider. This updates your live AI receptionist with the new configuration.
+
+<Warning>
+If you save but do not sync, your changes are stored in the dashboard but your AI will keep using the old settings on live calls. Always click both **Save Changes** and **Sync with VAPI**.
+</Warning>
+
+---
+
+## Call Routing Mode
+
+At the top of the Call Handling tab, you may see routing mode cards (depending on your plan):
+
+### Single Assistant
+
+One AI receptionist handles all calls. This is the default and works for most businesses.
+
+### Smart Routing / Squad
+
+Multiple AI assistants handle different types of calls. For example, one assistant for booking enquiries and another for technical support questions. This is an advanced feature — contact support if you want help setting it up.
+
+---
+
+## IVR Phone Menu
+
+The IVR (Interactive Voice Response) phone menu lets callers choose an option before reaching the AI. For example: "Press 1 for bookings, press 2 for support."
+
+<Steps>
+  <Step title="Toggle on IVR Phone Menu">
+    The menu builder appears below the toggle.
+  </Step>
+  <Step title="Add menu items">
+    Click **Add Option**. For each option, fill in:
+    - **Label** — What the caller hears (e.g. "For bookings")
+    - **Action Type** — What happens when they press the number. Options include:
+      - **Transfer to AI** — Routes to your AI receptionist (default)
+      - **Transfer to Number** — Forwards to a specific phone number
+      - **Play Message** — Plays a recorded message and hangs up
+  </Step>
+  <Step title="Reorder or remove options">
+    Drag options to reorder them. Click the trash icon to delete an option.
+  </Step>
+  <Step title="Save and sync">
+    Click **Save Changes** then **Sync with VAPI** to make the menu live.
+  </Step>
+</Steps>
+
+<Info>
+Most small businesses do not need an IVR menu. If you just want the AI to answer and help the caller directly, leave this toggle off. IVR menus are best for businesses with clearly separate departments.
+</Info>

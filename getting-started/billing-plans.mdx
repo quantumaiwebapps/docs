@@ -153,4 +153,78 @@ No. All plans are month-to-month. Cancel anytime.
 Plans are billed in GBP (£) for UK businesses and USD ($) for US businesses.
 </Accordion>
 
+## Managing Your Subscription
+
+The **Manage Subscription** button on your Billing page opens a secure Stripe-hosted portal where you can manage everything about your subscription without contacting support.
+
+<Steps>
+  <Step title="Open the Billing Portal">
+    Go to **Billing** in the sidebar and click the **Manage Subscription** button at the top of the page. A new tab opens with the Stripe billing portal.
+  </Step>
+  <Step title="What you can do in the portal">
+    From the Stripe portal, you can:
+    - **Change your payment card** — Add a new card and set it as default, or remove old cards.
+    - **Download receipts and invoices** — Click **Billing history** to see every payment. Click the PDF icon next to any charge to download a receipt for your accountant.
+    - **Update your billing email** — Change where invoice emails are sent.
+    - **Cancel your plan** — Click **Cancel plan** to stop at the end of your current billing period.
+    - **Upgrade or downgrade** — Click **Update plan** to switch tiers. The change is prorated automatically.
+  </Step>
+</Steps>
+
+<Info>
+The billing portal is hosted by Stripe, not CloseTheCall. Your card details are never stored on our servers — they go directly to Stripe, which is PCI Level 1 certified (the highest security standard).
+</Info>
+
+## Invoice History
+
+Your past invoices are visible in two places:
+
+### On Your Dashboard
+
+Scroll down on the **Billing** page to find the **Invoice History** section. This shows a table with:
+
+| Column | What it shows |
+|--------|--------------|
+| **Date** | When the invoice was created |
+| **Period** | The billing period it covers (e.g. "1 Mar - 31 Mar 2026") |
+| **Amount** | The total charged |
+| **Status** | Paid, Pending, or Failed |
+
+Click the **Download PDF** button on any row to save the invoice to your computer.
+
+### In the Stripe Portal
+
+For a complete history including old subscriptions, click **Manage Subscription** then **Billing history** in the Stripe portal.
+
+## Creating a Manual Invoice
+
+If you need to bill a customer directly (for a one-off job, a deposit, or a service not covered by your AI bookings), you can create and send invoices from your dashboard.
+
+<Steps>
+  <Step title="Go to Billing">
+    Click **Billing** in the sidebar.
+  </Step>
+  <Step title="Click Create Invoice">
+    Click the **Create Invoice** button. A form dialog opens.
+  </Step>
+  <Step title="Fill in the invoice details">
+    - **Customer Name** — The name of the person or business you are billing.
+    - **Customer Email** — Where the invoice will be sent. The customer receives an email with a link to pay online.
+    - **Amount** — The total amount to charge (in your local currency).
+    - **Description** — A line item describing what the charge is for (e.g. "Emergency boiler repair — 15 March 2026").
+    - **Due Date** — Select the date by which payment is expected using the date picker.
+  </Step>
+  <Step title="Click Send Invoice">
+    Click **Send Invoice**. The customer receives a branded email with the invoice details and a **Pay Now** button. The Pay Now button takes them to a secure Stripe payment page where they can pay by card.
+  </Step>
+</Steps>
+
+<Tip>
+Sent invoices appear in your Invoice History with a **Sent** status. Once the customer pays, the status updates to **Paid** automatically. If an invoice passes its due date without payment, you will receive an overdue reminder.
+</Tip>
+
+<Warning>
+Manual invoices are separate from your subscription billing. They do not affect your plan or minute allowance — they are simply a convenient way to collect payments from your customers.
+</Warning>
+
 <Snippet file="snippets/footer.mdx" />

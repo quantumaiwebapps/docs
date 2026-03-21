@@ -35,6 +35,7 @@
           "getting-started/understanding-dashboard",
           "getting-started/call-forwarding",
           "getting-started/billing-plans",
+          "getting-started/my-business",
           "getting-started/glossary"
         ]
       },
@@ -47,7 +48,9 @@
           "ai-receptionist/knowledge-base",
           "ai-receptionist/smart-routing",
           "ai-receptionist/ivr-phone-menu",
+          "ai-receptionist/call-handling-settings",
           "ai-receptionist/testing",
+          "ai-receptionist/ai-training",
           "ai-receptionist/bilingual",
           "ai-receptionist/email-replies",
           "ai-receptionist/hipaa"
@@ -133,7 +136,8 @@
         "pages": [
           "settings/account-security",
           "settings/team-management",
-          "settings/notifications"
+          "settings/notifications",
+          "settings/support-tickets"
         ]
       },
       {

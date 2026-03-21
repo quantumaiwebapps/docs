@@ -12,18 +12,25 @@ If your business has more than one location (e.g. two salon branches, or offices
 
 <Steps>
   <Step title="Go to Locations">
-    Click **Locations** in the left sidebar.
+    Click **Locations** in the left sidebar. You will see a grid of cards showing your existing locations (or an empty state if you have none yet).
   </Step>
-  <Step title="Click Add Location">
-    Click the **Add Location** button.
+  <Step title="Click the + button">
+    Click the **+** button (or **Add Location** button) at the top right of the page. A form dialog opens.
   </Step>
-  <Step title="Enter the details">
-    - **Name** — the location name (e.g. "Manchester Branch")
-    - **Address** — the full street address
-
-    Click **Save** to create the location.
+  <Step title="Enter the location name">
+    Type a clear, recognisable name in the **Name** field. Examples: "Manchester Branch", "High Street Salon", "Warehouse". This name appears on location cards and in your call logs.
+  </Step>
+  <Step title="Enter the address">
+    Type the full street address in the **Address** field. This helps the AI tell callers where the location is.
+  </Step>
+  <Step title="Save">
+    Click **Save** to create the location. It appears as a new card on the Locations page.
   </Step>
 </Steps>
+
+<Tip>
+You can add as many locations as your plan allows. Each location can have its own phone numbers, hours, and call tracking.
+</Tip>
 
 ## Phone Numbers Per Location
 
@@ -53,14 +60,52 @@ To provision a phone number for a location:
   You can have both a mobile and a landline number for the same location. Many businesses use the landline as their main advertised number and the mobile for SMS.
 </Tip>
 
-## Activate and Deactivate Locations
+## Editing a Location
 
-You can deactivate a location without deleting it. This is useful for seasonal branches or temporary closures.
+<Steps>
+  <Step title="Click the location card">
+    From the Locations page, click on any location card to open its **Location Detail** page.
+  </Step>
+  <Step title="Edit the name or address">
+    On the detail page, the name and address fields are editable. Click into either field, make your changes, and click **Save**.
+  </Step>
+  <Step title="Change location hours">
+    Each location can have its own operating hours, independent of your main business hours. See the **Location Hours** section below for details.
+  </Step>
+</Steps>
 
-- **Active** locations receive calls and appear in your reports
-- **Inactive** locations stop receiving calls but keep their history and phone numbers
+## Location Hours
 
-Toggle the status from the location detail page.
+Each location has its own **7-day hours grid**, identical in format to the hours on your My Business page:
+
+- **Toggle each day** on or off using the switch on the left.
+- **Set start and end times** for each active day using the time pickers.
+- If a location has different hours from your main business (e.g. your city centre branch opens at 7am but your suburban branch opens at 9am), set them here.
+
+<Info>
+Location-specific hours are used by the AI when a caller asks "What time does your Manchester branch open?" If no location hours are set, the AI falls back to your main business hours.
+</Info>
+
+## Activating and Deactivating Locations
+
+You can deactivate a location without deleting it. This is useful for seasonal branches, temporary closures, or locations that are not yet ready to go live.
+
+<Steps>
+  <Step title="Open the location detail page">
+    Click the location card from the Locations page.
+  </Step>
+  <Step title="Find the active/inactive toggle">
+    On the detail page, look for the **Active** toggle switch.
+  </Step>
+  <Step title="Toggle it">
+    - **Active (on)** — The location receives calls, appears in your reports, and the AI can mention it to callers.
+    - **Inactive (off)** — The location stops receiving calls. Its phone numbers are kept but calls are not answered. Call history and settings are preserved.
+  </Step>
+</Steps>
+
+<Tip>
+Use deactivation instead of deletion for temporary closures (holidays, refurbishment, seasonal shutdown). When you reactivate, everything picks up right where it left off — phone numbers, history, and settings are all intact.
+</Tip>
 
 ## Location Detail Page
 
@@ -70,17 +115,33 @@ Click any location card to see:
 - Phone numbers (mobile and landline) with provision buttons
 - Recent calls for that location
 - Active/inactive toggle
+- Location-specific hours grid
 
 <Info>
-  Calls are automatically associated with the location based on which phone number was called. You can filter your call history and analytics by location.
+Calls are automatically associated with the location based on which phone number was called. You can filter your call history and analytics by location.
 </Info>
 
 ## Deleting a Location
 
-From the location detail page, scroll to the bottom and click **Delete Location**. This will release any phone numbers associated with it.
+<Steps>
+  <Step title="Open the location detail page">
+    Click the location card from the Locations page.
+  </Step>
+  <Step title="Scroll to the bottom">
+    At the bottom of the detail page, you will find the **Delete Location** button.
+  </Step>
+  <Step title="Click Delete Location">
+    A confirmation dialog asks if you are sure. Click **Delete** to confirm.
+  </Step>
+  <Step title="What happens next">
+    - All phone numbers assigned to this location are **released permanently**. You cannot get the same number back.
+    - Call history for the location is kept in your records for reference.
+    - The location card disappears from the Locations page.
+  </Step>
+</Steps>
 
 <Warning>
-  Deleting a location releases its phone numbers permanently. If you just need to pause it temporarily, use the deactivate toggle instead.
+Deleting a location releases its phone numbers permanently. If you just need to pause it temporarily, use the **deactivate toggle** instead — it keeps the numbers reserved for when you reactivate.
 </Warning>
 
 <Snippet file="snippets/footer.mdx" />
