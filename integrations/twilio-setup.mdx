@@ -1,0 +1,143 @@
+---
+title: "Twilio Phone Numbers"
+description: "When you need Twilio, how to set it up, and how it works with your voice provider"
+icon: "phone"
+---
+
+## What Is Twilio?
+
+Twilio is a **phone number provider**. It buys and manages real phone numbers for your AI receptionist. Twilio does not handle the AI conversation itself — that is done by your voice provider (VAPI, Retell, or Bland). Twilio just provides the phone number that rings.
+
+Think of it this way: Twilio is the phone line, and VAPI/Retell/Bland is the brain that answers.
+
+---
+
+## When You Need Twilio
+
+<CardGroup cols={2}>
+  <Card title="You need Twilio if..." icon="check">
+    - You use **VAPI** and need **UK or AU** phone numbers (VAPI only provides US numbers natively)
+    - You are an **agency** and want to **own your phone numbers** directly (numbers stay with you if you ever leave CloseTheCall)
+  </Card>
+  <Card title="You do NOT need Twilio if..." icon="xmark">
+    - You are a **US-only business on VAPI** (numbers are included)
+    - You use **Retell** (native phone numbers for multiple countries)
+    - You use **Bland** (native phone numbers for multiple countries)
+    - You are a **direct client** (the platform handles phone numbers for you)
+  </Card>
+</CardGroup>
+
+---
+
+## How to Create a Twilio Account
+
+<Steps>
+  <Step title="Go to Twilio">
+    Visit [twilio.com](https://www.twilio.com) and click **Sign Up**.
+  </Step>
+  <Step title="Create your account">
+    Enter your name, email, and a password. Click **Start your free trial**.
+  </Step>
+  <Step title="Verify your email">
+    Check your inbox for a verification email from Twilio and click the link.
+  </Step>
+  <Step title="Verify your phone number">
+    Twilio will ask you to verify a phone number via SMS code. Enter your mobile number and the code you receive.
+  </Step>
+  <Step title="You are in">
+    Once verified, you land on the Twilio Console dashboard. You are ready to grab your keys.
+  </Step>
+</Steps>
+
+---
+
+## Finding Your Keys
+
+You need two values from Twilio: your **Account SID** and your **Auth Token**.
+
+<Steps>
+  <Step title="Open the Twilio Console">
+    Go to [twilio.com/console](https://www.twilio.com/console) and log in.
+  </Step>
+  <Step title="Find your Account SID">
+    Your **Account SID** is displayed on the dashboard home page. It starts with `AC` followed by a long string of letters and numbers.
+  </Step>
+  <Step title="Find your Auth Token">
+    Your **Auth Token** is next to the Account SID. Click **"Show"** or the eye icon to reveal it. Copy it.
+  </Step>
+</Steps>
+
+<Warning>Your Auth Token is a secret. Do not share it publicly or commit it to code. If you suspect it has been exposed, rotate it immediately in Twilio Console under **Settings > API Keys**.</Warning>
+
+---
+
+## Entering Keys in CloseTheCall
+
+<Steps>
+  <Step title="Open Agency Settings">
+    In your CloseTheCall dashboard, go to **Agency Settings > API Keys**.
+  </Step>
+  <Step title="Paste your credentials">
+    Enter your **Account SID** in the Twilio Account SID field and your **Auth Token** in the Twilio Auth Token field.
+  </Step>
+  <Step title="Save">
+    Click **Save**. The system validates your credentials by making a test API call. If successful, your keys are encrypted and stored.
+  </Step>
+</Steps>
+
+---
+
+## UK Number Requirements
+
+UK phone regulations are stricter than US regulations. Before you can buy a UK phone number through Twilio, you need to complete a one-time regulatory setup.
+
+<Steps>
+  <Step title="Go to Regulatory Compliance">
+    In the Twilio Console, navigate to **Phone Numbers > Regulatory Compliance**.
+  </Step>
+  <Step title="Create a Regulatory Bundle">
+    Click **Create a Bundle** and select **United Kingdom**. You will need to provide your business name, address, and a form of identification.
+  </Step>
+  <Step title="Submit for review">
+    Submit the bundle. Twilio typically approves UK bundles within 1-3 business days.
+  </Step>
+  <Step title="Note your BundleSid and AddressSid">
+    Once approved, you will have a **BundleSid** and an **AddressSid**. These are used automatically when the platform purchases UK numbers on your behalf.
+  </Step>
+</Steps>
+
+<Info>This is a one-time setup per country. Once your regulatory bundle is approved, all future UK number purchases work automatically.</Info>
+
+---
+
+## Cost
+
+- **Phone number rental:** ~$1-2/month per number (varies by country and number type)
+- **Calling rates:** per-minute charges apply on top of your voice provider costs. US calls are typically $0.01-0.02/min. UK and international rates vary.
+- **SMS:** ~$0.0075 per message (US). UK rates vary.
+
+Twilio charges are billed separately through your Twilio account, not through CloseTheCall.
+
+---
+
+## Troubleshooting
+
+<Accordion title="My key does not save">
+  - Check that your Account SID starts with `AC`. If it starts with anything else, you may be copying the wrong value.
+  - Check that your Auth Token is at least 32 characters long.
+  - Make sure you are copying from the main account, not a subaccount.
+</Accordion>
+
+<Accordion title="Phone number purchase fails">
+  - For UK numbers: check that your regulatory bundle is approved in Twilio Console under **Phone Numbers > Regulatory Compliance**. The bundle status must be "Approved".
+  - For US numbers: most purchases work immediately. If a specific area code fails, try a different one — not all area codes have available numbers.
+  - Check your Twilio account balance. Trial accounts have limited purchasing ability.
+</Accordion>
+
+<Accordion title="Calls are not connecting">
+  - Verify your Twilio account is upgraded from trial (trial accounts can only call verified numbers).
+  - Check that the phone number is active in Twilio Console under **Phone Numbers > Manage > Active Numbers**.
+  - Ensure your Twilio balance is not zero.
+</Accordion>
+
+<Snippet file="snippets/footer.mdx" />

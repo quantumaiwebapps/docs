@@ -36,6 +36,7 @@
           "getting-started/call-forwarding",
           "getting-started/billing-plans",
           "getting-started/my-business",
+          "getting-started/voice-providers",
           "getting-started/glossary",
           "getting-started/faq"
         ]
@@ -136,7 +137,8 @@
           "integrations/google-calendar",
           "integrations/outlook-calendar",
           "integrations/crm-hubspot-salesforce-ghl",
-          "integrations/zapier"
+          "integrations/zapier",
+          "integrations/twilio-setup"
         ]
       },
       {

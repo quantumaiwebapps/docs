@@ -1,0 +1,97 @@
+---
+title: "Voice Providers Explained"
+description: "Understanding VAPI, Retell, and Bland — which one powers your AI and why it matters"
+icon: "microphone"
+---
+
+## What Is a Voice Provider?
+
+A voice provider is the **AI engine that handles phone calls**. It listens to the caller, thinks of a response, and speaks back in a natural voice. Think of it as the "brain" behind your AI receptionist.
+
+The voice provider is separate from the phone number. The phone number is how callers reach your AI. The voice provider is what answers and talks.
+
+---
+
+## For Direct Clients
+
+<Info>Your provider is managed by the platform. You do not need to choose or configure anything — it just works. The platform uses VAPI by default, which gives you the best feature set including appointment booking, lead capture, and caller intelligence.</Info>
+
+---
+
+## For Agencies
+
+You choose which voice provider to use for all your clients. Set this in **Agency Settings > API Keys** by entering the API key for your chosen provider.
+
+See [API Keys & Voice Providers](/agency/api-keys-providers) for setup instructions.
+
+---
+
+## The 3 Providers
+
+### VAPI (Recommended — Default)
+
+VAPI is the most popular AI voice platform and the default provider on CloseTheCall. It offers the richest feature set of any provider.
+
+- **Voices:** ElevenLabs premium voices (Sarah, Alice, Eric, Daniel), VAPI native voices, custom voice clones
+- **Phone numbers:** US only (native provisioning). UK, AU, and other countries require Twilio — see [Twilio Setup](/integrations/twilio-setup)
+- **Key features:** Function calling (book appointments, capture leads), knowledge base RAG, Squads (multi-assistant routing), voicemail detection, caller intelligence (greet returning callers by name), bilingual support (5 languages), call transfer to human
+- **Pricing:** ~$0.05-0.11/min depending on voice and LLM selection
+- **Best for:** Most businesses. Richest feature set, best AI quality.
+
+### Retell
+
+Retell is a high-quality conversational AI platform with low latency and simpler setup.
+
+- **Voices:** Retell native voices, custom voice options
+- **Phone numbers:** Native provisioning for multiple countries — no Twilio needed for UK, AU, or EU numbers
+- **Key features:** Agent creation, custom voices, call transfer, basic call handling
+- **Pricing:** ~$0.04-0.08/min
+- **Best for:** Agencies wanting simpler setup with native international numbers without the Twilio hassle.
+
+### Bland
+
+Bland is a budget-friendly voice AI option designed for high-volume deployments.
+
+- **Voices:** Bland native voices
+- **Phone numbers:** Native provisioning for multiple countries — no Twilio needed
+- **Key features:** Basic AI agents, call handling, simple conversation flows
+- **Pricing:** ~$0.03-0.06/min
+- **Best for:** High-volume, cost-sensitive deployments where advanced features are not required.
+
+---
+
+## Comparison Table
+
+| Feature | VAPI | Retell | Bland |
+|---------|------|--------|-------|
+| Voice quality | Premium (ElevenLabs) | High | Good |
+| Phone numbers (US) | Native | Native | Native |
+| Phone numbers (UK/AU/EU) | Needs Twilio | Native | Native |
+| Multi-assistant routing (Squads) | Yes | No | No |
+| Knowledge base RAG | Yes | No | No |
+| Function calling (book appts, capture leads) | Yes | Limited | Limited |
+| Caller intelligence (greet by name) | Yes | No | No |
+| Voicemail detection | Yes | Basic | No |
+| Bilingual support | Yes (5 languages) | No | No |
+| Approx cost per minute | $0.05-0.11 | $0.04-0.08 | $0.03-0.06 |
+
+---
+
+## Which Should You Choose?
+
+<CardGroup cols={2}>
+  <Card title="I want the best AI quality and most features" icon="star">
+    **Choose VAPI.** It has function calling, knowledge base integration, caller intelligence, voicemail detection, and bilingual support. Most CloseTheCall features are built on VAPI.
+  </Card>
+  <Card title="I need international numbers without Twilio" icon="globe">
+    **Choose Retell.** It provisions phone numbers natively in multiple countries, so you skip the Twilio regulatory setup entirely.
+  </Card>
+  <Card title="I want the lowest cost per minute" icon="coins">
+    **Choose Bland.** At $0.03-0.06/min, it is the most affordable option for simple call answering at scale.
+  </Card>
+  <Card title="I am a direct client and do not care" icon="circle-check">
+    **Do not worry about it.** The platform handles everything for you. Your AI receptionist uses VAPI by default and it just works.
+  </Card>
+</CardGroup>
+
+<Snippet file="snippets/footer.mdx" />

@@ -50,37 +50,57 @@ VAPI is the primary voice AI provider and offers the most features: function cal
 
 ## Retell API Key (Optional)
 
-Retell is a simpler voice AI provider with lower latency. It supports basic call flows but does not have the full function calling capabilities of VAPI.
+Retell is a high-quality voice AI provider with low latency. It supports basic call flows and provisions phone numbers natively in multiple countries (including UK and AU) — so you do not need Twilio for international numbers. It does not have the full function calling or knowledge base capabilities of VAPI.
+
+See [Voice Providers Explained](/getting-started/voice-providers) for a full comparison.
 
 <Steps>
   <Step title="Create a Retell account">
-    Go to [retell.ai](https://retell.ai) and sign up.
+    Go to [retell.ai](https://retell.ai) and click **Sign Up**. Enter your email and create a password.
   </Step>
-  <Step title="Get your API key">
-    In the Retell dashboard, navigate to **Settings** and copy your API key.
+  <Step title="Open the dashboard">
+    After verifying your email, log in to the Retell dashboard.
+  </Step>
+  <Step title="Navigate to Settings">
+    In the left sidebar, click **Settings**. Then click **API Key**.
+  </Step>
+  <Step title="Copy your API key">
+    Your API key is displayed on the settings page. Click the copy icon to copy it to your clipboard.
   </Step>
   <Step title="Paste into CloseTheCall">
-    Go to **Agency Settings > API Keys** and paste the key into the Retell field. Click **Save**.
+    Go to **Agency Settings > API Keys** in your CloseTheCall dashboard. Paste the key into the **Retell** field. Click **Save**.
   </Step>
 </Steps>
+
+<Info>**What happens after you save:** The platform validates your key, then syncs all your client assistants to Retell. New phone numbers will be provisioned through Retell instead of Twilio/VAPI. All existing clients automatically switch to the Retell provider on their next call.</Info>
 
 ---
 
 ## Bland API Key (Optional)
 
-Bland is a budget-friendly voice AI option. It works well for simple call answering but has fewer customization options than VAPI or Retell.
+Bland is a budget-friendly voice AI option at ~$0.03-0.06/min. It works well for simple, high-volume call answering but has fewer customization options than VAPI or Retell. Like Retell, Bland provisions phone numbers natively in multiple countries — no Twilio needed.
+
+See [Voice Providers Explained](/getting-started/voice-providers) for a full comparison.
 
 <Steps>
   <Step title="Create a Bland account">
-    Go to [bland.ai](https://bland.ai) and sign up.
+    Go to [bland.ai](https://bland.ai) and click **Sign Up**. Enter your email and create a password.
   </Step>
-  <Step title="Get your API key">
-    Copy your API key from the Bland dashboard settings.
+  <Step title="Open the dashboard">
+    After verifying your account, log in to the Bland dashboard.
+  </Step>
+  <Step title="Navigate to API Keys">
+    In the dashboard, go to **API Keys** (typically in the settings or sidebar menu).
+  </Step>
+  <Step title="Copy your API key">
+    Click **Create Key** if you do not have one yet, or copy your existing key.
   </Step>
   <Step title="Paste into CloseTheCall">
-    Go to **Agency Settings > API Keys** and paste the key into the Bland field. Click **Save**.
+    Go to **Agency Settings > API Keys** in your CloseTheCall dashboard. Paste the key into the **Bland** field. Click **Save**.
   </Step>
 </Steps>
+
+<Info>**What happens after you save:** The platform validates your key, then syncs all your client assistants to Bland. New phone numbers will be provisioned through Bland instead of Twilio/VAPI. All existing clients automatically switch to the Bland provider on their next call.</Info>
 
 ---
 
