@@ -1,0 +1,169 @@
+---
+title: "API Keys & Voice Providers"
+description: "Configure VAPI, Retell, Bland, and Twilio API keys for your agency — encrypted storage, key validation, and provider comparison."
+icon: "key"
+---
+
+## Overview
+
+API keys connect the CloseTheCall platform to the voice AI and telephony services that power your clients' receptionists. You enter your keys once in **Agency Settings > API Keys**, and they are used for all client calls.
+
+All keys are encrypted with **AES-256-GCM** before storage. They are never stored in plain text, never logged, and decrypted only at the moment a call is made.
+
+---
+
+## Required vs Optional Keys
+
+| Key | Required? | What It Powers |
+|-----|-----------|---------------|
+| **VAPI API Key** | Yes | Voice AI calls (primary provider) |
+| **Retell API Key** | No | Alternative voice AI provider |
+| **Bland API Key** | No | Budget voice AI provider |
+| **Twilio Account SID + Auth Token** | No | Use your own phone numbers instead of platform numbers |
+
+<Warning>You must configure at least one voice provider key (VAPI is recommended). Without it, no AI calls can be made for your clients.</Warning>
+
+---
+
+## VAPI API Key (Recommended)
+
+VAPI is the primary voice AI provider and offers the most features: function calling, knowledge base integration, call transfer, voicemail detection, and bilingual support.
+
+<Steps>
+  <Step title="Create a VAPI account">
+    Go to [dashboard.vapi.ai](https://dashboard.vapi.ai) and sign up.
+  </Step>
+  <Step title="Navigate to API Keys">
+    In the VAPI dashboard, go to **Settings > API Keys**.
+  </Step>
+  <Step title="Create or copy your key">
+    Copy your API key. It starts with `vapi_` followed by a long string.
+  </Step>
+  <Step title="Paste into CloseTheCall">
+    Go to **Agency Settings > API Keys** and paste the key into the VAPI field. Click **Save**.
+  </Step>
+</Steps>
+
+<Info>The system validates your key when you save it by making a test API call. If the key is invalid, you will see an error message and the key will not be saved.</Info>
+
+---
+
+## Retell API Key (Optional)
+
+Retell is a simpler voice AI provider with lower latency. It supports basic call flows but does not have the full function calling capabilities of VAPI.
+
+<Steps>
+  <Step title="Create a Retell account">
+    Go to [retell.ai](https://retell.ai) and sign up.
+  </Step>
+  <Step title="Get your API key">
+    In the Retell dashboard, navigate to **Settings** and copy your API key.
+  </Step>
+  <Step title="Paste into CloseTheCall">
+    Go to **Agency Settings > API Keys** and paste the key into the Retell field. Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Bland API Key (Optional)
+
+Bland is a budget-friendly voice AI option. It works well for simple call answering but has fewer customization options than VAPI or Retell.
+
+<Steps>
+  <Step title="Create a Bland account">
+    Go to [bland.ai](https://bland.ai) and sign up.
+  </Step>
+  <Step title="Get your API key">
+    Copy your API key from the Bland dashboard settings.
+  </Step>
+  <Step title="Paste into CloseTheCall">
+    Go to **Agency Settings > API Keys** and paste the key into the Bland field. Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Twilio Keys (Optional)
+
+By default, phone numbers are provisioned from the platform's Twilio account. If you want to use your own Twilio account (for number ownership, custom caller ID, or billing control), enter your Twilio credentials.
+
+You need two values:
+- **Account SID** — starts with `AC`, found on your Twilio dashboard home page
+- **Auth Token** — found next to Account SID (click to reveal)
+
+Get both from [twilio.com/console](https://twilio.com/console).
+
+<Tip>Using your own Twilio account means you own the phone numbers directly. If you ever leave CloseTheCall, the numbers stay with you. With platform numbers, numbers are returned when you cancel.</Tip>
+
+---
+
+## How Key Encryption Works
+
+When you save an API key:
+
+1. The key is encrypted with **AES-256-GCM** using a platform encryption key
+2. The encrypted value is stored in the database
+3. When a call comes in, the key is decrypted in memory for that single API request
+4. The decrypted key is never written to logs, error reports, or cached
+
+Keys are isolated per agency. Your keys are never shared with other agencies or used for platform operations.
+
+---
+
+## Changing Keys
+
+You can update any API key at any time:
+
+1. Go to **Agency Settings > API Keys**
+2. Enter the new key in the appropriate field
+3. Click **Save**
+
+The new key takes effect on the next call. Calls already in progress continue using the previous key until they end.
+
+<Warning>If you rotate a key in your provider's dashboard (VAPI, Retell, etc.), update it in CloseTheCall immediately. Calls will fail until the new key is saved.</Warning>
+
+---
+
+## Which Provider Should You Choose?
+
+<CardGroup cols={3}>
+  <Card title="VAPI" icon="star">
+    **Recommended**
+
+    - Full function calling (booking, lead capture)
+    - Knowledge base integration
+    - Call transfer to human
+    - Voicemail detection
+    - Bilingual support (5 languages)
+    - ~$0.05/min
+  </Card>
+  <Card title="Retell" icon="bolt">
+    **Simpler**
+
+    - Lower latency
+    - Basic call flows
+    - Limited function calling
+    - Good for simple answering
+    - ~$0.04/min
+  </Card>
+  <Card title="Bland" icon="coins">
+    **Budget**
+
+    - Lowest cost
+    - Basic voice AI
+    - Fewer customization options
+    - Good for high-volume, simple calls
+    - ~$0.03/min
+  </Card>
+</CardGroup>
+
+<Accordion title="Can I use different providers for different clients?">
+  Not currently. The voice provider is set at the agency level and applies to all clients. If you need per-client provider selection, contact support to discuss Enterprise options.
+</Accordion>
+
+<Accordion title="What happens if my VAPI balance runs out?">
+  Calls will fail with a provider error. The AI will not answer, and calls will go to the client's voicemail or ring through to their personal phone (depending on routing settings). Top up your VAPI balance at dashboard.vapi.ai to restore service.
+</Accordion>
+
+<Snippet file="snippets/footer.mdx" />

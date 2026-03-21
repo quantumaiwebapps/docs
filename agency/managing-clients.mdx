@@ -1,0 +1,103 @@
+---
+title: "Managing Clients (Sub-Accounts)"
+description: "Add, monitor, and manage client businesses from the agency portal — invites, impersonation, health scores, and bulk actions."
+icon: "users"
+---
+
+## Client List Page
+
+Navigate to **Agency Portal > Clients** to see all your sub-accounts. The page includes:
+
+- **Search bar** — find clients by name, email, or phone number
+- **Status tabs** — filter by All, Active, Suspended, or Pending
+- **Health score badges** — color-coded indicators showing each client's operational health
+- **Download Report** — export a PDF with calls, leads, and revenue per client
+
+<Info>Client health scores update daily at 2:00 AM ET. See [Analytics & Health Scores](/agency/analytics-health) for how they are calculated.</Info>
+
+---
+
+## Adding a New Client
+
+<Steps>
+  <Step title="Click 'Add Client'">
+    Open the Add Client dialog from the top-right of the Clients page.
+  </Step>
+  <Step title="Fill in client details">
+    Enter the following:
+    - **Email** — the client's login email
+    - **Business name** — displayed in their dashboard
+    - **Trade/Industry** — selects the right AI template (plumber, salon, etc.)
+    - **Phone number** — their existing business phone
+    - **Plan** — which plan to assign the client
+    - **Send invite email** — toggle on to email credentials automatically
+  </Step>
+  <Step title="Copy temporary credentials">
+    After creation, you will see a dialog with the client's temporary username and password. Use the **copy buttons** to grab these — they are only shown once.
+  </Step>
+  <Step title="Begin onboarding (optional)">
+    Click **Onboard Client** to walk through the [5-step onboarding wizard](/agency/client-onboarding) for this client.
+  </Step>
+</Steps>
+
+<Warning>Temporary credentials are displayed **once** after creation. If you miss them, use **Resend Invite** to send a new set via email.</Warning>
+
+---
+
+## Per-Client Actions
+
+Click the three-dot menu on any client row to access these actions:
+
+| Action | What It Does |
+|--------|-------------|
+| **View Details** | Opens the client's full profile — business info, AI config, calls, leads |
+| **Impersonate** | Logs you into the client's dashboard as them (opens in new tab) |
+| **Resend Invite** | Sends fresh login credentials to the client's email |
+| **Onboard** | Opens the 5-step onboarding wizard for this client |
+| **Go Live** | Activates the client — billing starts, calls begin |
+| **Suspend** | Temporarily disables the client's AI receptionist |
+| **Activate** | Re-enables a suspended client |
+| **Remove** | Permanently deletes the client sub-account |
+
+<Tip>**Impersonation** is your most powerful tool. It lets you configure the client's AI, knowledge base, phone, and settings as if you were logged into their account — without needing their password.</Tip>
+
+---
+
+## Bulk Actions
+
+Select multiple clients using the checkboxes on the left side of the table, then use the bulk action bar that appears at the top:
+
+- **Suspend Selected** — disable AI for all selected clients
+- **Activate Selected** — re-enable all selected clients
+
+<Info>Bulk remove is intentionally not available to prevent accidental mass deletion.</Info>
+
+---
+
+## Health Score Badges
+
+Each client displays a health badge based on their operational metrics:
+
+| Badge | Score Range | Meaning |
+|-------|------------|---------|
+| **Thriving** | 80–100 | Client is active, converting leads, wallet funded |
+| **Healthy** | 60–79 | Performing well, minor areas for improvement |
+| **At Risk** | 40–59 | Declining activity or low wallet — needs attention |
+| **Critical** | 0–39 | Inactive or out of funds — immediate action needed |
+
+Health scores are calculated from 6 factors: call volume, lead conversion, knowledge base quality, wallet balance, response rate, and recent activity. See [Analytics & Health Scores](/agency/analytics-health) for the full breakdown.
+
+---
+
+## What "Go Live" Means
+
+When you click **Go Live** on a client:
+
+1. The client's AI receptionist starts answering calls
+2. Billing begins (minutes are deducted from their wallet)
+3. The client gets full dashboard access
+4. Their phone number becomes active
+
+<Warning>**Go Live is irreversible.** You cannot "un-live" a client — you can only suspend them, which stops calls but does not reverse any charges.</Warning>
+
+<Snippet file="snippets/footer.mdx" />

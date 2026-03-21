@@ -1,0 +1,159 @@
+---
+title: "Agency Analytics & Health Scores"
+description: "Monitor client performance with cross-client analytics, conversion funnels, sentiment tracking, and the 6-factor health score algorithm."
+icon: "chart-mixed"
+---
+
+## Agency Dashboard Overview
+
+The agency analytics page aggregates data across all your clients into a single view. Navigate to **Agency Portal > Analytics**.
+
+Top-level metrics:
+- **Total Calls** — calls handled by all client AI receptionists
+- **Total Leads** — leads captured across all clients
+- **Total Appointments** — bookings made by all client AIs
+- **Revenue** — total client deposits over the selected period
+
+Use the **date range selector** (7 days, 30 days, 90 days) to adjust the time window.
+
+---
+
+## Revenue Trend Chart
+
+A bar chart showing monthly revenue over the past 6 months. Revenue is calculated from client wallet deposits (before the 5% platform fee is deducted).
+
+Hover over any bar to see the exact amount and client count for that month.
+
+---
+
+## Client Leaderboard
+
+Two ranked lists help you identify who needs attention:
+
+### Top 5 Performers
+Clients with the highest call volume, lead conversion, and health scores. These are your success stories — consider using them as case studies.
+
+### Bottom 5 Needing Attention
+Clients with the lowest health scores or declining activity. These need proactive outreach — their AI may be misconfigured, their wallet may be empty, or they may have stopped forwarding calls.
+
+<Tip>Set up [usage alerts](/agency/analytics-health#client-usage-alerts) to get notified automatically when a client drops into the "at risk" zone instead of checking manually.</Tip>
+
+---
+
+## Conversion Funnel
+
+The funnel visualization shows how callers progress through your clients' AI systems:
+
+```
+Calls (100%) → Leads Captured (45%) → Appointments Booked (22%) → Completed (18%)
+```
+
+Each stage shows the count and conversion rate from the previous stage. This is aggregated across all clients but can be filtered by individual client.
+
+Low conversion between stages indicates specific issues:
+- **Calls to Leads is low** — AI is not capturing caller information (check knowledge base and lead capture toggle)
+- **Leads to Appointments is low** — AI is not offering bookings (check booking mode in AI config)
+- **Appointments to Completed is low** — high no-show rate (enable appointment reminders)
+
+---
+
+## Sentiment Distribution
+
+A breakdown of call sentiment across all clients:
+
+| Sentiment | Meaning |
+|-----------|---------|
+| **Positive** | Caller was satisfied, issue resolved, appointment booked |
+| **Neutral** | Standard inquiry, no strong sentiment either way |
+| **Negative** | Caller was frustrated, issue unresolved, complaint |
+
+Sentiment is analyzed automatically from call transcripts using AI. A high negative percentage across a specific client suggests their AI needs better training or their knowledge base has gaps.
+
+---
+
+## Health Scores
+
+Every client receives a daily health score from 0 to 100, calculated from 6 weighted factors:
+
+| Factor | Weight | What It Measures |
+|--------|--------|-----------------|
+| **Call Volume** | 30% | Number of calls in the last 7 days vs the client's historical average |
+| **Lead Conversion** | 20% | Percentage of calls that result in a captured lead |
+| **Knowledge Base** | 15% | Intelligence score — category coverage and article quality |
+| **Wallet Balance** | 15% | Current balance relative to weekly usage (how many days of calls can they afford) |
+| **Response Rate** | 10% | Percentage of calls answered by AI (vs missed or failed) |
+| **Recent Activity** | 10% | Last login date, settings changes, knowledge base updates |
+
+### Health Temperatures
+
+Scores map to four temperature labels:
+
+<CardGroup cols={4}>
+  <Card title="Thriving" icon="face-smile-beam">
+    **80–100**
+
+    Active, converting, funded. No action needed.
+  </Card>
+  <Card title="Healthy" icon="face-smile">
+    **60–79**
+
+    Performing well. Minor improvements possible.
+  </Card>
+  <Card title="At Risk" icon="face-meh">
+    **40–59**
+
+    Declining. Check wallet, call volume, or KB gaps.
+  </Card>
+  <Card title="Critical" icon="face-frown">
+    **0–39**
+
+    Immediate attention. May be inactive or out of funds.
+  </Card>
+</CardGroup>
+
+Health scores recalculate daily at 2:00 AM ET. The calculation uses a Redis lock to prevent duplicate processing.
+
+---
+
+## Client Usage Alerts
+
+Configure automated alerts so you are notified when clients need attention. Navigate to **Agency Settings > Alert Preferences**.
+
+### Alert Types
+
+| Alert | Default Threshold | What Triggers It |
+|-------|-------------------|-----------------|
+| **Low Wallet** | Balance below $10 | Client's wallet balance drops below your threshold |
+| **Inactive** | No calls in 7 days | Client has not received any calls in N days |
+| **Usage Limit** | 80% of plan minutes | Client has used N% of their included minutes |
+| **Health Drop** | Score drops below 40 | Client's health score falls into Critical range |
+
+### Configuring Alerts
+
+Each alert type has two settings:
+- **Enabled/Disabled toggle** — turn the alert on or off
+- **Threshold** — the value that triggers the alert (e.g., $10 for low wallet, 7 days for inactive)
+
+### How Alerts Are Delivered
+
+Alerts are checked daily at 9:00 AM ET. All triggered alerts are batched into a single **digest email** sent to the agency owner. Each alert includes:
+- Client name and current metric value
+- Suggested action
+- Direct link to the client's detail page
+
+<Info>Each alert type is rate-limited to once per client per 24 hours. You will not receive duplicate alerts for the same client and issue within a day.</Info>
+
+---
+
+## CSV Export
+
+Click **Download CSV** on the analytics page to export a spreadsheet containing:
+- Client name, email, and plan
+- Call count, lead count, appointment count
+- Total deposited, total used, current balance
+- Health score and temperature
+- Last activity date
+
+This is useful for monthly reporting, client reviews, or importing into your own analytics tools.
+
+<Snippet file="snippets/footer.mdx" />

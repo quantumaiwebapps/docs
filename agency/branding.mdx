@@ -1,0 +1,145 @@
+---
+title: "White-Label Branding"
+description: "Customize your agency's logo, colors, domain, landing page, and email templates so clients never see CloseTheCall."
+icon: "palette"
+---
+
+## Overview
+
+White-label branding lets you present CloseTheCall as your own product. Every client-facing surface — the dashboard, login page, emails, and landing page — uses your agency's branding.
+
+Navigate to **Agency Portal > Settings > Branding** to configure all options.
+
+---
+
+## Logo
+
+Upload two versions of your logo:
+
+| Version | Used Where | Recommendation |
+|---------|-----------|----------------|
+| **Light logo** | Displayed on dark backgrounds (sidebar, dark mode) | White or light-colored logo, PNG or SVG |
+| **Dark logo** | Displayed on light backgrounds (login page, emails) | Dark-colored logo, PNG or SVG |
+
+<Tip>Use SVG format for crisp logos at any size. Minimum recommended dimensions are 200x60 pixels.</Tip>
+
+---
+
+## Brand Colors
+
+Set three colors that apply across the entire client dashboard:
+
+- **Primary** — buttons, links, active tabs, sidebar highlights
+- **Secondary** — secondary buttons, hover states, card borders
+- **Accent** — notification badges, status indicators, chart highlights
+
+Enter colors as hex codes (e.g., `#FF6B00`). Changes apply immediately in the live preview.
+
+---
+
+## Font Family
+
+Choose a font that matches your brand:
+
+| Font | Style | Best For |
+|------|-------|----------|
+| **Inter** | Clean, modern sans-serif | Tech agencies, SaaS brands |
+| **Poppins** | Rounded, friendly | Creative agencies, lifestyle brands |
+| **Roboto** | Neutral, professional | Enterprise, corporate agencies |
+| **System** | Uses the client's device font | Maximum performance, no font loading |
+
+---
+
+## Custom Welcome Message
+
+Write a dashboard greeting that clients see when they log in. This appears at the top of their main dashboard page.
+
+**Example:**
+> Welcome back! Your AI receptionist handled 47 calls this week. Check your leads below.
+
+You can use the placeholder `{{businessName}}` and it will be replaced with the client's business name.
+
+---
+
+## Email From Name
+
+All automated emails (appointment confirmations, lead notifications, weekly summaries) are sent using your agency's name instead of "CloseTheCall."
+
+- **From name** — e.g., "SmithAI Support" or "Your Agency Name"
+- **Reply-to** — set a reply-to address so client responses go to your inbox
+
+<Info>The actual sending email address remains a CloseTheCall domain for deliverability. Only the display name and reply-to are customized.</Info>
+
+---
+
+## Custom Domain
+
+Point your own domain to the client dashboard so clients log in at `ai.youragency.com` instead of `app.closethecall.com`.
+
+<Steps>
+  <Step title="Choose your subdomain">
+    Enter the subdomain you want to use, such as `ai.youragency.com` or `dashboard.youragency.com`.
+  </Step>
+  <Step title="Add a CNAME record">
+    In your DNS provider, add a CNAME record:
+
+    | Type | Name | Value |
+    |------|------|-------|
+    | CNAME | `ai` | `app.closethecall.com` |
+
+  </Step>
+  <Step title="Verify DNS">
+    Click **Verify Domain** in the branding settings. The system checks the CNAME record and confirms it points to the right place.
+  </Step>
+  <Step title="Wait for propagation">
+    DNS changes can take up to 48 hours to propagate, though most complete within 15 minutes. The status will show "Pending" until verification succeeds.
+  </Step>
+</Steps>
+
+<Warning>Do not use your root domain (e.g., `youragency.com`). CNAME records only work on subdomains.</Warning>
+
+---
+
+## Landing Page Editor
+
+Your agency gets a public landing page where potential clients can learn about your AI receptionist service and sign up.
+
+**Editable sections:**
+- **Headline** — the main value proposition
+- **Subheadline** — supporting text below the headline
+- **Features list** — bullet points describing what clients get
+- **Call-to-action button** — text and link (defaults to signup)
+- **Testimonials** — add client quotes (optional)
+
+The landing page URL is `youragency.closethecall.com` or your custom domain if configured.
+
+---
+
+## Self-Signup Toggle
+
+Enable **self-signup** to let clients register directly from your landing page without an invite link.
+
+When enabled:
+- A signup form appears on your landing page
+- New signups are automatically created as sub-accounts under your agency
+- They count toward your plan's client limit (10/25/unlimited)
+- You can still onboard them through the wizard after they register
+
+When disabled:
+- Clients can only join via invite links you generate from the Clients page
+
+<Tip>Start with self-signup disabled while you refine your onboarding process. Turn it on once you have a smooth workflow and want to scale without manual invites.</Tip>
+
+---
+
+## Live Preview
+
+The branding page includes a live preview panel on the right side that updates as you make changes. It shows:
+
+- Login page with your logo and colors
+- Dashboard sidebar with your brand colors
+- Sample email with your from name and colors
+
+Click **Save Branding** to apply changes. They take effect immediately for all clients.
+
+<Snippet file="snippets/footer.mdx" />

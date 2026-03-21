@@ -1,0 +1,135 @@
+---
+title: "Agency Billing & Revenue"
+description: "Stripe Connect payouts, client wallets, per-minute pricing, revenue tracking, and how the platform fee works."
+icon: "dollar-sign"
+---
+
+## How Agency Billing Works
+
+As an agency, you pay a monthly subscription for the platform, and your clients pay you for AI receptionist minutes. You set your own prices and keep the margin.
+
+```
+Client deposits $100 → 5% platform fee ($5) → $95 to your Stripe balance
+```
+
+---
+
+## Stripe Connect
+
+Stripe Connect is how you receive client payments. You must connect a Stripe account before clients can deposit funds.
+
+<Steps>
+  <Step title="Go to Agency Settings > Billing">
+    Click **Connect Stripe Account** to start the Stripe Connect onboarding flow.
+  </Step>
+  <Step title="Complete Stripe onboarding">
+    Stripe will ask for your business details, bank account, and identity verification. This is a one-time process.
+  </Step>
+  <Step title="Verify connection">
+    Once complete, the Billing page shows your Stripe Connect status as "Connected" with your account ID.
+  </Step>
+</Steps>
+
+<Warning>Clients cannot deposit funds or auto-recharge until your Stripe Connect account is fully verified. Complete this step before onboarding clients.</Warning>
+
+---
+
+## Client Wallet
+
+Each client has a prepaid wallet that funds their AI call minutes.
+
+### How the wallet works:
+
+- **Deposits** — clients add funds via Stripe (charged to their card, transferred to your Stripe account minus the 5% platform fee)
+- **Auto-recharge** — clients can set a threshold and reload amount (e.g., "Add $50 when balance drops below $10")
+- **Per-minute deduction** — each AI call minute deducts from the wallet at the rate you set
+- **Transaction history** — every deposit, deduction, and credit is logged
+
+### Credits vs Balance
+
+| Type | Source | Priority | Refundable? |
+|------|--------|----------|-------------|
+| **Credits** | Gifted by agency (promotional, onboarding bonus) | Used first | No |
+| **Balance** | Deposited by client via Stripe | Used after credits | Yes (via Stripe) |
+
+<Tip>Gift new clients 30 minutes of credits as an onboarding incentive. It costs you nothing (credits are not charged to Stripe) and helps them see value immediately.</Tip>
+
+---
+
+## Per-Minute Pricing
+
+You control what you charge clients per minute. Set this in **Agency Settings > Pricing**.
+
+**Example margin calculation:**
+
+| Item | Amount |
+|------|--------|
+| VAPI cost to platform | ~$0.05/min |
+| Platform charges agency | $0.07/min |
+| Agency charges client | $0.15/min |
+| **Your margin** | **$0.08/min** |
+
+<Info>The platform cost varies by voice provider and call duration. Check your VAPI dashboard for exact per-minute rates. Most agencies charge 2-3x the platform cost.</Info>
+
+---
+
+## Revenue Dashboard
+
+Navigate to **Agency Portal > Analytics** to see your revenue metrics:
+
+- **MRR (Monthly Recurring Revenue)** — total expected revenue this month based on active clients
+- **Total Revenue** — lifetime revenue across all clients
+- **Per-client breakdown** — table showing each client's deposits, usage, and balance
+- **Revenue trend chart** — 6-month chart of monthly revenue
+
+### Downloading Reports
+
+Click **Download CSV** on the analytics page to export:
+- Client name, email, plan
+- Total deposited, total used, current balance
+- Call count, lead count, appointment count
+- Health score and temperature
+
+---
+
+## Platform Fee
+
+The platform charges a **5% fee** on all client deposits. This is deducted automatically before funds reach your Stripe balance.
+
+| Client Deposits | Platform Fee (5%) | You Receive |
+|----------------|-------------------|-------------|
+| $50 | $2.50 | $47.50 |
+| $100 | $5.00 | $95.00 |
+| $500 | $25.00 | $475.00 |
+
+<Info>The platform fee covers infrastructure costs (VAPI, Twilio, hosting). Your monthly agency subscription covers the dashboard, branding, and support.</Info>
+
+---
+
+## How Payouts Work
+
+Stripe Connect handles payouts to your bank account:
+
+1. Client deposits funds via Stripe
+2. 5% platform fee is deducted
+3. Remaining amount lands in your Stripe Connect balance
+4. Stripe pays out to your bank on your configured schedule (daily, weekly, or monthly)
+
+You can check payout status and history directly in your Stripe dashboard at [dashboard.stripe.com](https://dashboard.stripe.com).
+
+---
+
+## Client Invoices
+
+Clients can download invoices for their deposits from their own dashboard under **Billing > Transaction History**. Each transaction shows:
+
+- Date and amount
+- Payment method (last 4 digits)
+- Invoice number
+- Download link (PDF)
+
+<Accordion title="Can I generate invoices for clients manually?">
+  Yes. Navigate to a client's detail page via impersonation and go to **Billing > Invoices**. You can create a custom invoice with a due date and send it via email with a Stripe payment link.
+</Accordion>
+
+<Snippet file="snippets/footer.mdx" />

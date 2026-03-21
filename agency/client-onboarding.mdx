@@ -1,0 +1,113 @@
+---
+title: "Client Onboarding Wizard"
+description: "Walk through the 5-step onboarding wizard to configure a client's AI receptionist, phone number, and knowledge base."
+icon: "wand-magic-sparkles"
+---
+
+## Overview
+
+The onboarding wizard guides you through setting up a new client from scratch. You can access it two ways:
+
+- **After adding a client** — a dialog prompts you to start onboarding immediately
+- **From the client list** — click the three-dot menu on any client and select **Onboard Client**
+
+The wizard tracks progress with a step indicator at the top. You can leave and return at any time — your progress is saved.
+
+<Info>The onboarding step badge appears on the client list so you can see at a glance which clients still need setup.</Info>
+
+---
+
+## The 5 Steps
+
+<Steps>
+  <Step title="Business Details">
+    Confirm or edit the client's core information:
+
+    - **Business name** — how the AI introduces the business on calls
+    - **Trade/Industry** — determines the default AI template and knowledge base
+    - **Phone number** — the client's existing business phone (customers forward this to the AI number)
+    - **Website URL** — the system scrapes this to auto-populate the knowledge base
+
+    <Tip>If the client has a website, enter it here. The crawler will extract services, hours, pricing, and FAQs automatically — saving you significant setup time.</Tip>
+  </Step>
+
+  <Step title="AI Configuration">
+    Configure the AI receptionist's personality and behavior:
+
+    - **Voice** — choose from Sarah, Alice, Eric, or Daniel (ElevenLabs voices)
+    - **Greeting message** — what the AI says when it picks up the phone
+    - **Personality** — professional, friendly, casual, or custom instructions
+    - **Booking mode** — whether the AI books appointments, captures leads, or both
+
+    This step uses **impersonation** to open the client's AI Config page. You are editing their settings directly.
+  </Step>
+
+  <Step title="Phone Provisioning">
+    Provision an AI phone number for the client:
+
+    - The system auto-detects the client's country from their business phone
+    - For US/CA clients, a local area code is matched to their region
+    - For UK clients, you can choose between a mobile (+447) or landline (+441/2/3) number
+
+    This step opens in a **new tab** via impersonation, taking you to the client's Phone page.
+
+    <Warning>UK landline numbers require an approved Twilio regulatory bundle (AddressSid + BundleSid). These are configured at the platform level — contact support if provisioning fails.</Warning>
+  </Step>
+
+  <Step title="Knowledge Base">
+    Build out the client's knowledge base so the AI can answer caller questions accurately:
+
+    - **Auto-scraped data** — if a website was provided in Step 1, scraped content appears here
+    - **Apply a template** — use a pre-built [knowledge template](/agency/knowledge-templates) for the client's industry
+    - **Manual articles** — add custom FAQ articles, service descriptions, pricing info
+    - **Upload documents** — PDF, TXT, or CSV files with business information
+
+    This step opens in a **new tab** via impersonation, taking you to the client's Knowledge Base page.
+
+    <Tip>Apply an industry template first, then customize. A plumbing template gives you 15+ articles covering emergency callouts, pricing ranges, service areas, and common questions — all editable.</Tip>
+  </Step>
+
+  <Step title="Review & Go Live">
+    Review all settings before activation:
+
+    - Business details summary
+    - AI voice and greeting preview
+    - Phone number confirmation
+    - Knowledge base intelligence score (aim for 70%+)
+    - Any missing items flagged with warnings
+
+    Click **Go Live** to activate the client.
+  </Step>
+</Steps>
+
+---
+
+## What Happens After Go Live
+
+Once you click Go Live:
+
+1. **Billing starts** — call minutes are deducted from the client's wallet
+2. **Calls begin** — the AI phone number starts answering incoming calls
+3. **Dashboard access** — the client can log in and see their calls, leads, and appointments
+4. **Automations activate** — missed call textback, review requests, and reminders go live
+5. **Health scoring begins** — the client appears in your analytics with a health score
+
+---
+
+## Resuming Incomplete Onboarding
+
+If you leave the wizard before completing all steps:
+
+- A **badge** appears on the client's row in the client list showing which step they are on (e.g., "Step 3/5")
+- Click **Onboard Client** from the three-dot menu to resume where you left off
+- The sidebar shows a **Setup Wizard** prompt until onboarding is complete
+
+<Accordion title="Can a client complete their own onboarding?">
+  Yes. If the client logs into their dashboard before you finish onboarding, they will see the same setup wizard in their sidebar. They can complete the remaining steps themselves. The wizard syncs — any steps you completed will show as done for them too.
+</Accordion>
+
+<Accordion title="Can I redo a completed step?">
+  Yes. Click any completed step in the wizard to go back and edit it. Changes take effect immediately. The only exception is "Go Live" — once activated, you cannot deactivate (only suspend).
+</Accordion>
+
+<Snippet file="snippets/footer.mdx" />

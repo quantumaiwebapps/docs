@@ -149,6 +149,19 @@
         ]
       },
       {
+        "group": "\ud83c\udfe2 Agency Portal",
+        "pages": [
+          "agency/getting-started",
+          "agency/managing-clients",
+          "agency/client-onboarding",
+          "agency/branding",
+          "agency/billing-revenue",
+          "agency/knowledge-templates",
+          "agency/analytics-health",
+          "agency/api-keys-providers"
+        ]
+      },
+      {
         "group": "Troubleshooting",
         "pages": [
           "troubleshooting/common-issues",
