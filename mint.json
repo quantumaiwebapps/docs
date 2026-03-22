@@ -43,8 +43,11 @@
       "pages": [
         "getting-started/first-10-minutes",
         "getting-started/understanding-dashboard",
+        "getting-started/my-business",
         "getting-started/call-forwarding",
         "getting-started/billing-plans",
+        "getting-started/voice-providers",
+        "getting-started/faq",
         "getting-started/glossary"
       ]
     },
@@ -57,7 +60,11 @@
         "ai-receptionist/knowledge-base",
         "ai-receptionist/smart-routing",
         "ai-receptionist/ivr-phone-menu",
+        "ai-receptionist/call-handling-settings",
         "ai-receptionist/ai-email-replies",
+        "ai-receptionist/ai-training",
+        "ai-receptionist/bilingual",
+        "ai-receptionist/hipaa",
         "ai-receptionist/testing"
       ]
     },
@@ -66,7 +73,14 @@
       "pages": [
         "phone-routing/ai-phone-number",
         "phone-routing/call-forwarding-setup",
-        "phone-routing/routing-modes"
+        "phone-routing/routing-modes",
+        "phone-routing/after-hours"
+      ]
+    },
+    {
+      "group": "Calls",
+      "pages": [
+        "calls/call-detail"
       ]
     },
     {
@@ -85,28 +99,57 @@
     {
       "group": "Quotes & Invoices",
       "pages": [
-        "quotes-invoices/how-quotes-work"
+        "quotes-invoices/how-quotes-work",
+        "quotes-invoices/quote-settings"
       ]
     },
     {
       "group": "Conversations",
       "pages": [
-        "conversations/overview"
+        "conversations/overview",
+        "conversations/sms-setup"
+      ]
+    },
+    {
+      "group": "Chat Widget",
+      "pages": [
+        "chat-widget/setup"
       ]
     },
     {
       "group": "Automations",
       "pages": [
         "automations/overview",
-        "automations/workflow-builder"
+        "automations/workflow-builder",
+        "automations/proactive-outbound"
+      ]
+    },
+    {
+      "group": "Campaigns",
+      "pages": [
+        "campaigns/overview"
+      ]
+    },
+    {
+      "group": "Voicemails",
+      "pages": [
+        "voicemails/overview"
       ]
     },
     {
       "group": "Integrations",
       "pages": [
         "integrations/google-calendar",
+        "integrations/outlook-calendar",
         "integrations/crm-hubspot-salesforce-ghl",
-        "integrations/zapier"
+        "integrations/zapier",
+        "integrations/twilio-setup"
+      ]
+    },
+    {
+      "group": "Locations",
+      "pages": [
+        "locations/multi-location"
       ]
     },
     {
@@ -114,19 +157,35 @@
       "pages": [
         "settings/account-security",
         "settings/team-management",
+        "settings/notifications",
+        "settings/support-tickets",
         "settings/chat-widget"
-      ]
-    },
-    {
-      "group": "Troubleshooting",
-      "pages": [
-        "troubleshooting/common-issues"
       ]
     },
     {
       "group": "Analytics",
       "pages": [
         "analytics/reading-analytics"
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        "troubleshooting/common-issues",
+        "troubleshooting/error-scenarios"
+      ]
+    },
+    {
+      "group": "Agency Portal",
+      "pages": [
+        "agency/getting-started",
+        "agency/managing-clients",
+        "agency/client-onboarding",
+        "agency/branding",
+        "agency/knowledge-templates",
+        "agency/analytics-health",
+        "agency/billing-revenue",
+        "agency/api-keys-providers"
       ]
     }
   ],
