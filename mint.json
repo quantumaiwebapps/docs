@@ -65,7 +65,8 @@
         "ai-receptionist/ai-training",
         "ai-receptionist/bilingual",
         "ai-receptionist/hipaa",
-        "ai-receptionist/testing"
+        "ai-receptionist/testing",
+        "ai-receptionist/custom-email"
       ]
     },
     {
@@ -107,7 +108,9 @@
       "group": "Conversations",
       "pages": [
         "conversations/overview",
-        "conversations/sms-setup"
+        "conversations/sms-setup",
+        "conversations/channels",
+        "conversations/escalation"
       ]
     },
     {
@@ -139,6 +142,10 @@
     {
       "group": "Integrations",
       "pages": [
+        "integrations/social-channels",
+        "integrations/whatsapp",
+        "integrations/facebook-messenger",
+        "integrations/instagram-dms",
         "integrations/google-calendar",
         "integrations/outlook-calendar",
         "integrations/crm-hubspot-salesforce-ghl",
@@ -150,6 +157,13 @@
       "group": "Locations",
       "pages": [
         "locations/multi-location"
+      ]
+    },
+    {
+      "group": "Billing",
+      "pages": [
+        "billing/payg-credits",
+        "billing/feature-gating"
       ]
     },
     {
@@ -185,7 +199,15 @@
         "agency/knowledge-templates",
         "agency/analytics-health",
         "agency/billing-revenue",
-        "agency/api-keys-providers"
+        "agency/api-keys-providers",
+        "agency/tenant-isolation",
+        "agency/default-automations"
+      ]
+    },
+    {
+      "group": "Security",
+      "pages": [
+        "security/overview"
       ]
     }
   ],

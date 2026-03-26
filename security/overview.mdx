@@ -1,0 +1,28 @@
+---
+title: "Security Overview"
+description: "Enterprise-grade security"
+icon: "shield"
+---
+
+## Authentication
+- JWT httpOnly cookies
+- Bcrypt 12 rounds
+- Account lockout (5 attempts)
+- Optional MFA/TOTP
+
+## Data Protection
+- AES-256 encryption
+- Tenant isolation on all queries
+- RBAC: 7 roles, 28 permissions
+- Per-tenant rate limiting
+
+## Webhook Security
+- VAPI: HMAC-SHA256
+- Stripe: Per-brand secrets
+- Twilio: SHA1 validation
+- Meta/Kapso: HMAC verification
+
+## Compliance
+- GDPR, CCPA, HIPAA, TCPA
+- 34 vulnerabilities found and fixed
+- 126/126 tests passing
